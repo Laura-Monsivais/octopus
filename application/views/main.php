@@ -13,11 +13,11 @@
     <link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url("assets/src/assets/images/favicon.png"); ?>">
     <title>Adminmart Template - The Ultimate Multipurpose admin template</title>
     <!-- Custom CSS -->
-    <link href="<?php echo base_url("assets/src/assets/src/assets/extra-libs/c3/c3.min.css"); ?>" rel="stylesheet">
-    <link href="<?php echo base_url("assets/src/assets/src/assets/libs/chartist/dist/chartist.min.css"); ?>" rel="stylesheet">
-    <link href="<?php echo base_url("assets/src/assets/src/assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css"); ?>" rel="stylesheet" />
+    <link href="<?php echo base_url("http://localhost/octopus/assets/src/assets/extra-libs/c3/c3.min.css"); ?>" rel="stylesheet">
+    <link href="<?php echo base_url("http://localhost/octopus/assets/src/assets/libs/chartist/dist/chartist.min.css"); ?>" rel="stylesheet">
+    <link href="<?php echo base_url("http://localhost/octopus/assets/src/assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css"); ?>" rel="stylesheet" />
     <!-- Custom CSS -->
-    <link href="<?php echo base_url("assets/src/dist/css/style.min.css"); ?>" rel="stylesheet">
+    <link href="<?php echo base_url("http://localhost/octopus/assets/src/dist/css/style.min.css"); ?>" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -65,9 +65,9 @@
                             <!-- Logo text -->
                             <span class="logo-text">
                                 <!-- dark Logo text -->
-                                <img src="<?php echo base_url("assets/src/assets/images/logo-text.png"); ?>" alt="homepage" class="dark-logo" />
+                                <img src="<?php echo base_url("http://localhost/octopus/assets/src/assets/images/logo-text.png"); ?>" alt="homepage" class="dark-logo" />
                                 <!-- Light Logo text -->
-                                <img src="<?php echo base_url("assets/src/assets/images/logo-light-text.png"); ?>" class="light-logo" alt="homepage" />
+                                <img src="<?php echo base_url("http://localhost/octopus/assets/src/assets/images/logo-light-text.png"); ?>" class="light-logo" alt="homepage" />
                             </span>
                         </a>
                     </div>
