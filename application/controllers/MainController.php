@@ -7,6 +7,7 @@ class MainController extends CI_Controller {
 		$this->load->view("LoaderComponent");
 		$this->load->view("HeaderComponent");
 		$this->load->view("NavbarComponent");
+		$this->load->view("MainView");
 		$this->load->view("FooterComponent");
 	}
 }
