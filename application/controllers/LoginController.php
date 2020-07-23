@@ -12,7 +12,7 @@ class LoginController extends CI_Controller {
 		$username = $this->input->post("username");
 		$password = $this->input->post("password");
 		if ($username != null and $password != null) {
-			redirect("maincontroller");
+			redirect("MainController");
 		}
 	}
 }

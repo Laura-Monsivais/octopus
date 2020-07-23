@@ -44,7 +44,7 @@
                     <!-- ============================================================== -->
                     <div class="navbar-brand">
                         <!-- Logo icon -->
-                        <a href="#">
+                        <a href="<?php base_url()?>MainController">
                             <b class="logo-icon">
                                 <!-- Dark Logo icon -->
                                 <img src="<?php echo base_url()?>assets/src/assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
@@ -154,7 +154,7 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="javascript:void(0)"><i data-feather="settings"
+                                <a class="dropdown-item" href="<?php base_url()?>UsersPermissionsController"><i data-feather="settings"
                                         class="svg-icon mr-2 ml-1"></i>
                                     Gestión de usuarios y permisos</a>
                                 <div class="dropdown-divider"></div>
