@@ -12,18 +12,17 @@
 </head>
 <body>
 <div class="main-wrapper">
-    <div class="auth-wrapper d-flex no-block justify-content-center align-items-center position-relative"
-        style="background:url(http://localhost/octopus/assets/images/big/des.jpg) no-repeat center center;">
+    <div class="auth-wrapper d-flex no-block justify-content-center align-items-center position-relative">
         <div class="auth-box row">
             <div class="col-lg-7 col-md-5 modal-bg-img" style="background-image: url(<?php echo base_url()?>assets/src/assets/images/big/3.jpg);">
             </div>
             <div class="col-lg-5 col-md-7 bg-white">
                 <div class="p-3">
                     <div class="text-center">
-                        <img src="<?php echo base_url()?>assets/src/assets/images/big/icon.png" alt="wrapkit">
+                        <!-- <img src="<?php echo base_url()?>assets/src/assets/images/big/icon.png" alt="wrapkit"> -->
                     </div>
                     <h2 class="mt-3 text-center">LOGIN</h2>
-                    <p class="text-center">Entra con tu correo y contraseña para acceder al panel de administración.</p>
+                    <!-- <p class="text-center">Entra con tu correo y contraseña para acceder al panel de administración.</p> -->
                     <form class="mt-4" action="" method="POST">
                         <div class="row">
                             <div class="col-lg-12">
@@ -44,7 +43,7 @@
                                 <button type="submit" class="btn btn-block btn-dark">ENTRAR</button>
                             </div>
                             <div class="col-lg-12 text-center mt-5">
-                                No tienes una cuenta? <a href="#" class="text-danger">Regístrate</a>
+                                <!-- No tienes una cuenta? <a href="#" class="text-danger">Regístrate</a> -->
                             </div>
                         </div>
                     </form>
