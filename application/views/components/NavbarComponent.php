@@ -5,10 +5,10 @@
             <ul id="sidebarnav">
                 <li class="sidebar-item"> <a class="sidebar-link has-arrow" href="javascript:void(0)"
                         aria-expanded="false"><i data-feather="file-text" class="feather-icon"></i><span
-                            class="hide-menu">En definición</span></a>
+                            class="hide-menu">Proveedor</span></a>
                     <ul aria-expanded="false" class="collapse  first-level base-level-line">
                         <li class="sidebar-item">
-                            <a href="form-inputs.html" class="sidebar-link"><span class="hide-menu">En definición</span></a>
+                            <a href="<?php base_url()?>ProviderController" class="sidebar-link"><span class="hide-menu">En definición</span></a>
                         </li>
                         <li class="sidebar-item">
                             <a href="form-inputs.html" class="sidebar-link"><span class="hide-menu">En definición</span></a>
