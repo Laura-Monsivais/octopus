@@ -156,7 +156,7 @@
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="<?php base_url()?>UsersPermissionsController"><i data-feather="settings"
                                         class="svg-icon mr-2 ml-1"></i>
-                                    Gestión de usuarios y permisos</a>
+                                    Gestión de administradores y permisos</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="javascript:void(0)"><i data-feather="power"
                                         class="svg-icon mr-2 ml-1"></i>
