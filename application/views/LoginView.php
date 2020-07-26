@@ -24,8 +24,15 @@
                     </div>
                     <h2 class="mt-3 text-center">LOGIN</h2>
                     <p class="text-center">Entra con tu correo y contraseña para acceder al panel de administración.</p>
-                    <form class="mt-4" action="" method="POST">
+                    <form class="mt-4" action="<?php echo site_url()?>/LoginController/validatingFormData" method="POST">
                         <div class="row">
+                            <div class="col-lg-12">
+                                <?php if (validation_errors()): ?>
+                                    <div class="alert alert-danger" role="alert">
+                                        <?php echo validation_errors(); ?>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
                             <div class="col-lg-12">
                                 <div class="form-group">
                                     <label class="text-dark" for="uname">Usuario</label>
@@ -40,6 +47,11 @@
                                     placeholder="Ingresa tu contraseña" name="password">
                                 </div>
                             </div>
+                            <?php if (isset($message) and $message != null): ?>
+                                    <div class="alert alert-danger" role="alert">
+                                        <?php echo $message; ?>
+                                    </div>
+                            <?php endif; ?>
                             <div class="col-lg-12 text-center">
                                 <button type="submit" class="btn btn-block btn-dark">ENTRAR</button>
                             </div>
