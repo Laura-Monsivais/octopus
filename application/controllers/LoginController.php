@@ -44,7 +44,6 @@ class LoginController extends CI_Controller {
 	 * 
 	 */
 	public function logout() {
-		print_r("HOLA");
 		$this->session->sess_destroy();
 		redirect("LoginController");
 	} 
