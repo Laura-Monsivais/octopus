@@ -5,25 +5,19 @@
             <ul id="sidebarnav">
                 <li class="sidebar-item"> <a class="sidebar-link has-arrow" href="javascript:void(0)"
                         aria-expanded="false"><i data-feather="file-text" class="feather-icon"></i><span
-                            class="hide-menu">En definición</span></a>
+                            class="hide-menu">Proveedores</span></a>
                     <ul aria-expanded="false" class="collapse  first-level base-level-line">
                         <li class="sidebar-item">
-                            <a href="form-inputs.html" class="sidebar-link"><span class="hide-menu">En definición</span></a>
+                            <a href="<?php base_url()?>ProviderController" class="sidebar-link"><span class="hide-menu">Nuevo proveedor</span></a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="form-inputs.html" class="sidebar-link"><span class="hide-menu">En definición</span></a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="sidebar-item"> <a class="sidebar-link has-arrow" href="javascript:void(0)"
-                        aria-expanded="false"><i data-feather="grid" class="feather-icon"></i><span
-                            class="hide-menu">En definición</span></a>
-                    <ul aria-expanded="false" class="collapse  first-level base-level-line">
-                        <li class="sidebar-item">
-                            <a href="form-inputs.html" class="sidebar-link"><span class="hide-menu">En definición</span></a>
+                            <a href="<?php base_url()?>ProviderController" class="sidebar-link"><span class="hide-menu">Tabla de proveedores</span></a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="form-inputs.html" class="sidebar-link"><span class="hide-menu">En definición</span></a>
+                            <a href="<?php base_url()?>ProviderController" class="sidebar-link"><span class="hide-menu">Insumos</span></a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="<?php base_url()?>ProviderController" class="sidebar-link"><span class="hide-menu">Tabla de insumos</span></a>
                         </li>
                     </ul>
                 </li>
@@ -31,25 +25,76 @@
             <ul id="sidebarnav">
                 <li class="sidebar-item"> <a class="sidebar-link has-arrow" href="javascript:void(0)"
                         aria-expanded="false"><i data-feather="file-text" class="feather-icon"></i><span
-                            class="hide-menu">En definición</span></a>
+                            class="hide-menu">Equipos técnicos</span></a>
                     <ul aria-expanded="false" class="collapse  first-level base-level-line">
-                        <li class="sidebar-item">
-                            <a href="form-inputs.html" class="sidebar-link"><span class="hide-menu">En definición</span></a>
+                    <li class="sidebar-item">
+                            <a href="<?php base_url()?>ProviderController" class="sidebar-link"><span class="hide-menu">Nuevo equipo</span></a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="form-inputs.html" class="sidebar-link"><span class="hide-menu">En definición</span></a>
+                            <a href="<?php base_url()?>ProviderController" class="sidebar-link"><span class="hide-menu">Tabla de equipos</span></a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="<?php base_url()?>ProviderController" class="sidebar-link"><span class="hide-menu">Mantenimiento</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidebar-item"> <a class="sidebar-link has-arrow" href="javascript:void(0)"
+                        aria-expanded="false"><i data-feather="file-text" class="feather-icon"></i><span
+                            class="hide-menu">Servicios</span></a>
+                    <ul aria-expanded="false" class="collapse  first-level base-level-line">
+                        <li class="sidebar-item">
+                            <a href="form-inputs.html" class="sidebar-link"><span class="hide-menu">Nuevo servicio</span></a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="form-inputs.html" class="sidebar-link"><span class="hide-menu">Tabla de servicios</span></a>
                         </li>
                     </ul>
                 </li>
                 <li class="sidebar-item"> <a class="sidebar-link has-arrow" href="javascript:void(0)"
                         aria-expanded="false"><i data-feather="grid" class="feather-icon"></i><span
-                            class="hide-menu">En definición</span></a>
+                            class="hide-menu">Calendario</span></a>
                     <ul aria-expanded="false" class="collapse  first-level base-level-line">
                         <li class="sidebar-item">
-                            <a href="form-inputs.html" class="sidebar-link"><span class="hide-menu">En definición</span></a>
+                            <a href="form-inputs.html" class="sidebar-link"><span class="hide-menu">Nuevo evento</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidebar-item"> <a class="sidebar-link has-arrow" href="javascript:void(0)"
+                        aria-expanded="false"><i data-feather="grid" class="feather-icon"></i><span
+                            class="hide-menu">Empleados</span></a>
+                    <ul aria-expanded="false" class="collapse  first-level base-level-line">
+                        <li class="sidebar-item">
+                            <a href="form-inputs.html" class="sidebar-link"><span class="hide-menu">Nuevo empleado</span></a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="form-inputs.html" class="sidebar-link"><span class="hide-menu">En definición</span></a>
+                            <a href="form-inputs.html" class="sidebar-link"><span class="hide-menu">Tabla de empleados</span></a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="form-inputs.html" class="sidebar-link"><span class="hide-menu">Asistencia</span></a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="form-inputs.html" class="sidebar-link"><span class="hide-menu">Tabla de asistencias</span></a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="form-inputs.html" class="sidebar-link"><span class="hide-menu">Capacitaciones</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidebar-item"> <a class="sidebar-link has-arrow" href="javascript:void(0)"
+                        aria-expanded="false"><i data-feather="file-text" class="feather-icon"></i><span
+                            class="hide-menu">Importar archivos</span></a>
+                    <ul aria-expanded="false" class="collapse  first-level base-level-line">
+                        <li class="sidebar-item">
+                            <a href="<?php base_url()?>ProviderController" class="sidebar-link"><span class="hide-menu">HACCP</span></a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="<?php base_url()?>ProviderController" class="sidebar-link"><span class="hide-menu">POES</span></a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="<?php base_url()?>ProviderController" class="sidebar-link"><span class="hide-menu">BPDM</span></a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="<?php base_url()?>ProviderController" class="sidebar-link"><span class="hide-menu">Fichas técnicas</span></a>
                         </li>
                     </ul>
                 </li>

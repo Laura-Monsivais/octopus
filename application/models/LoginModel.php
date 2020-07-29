@@ -1,37 +1,51 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+/**
+ * 
+ */
 class LoginModel extends CI_Model {
 
-    private $username;
-    private $password:
+    private $_username;
+    private $_password;
 
     public function getUsername() {
-        return $this->username;
+        return $this->_username;
     } 
 
-    public function setUsername($name) {
-        $this->username = $name;
+    public function setUsername($username) {
+        $this->_username = $username;
     } 
 
     public function getPassword() {
-        return $this->username;
+        return $this->_password;
     } 
 
-    public function getPassword($hash) {
-        $this->password = $hash;
+    public function setPassword($password) {
+        $this->_password = $password;
     } 
 
-    construct() {}
-
+    /**
+     * 
+     */
     public function collectFormData($username, $password) {
         $this->setUsername($username);
         $this->setPassword($password);
+        return $this->processingLogin();
     }
 
-    public function initLogin() {
+    /**
+     * 
+     */
+    private function processingLogin() {
         $username = $this->getUsername();
         $password = $this->getPassword();
-        $query = $this->db->query("SELECT * FROM personal WHERE usuario = ? AND contrasena = ? LIMIT 1");
+        $usersExisting = $this->db->get_where("personal", array("usuario" => $username))->result_array();
+        if (count($usersExisting) > 0) { 
+            foreach ($usersExisting as $userExisting) {
+                return password_verify($password, $userExisting["contrasena"]) ? true : false;
+            }
+        }
+        return false;
     }
 }
