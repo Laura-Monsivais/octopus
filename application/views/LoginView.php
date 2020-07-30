@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url()?>assets/src/assets/images/favicon.png">
-    <title>OCTOPUS LOGIN</title>
+    <title>OCTOPUS</title>
     <link href="<?php echo base_url()?>assets/src/dist/css/style.min.css" rel="stylesheet">
 </head>
 <body>
