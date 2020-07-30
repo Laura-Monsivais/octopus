@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url()?>assets/src/assets/images/favicon.png">
-    <title>Adminmart Template - The Ultimate Multipurpose admin template</title>
+    <title>OCTOPUS</title>
     <link href="<?php echo base_url()?>assets/src/assets/extra-libs/c3/c3.min.css" rel="stylesheet">
     <link href="<?php echo base_url()?>assets/src/assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
     <link href="<?php echo base_url()?>assets/src/assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
