@@ -23,7 +23,7 @@
                     </div>
                     <h2 class="mt-3 text-center">LOGIN</h2>
                     <!-- <p class="text-center">Entra con tu correo y contraseña para acceder al panel de administración.</p> -->
-                    <form class="mt-4" action="" method="POST">
+                    <form class="mt-4" action="<?php echo site_url()?>/LoginController/validatingFormData" method="POST">
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="form-group">
