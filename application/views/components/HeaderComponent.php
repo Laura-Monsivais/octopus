@@ -47,18 +47,11 @@ data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="fu
                 <a href="<?php base_url()?>MainController">
                     <b class="logo-icon">
                         <!-- Dark Logo icon -->
-                        <img src="<?php echo base_url()?>assets/src/assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                        <img src="<?php echo base_url()?>assets/src/assets/images/octopus.png" alt="homepage" class="dark-logo" />
                         <!-- Light Logo icon -->
-                        <img src="<?php echo base_url()?>assets/src/assets/images/logo-icon.png" alt="homepage" class="light-logo" />
+                        <img src="<?php echo base_url()?>assets/src/assets/images/octopus.png" alt="homepage" class="light-logo" />
                     </b>
-                    <!--End Logo icon -->
-                    <!-- Logo text -->
-                    <span class="logo-text">
-                        <!-- dark Logo text -->
-                        <img src="<?php echo base_url()?>assets/src/assets/images/logo-text.png" alt="homepage" class="dark-logo" />
-                        <!-- Light Logo text -->
-                        <img src="<?php echo base_url()?>assets/src/assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
-                    </span>
+                    <span class="logo-text">OCTOPUS</span>
                 </a>
             </div>
             <!-- ============================================================== -->
@@ -86,7 +79,7 @@ data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="fu
                         id="bell" role="button" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false">
                         <span><i data-feather="bell" class="svg-icon"></i></span>
-                        <span class="badge badge-primary notify-no rounded-circle">5</span>
+                        <span class="badge badge-primary notify-no rounded-circle">0</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-left mailbox animated bounceInDown">
                         <ul class="list-style-none">
