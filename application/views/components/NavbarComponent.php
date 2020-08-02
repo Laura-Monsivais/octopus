@@ -85,7 +85,7 @@
                             class="hide-menu">Importar archivos</span></a>
                     <ul aria-expanded="false" class="collapse  first-level base-level-line">
                         <li class="sidebar-item">
-                            <a href="<?php base_url()?>ImportFilesController" class="sidebar-link">
+                            <a href="<?php base_url()?>ImportFileController" class="sidebar-link">
                                 <span class="hide-menu">Importar archivos</span>
                             </a>
                         </li>
