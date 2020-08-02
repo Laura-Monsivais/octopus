@@ -34,9 +34,8 @@
 							<button type="submit" class="btn btn-outline-info">Guardar</button>
                     </div>
 				</form>
-				
             </div>
-        </div>
+        </form>
     </div>
 </div>
 

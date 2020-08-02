@@ -9,60 +9,43 @@
     <link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url()?>assets/src/assets/images/favicon.png">
     <title>OCTOPUS</title>
     <link href="<?php echo base_url()?>assets/src/dist/css/style.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <style >
+    * {
+        font-family: 'Noto Sans JP', sans-serif;
+    }
+    </style>
 </head>
 <body>
 <div class="main-wrapper">
     <div class="auth-wrapper d-flex no-block justify-content-center align-items-center position-relative">
-        <div class="auth-box row">
-            <div class="col-lg-7 col-md-5 modal-bg-img" style="background-image: url(<?php echo base_url()?>assets/src/assets/images/big/3.jpg);">
-            </div>
-            <div class="col-lg-5 col-md-7 bg-white">
-                <div class="p-3">
-                    <div class="text-center">
-                        <!-- <img src="<?php echo base_url()?>assets/src/assets/images/big/icon.png" alt="wrapkit"> -->
+        <div class="card col-md-4">
+            <div class="card-body">
+                <form action="<?php echo site_url()?>/LoginController/validatingFormData" method="POST">
+                    <div class="form-group text-center text-secondary">
+                        <h1>OCTOPUS</h1>
                     </div>
-                    <h2 class="mt-3 text-center">LOGIN</h2>
-                    <br>
-                    <!-- <p class="text-center">Entra con tu correo y contraseña para acceder al panel de administración.</p> -->
-                    <form class="mt-4" action="<?php echo site_url()?>/LoginController/validatingFormData" method="POST">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <?php if (validation_errors()): ?>
-                                    <div class="alert alert-danger" role="alert">
-                                        <?php echo validation_errors(); ?>
-                                    </div>
-                                <?php endif; ?>
+                    <div class="form-group"> 
+                        <?php if (validation_errors()): ?>
+                            <div class="alert alert-danger" role="alert">
+                                <?php echo validation_errors(); ?>
                             </div>
-                            <div class="col-lg-12">
-                                <div class="form-group">
-                                    <label class="text-dark" for="uname">Usuario</label>
-                                    <input class="form-control" id="uname" type="text" 
-                                    placeholder="Ingresa tu usuario" name="username">
-                                </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <div class="form-group">
-                                    <label class="text-dark" for="pwd">Contraseña</label>
-                                    <input class="form-control" id="pwd" type="password" 
-                                    placeholder="Ingresa tu contraseña" name="password">
-                                </div>
-                            </div>
-                            <?php if (isset($message) and $message != null): ?>
-                                    <div class="alert alert-danger" role="alert">
-                                        <?php echo $message; ?>
-                                    </div>
-                            <?php endif; ?>
-                            <div class="col-lg-12 text-center">
-                                <button type="submit" class="btn btn-block btn-dark">ENTRAR</button>
-                            </div>
-                            <div class="col-lg-12 text-center mt-5">
-                                <!-- No tienes una cuenta? <a href="#" class="text-danger">Regístrate</a> -->
-                            </div>
-                        </div>
-                    </form>
-                </div>
+                        <?php endif; ?>
+                    </div>
+                    <div class="form-group">
+                        <label for="username" class="text-body">Nombre de usuario</label>
+                        <input type="text"     class="form-control" name="username" required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="username" class="text-body">Contraseña</label>
+                        <input type="password" class="form-control" name="password" required="true">
+                    </div>
+                    <div class="form-group text-center">
+                        <button type="submit" class="btn btn-rounded btn-primary">Entrar al sistema</button>
+                    </div>
+                </form>
             </div>
-        </div>
+        </div> 
     </div>
 </div>
 <script src="<?php echo base_url()?>assets/src/assets/libs/jquery/dist/jquery.min.js "></script>
