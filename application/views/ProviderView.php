@@ -14,20 +14,24 @@
 						
                         <div class="box-tools pull-right"></div>
                     </div>
+					<hr>
 					<!--box-header-->
 					<!--centro-->
                     <div class="panel-body table-responsive" id="listadoregistros">
                         <div id="tbllistado_wrapper" class="dataTables_wrapper">
-                        <!-- <div class="dt-buttons">
-                                <a class="dt-button buttons-copy buttons-html5" tabindex="0" aria-controls="tbllistado" href="#"><span>Copy</span></a>
-                                <a class="dt-button buttons-excel buttons-html5" tabindex="0" aria-controls="tbllistado" href="#"><span>Excel</span></a>
-                                <a class="dt-button buttons-csv buttons-html5" tabindex="0" aria-controls="tbllistado" href="#"><span>CSV</span></a>
-                                <a class="dt-button buttons-pdf buttons-html5" tabindex="0" aria-controls="tbllistado" href="#"><span>PDF</span></a>    
-                            </div> -->
-							<div id="tbllistado_filter" class="dataTables_filter">
-								<label>Buscar:
-									<input type="search" class="" placeholder="" aria-controls="tbllistado">
-								</label>
+							<div class="row p-2">
+								<div class="col-9">
+									<div class="dt-buttons">
+										<a class="btn btn btn-light" tabindex="0" aria-controls="tbllistado" href="#"><span>Excel</span></a>
+										<a class="btn btn btn-light" tabindex="0" aria-controls="tbllistado" href="#"><span>CSV</span></a>
+										<a class="btn btn btn-light" tabindex="0" aria-controls="tbllistado" href="#"><span>PDF</span></a>    
+									</div>
+								</div>
+								<div class="col-3">
+									<div id="tbllistado_filter" class="dataTables_filter">		
+										<input type="search" class="form-control" placeholder="Buscar" aria-controls="tbllistado">
+									</div>
+								</div>	
 							</div>
 							
 							<table id="tbllistado" class="table table-striped table-bordered table-condensed table-hover dataTable" role="grid" aria-describedby="tbllistado_info" style="width: 1396px;">
@@ -53,9 +57,9 @@
 												<path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"></path>
 											</svg>
 											</button> 
-											<button class="btn btn-info btn-xs" >
+											<!--<button class="btn btn-info btn-xs" >
 												<i class="fa fa-key"></i>
-											</button> 
+											</button> -->
 											<button class="btn btn-danger btn-xs">
 												<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 													<path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.146-3.146a.5.5 0 0 0-.708-.708L8 7.293 4.854 4.146a.5.5 0 1 0-.708.708L7.293 8l-3.147 3.146a.5.5 0 0 0 .708.708L8 8.707l3.146 3.147a.5.5 0 0 0 .708-.708L8.707 8l3.147-3.146z"></path>

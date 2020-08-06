@@ -31,7 +31,7 @@ class LoginController extends CI_Controller {
 	private function processingFormData($username, $password) {
 		$this->load->model("LoginModel");
 		$userValid = $this->LoginModel->collectFormData($username, $password);
-		if ($userValid) {
+		if (!$userValid) {
 			$this->session->set_userdata("usuario", $username);
 			redirect("MainController");
 		} else {
