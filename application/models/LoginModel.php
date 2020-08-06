@@ -1,9 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-/**
- * 
- */
 class LoginModel extends CI_Model {
 
     private $_username;
@@ -25,18 +22,12 @@ class LoginModel extends CI_Model {
         $this->_password = $password;
     } 
 
-    /**
-     * 
-     */
     public function collectFormData($username, $password) {
         $this->setUsername($username);
         $this->setPassword($password);
         return $this->processingLogin();
     }
 
-    /**
-     * 
-     */
     private function processingLogin() {
         $username = $this->getUsername();
         $password = $this->getPassword();
