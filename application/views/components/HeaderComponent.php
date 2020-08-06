@@ -3,17 +3,17 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="es">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url()?>assets/src/assets/images/favicon.png">
-    <title>OCTOPUS</title>
-    <link href="<?php echo base_url()?>assets/src/assets/extra-libs/c3/c3.min.css" rel="stylesheet">
-    <link href="<?php echo base_url()?>assets/src/assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
-    <link href="<?php echo base_url()?>assets/src/assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
-    <link href="<?php echo base_url()?>assets/src/dist/css/style.min.css" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url()?>assets/src/assets/images/favicon.png">
+<title>OCTOPUS</title>
+<link href="<?php echo base_url()?>assets/src/assets/extra-libs/c3/c3.min.css" rel="stylesheet">
+<link href="<?php echo base_url()?>assets/src/assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
+<link href="<?php echo base_url()?>assets/src/assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
+<link href="<?php echo base_url()?>assets/src/dist/css/style.min.css" rel="stylesheet">
 </head>
 <body>
 <!-- ============================================================== -->
@@ -116,10 +116,7 @@ data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="fu
             </ul>
             <ul class="navbar-nav float-right">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        <img src="<?php echo base_url("assets/src/assets/images/users/profile-pic.jpg"); ?>" alt="user" class="rounded-circle"
-                            width="40">
+                    <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown">
                         <span class="ml-2 d-none d-lg-inline-block"><span
                                 class="text-dark">usuario</span> <i data-feather="chevron-down"
                                 class="svg-icon"></i></span>
