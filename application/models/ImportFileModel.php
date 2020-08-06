@@ -9,6 +9,8 @@ class ImportFileModel extends CI_Model {
     }
 
     public function obtenerArchivos() {
-        return $this->db->query("SELECT * FROM archivo")->result_array();
-    }
+        return $this->db->query("SELECT * FROM archivo ")->result_array();
+	}
+	
+	
 }
