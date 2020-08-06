@@ -7,7 +7,7 @@
                             <label for="inputHorizontalDnger" class="col-sm-3 col-form-label">Título</label>
                             <div class="col-sm-9">
                                 <div class="custom-file">
-									<input type="text" name="titImagen" class="form-control">
+									<input type="text" name="titImagen" class="form-control" require>
                                 </div>
                             </div>
                         </div>
@@ -48,6 +48,7 @@
 				</tr>
 			</thead>
 			<tbody>
+			
 			<?php 
 				$archivos = json_decode(json_encode($listaArchivos), true);
 				$path = site_url();
@@ -56,9 +57,10 @@
 					echo "<td >" . $archivo["nombre_archivo"] . "</td>";
 					echo "<td >" . $archivo["ruta"] . "</td>";
 					echo "<td >" . $archivo["categoria"] . "</td>";
-                    echo "<td ><a class='btn btn-primary' href='${path}/ImportFileController/descargarArchivo/" . $archivo["id_archivo"] . "'>Descargar</a></td>"; 
+                    echo "<td ><a class='btn btn-primary' href='${path}/ImportFileController/descargarArchivo/" . $archivo["ruta"] . "'>Descargar</a></td>"; 
 					echo "</tr>";
 				}
 			?>
+			
 			</tbody>
 		</table>
