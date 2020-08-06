@@ -139,7 +139,7 @@
                 </div>
             </nav>
         </header>
-        <?php if (!$this->session->userdata("usuario")): ?>
+        <!-- <?php //if (!$this->session->userdata("usuario")): ?>
         <div id="info-header-modal" class="modal fade show" tabindex="-1" role="dialog"
             aria-labelledby="info-header-modalLabel" aria-modal="true" style="display: block; padding-right: 17px;">
             <div class="modal-dialog">
@@ -152,4 +152,4 @@
                 </div>
             </div>
         </div>
-        <?php endif; ?>
+        <?php //endif; ?> -->
