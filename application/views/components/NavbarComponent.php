@@ -10,10 +10,6 @@
                             <a href="<?php base_url()?>ProviderController" class="sidebar-link"><span
                                     class="hide-menu">Nuevo proveedor</span></a>
                         </li>
-                        <li class="sidebar-item">
-                            <a href="<?php base_url()?>RawMaterialController" class="sidebar-link"><span
-                                    class="hide-menu">Insumos</span></a>
-                        </li>
                     </ul>
                 </li>
             </ul>
@@ -23,7 +19,7 @@
                             class="hide-menu">Equipos técnicos</span></a>
                     <ul aria-expanded="false" class="collapse  first-level base-level-line">
                         <li class="sidebar-item">
-                            <a href="" class="sidebar-link"><span class="hide-menu">Nuevo equipo</span></a>
+                            <a href="#" class="sidebar-link"><span class="hide-menu">Nuevo equipo</span></a>
                         </li>
                     </ul>
                 </li>
