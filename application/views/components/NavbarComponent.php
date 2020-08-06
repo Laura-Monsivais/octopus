@@ -11,13 +11,7 @@
                             <a href="<?php base_url()?>ProviderController" class="sidebar-link"><span class="hide-menu">Nuevo proveedor</span></a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="<?php base_url()?>ProviderController" class="sidebar-link"><span class="hide-menu">Tabla de proveedores</span></a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a href="<?php base_url()?>ProviderController" class="sidebar-link"><span class="hide-menu">Insumos</span></a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a href="<?php base_url()?>ProviderController" class="sidebar-link"><span class="hide-menu">Tabla de insumos</span></a>
+                            <a href="<?php base_url()?>RawMaterialController" class="sidebar-link"><span class="hide-menu">Insumos</span></a>
                         </li>
                     </ul>
                 </li>
@@ -28,13 +22,13 @@
                             class="hide-menu">Equipos técnicos</span></a>
                     <ul aria-expanded="false" class="collapse  first-level base-level-line">
                     <li class="sidebar-item">
-                            <a href="<?php base_url()?>ProviderController" class="sidebar-link"><span class="hide-menu">Nuevo equipo</span></a>
+                            <a href="" class="sidebar-link"><span class="hide-menu">Nuevo equipo</span></a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="<?php base_url()?>ProviderController" class="sidebar-link"><span class="hide-menu">Tabla de equipos</span></a>
+                            <a href="" class="sidebar-link"><span class="hide-menu">Tabla de equipos</span></a>
                         </li>
                         <li class="sidebar-item">
-                            <a href="<?php base_url()?>ProviderController" class="sidebar-link"><span class="hide-menu">Mantenimiento</span></a>
+                            <a href="" class="sidebar-link"><span class="hide-menu">Mantenimiento</span></a>
                         </li>
                     </ul>
                 </li>
@@ -43,10 +37,7 @@
                             class="hide-menu">Servicios</span></a>
                     <ul aria-expanded="false" class="collapse  first-level base-level-line">
                         <li class="sidebar-item">
-                            <a href="" class="sidebar-link"><span class="hide-menu">Nuevo servicio</span></a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a href="" class="sidebar-link"><span class="hide-menu">Tabla de servicios</span></a>
+                            <a href="<?php base_url()?>ServiceController" class="sidebar-link"><span class="hide-menu">Nuevo servicio</span></a>
                         </li>
                     </ul>
                 </li>
@@ -65,18 +56,6 @@
                     <ul aria-expanded="false" class="collapse  first-level base-level-line">
                         <li class="sidebar-item">
                             <a href="<?php base_url()?>EmployeeController" class="sidebar-link"><span class="hide-menu">Nuevo empleado</span></a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a href="" class="sidebar-link"><span class="hide-menu">Tabla de empleados</span></a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a href="" class="sidebar-link"><span class="hide-menu">Asistencia</span></a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a href="" class="sidebar-link"><span class="hide-menu">Tabla de asistencias</span></a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a href="" class="sidebar-link"><span class="hide-menu">Capacitaciones</span></a>
                         </li>
                     </ul>
                 </li>
