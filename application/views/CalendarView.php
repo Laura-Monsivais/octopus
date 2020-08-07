@@ -32,9 +32,12 @@
                     </div>
 
                     <table class="table table-bordered">
-                        <thead class="text-center">
-                            <tr>
-                                <th scope="col"></th>
+                        <thead>
+                            <tr class="text-center">
+                                <th scope="col" width="25%">
+                                    <button type="submit" class="btn btn-outline-info">Agregar</button>
+                                    <button type="submit" class="btn btn-danger" disabled>Eliminar</button>
+                                </th>
                                 <th scope="col">Personal</th>
                                 <th scope="col">Puesto</th>
                             </tr>
