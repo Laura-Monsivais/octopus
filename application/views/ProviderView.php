@@ -104,8 +104,67 @@
 				</div>
 			</div>
 		</div>
-		<!--inicio de modal editar contraseña--->
-		<!--fin de modal editar contraseña--->
+		<!--inicio de modal editar usuario--->
+        <body>
+                <h1 class="box-title">Actualizar Proveedor </h1>         
+				<hr>
+            <div class="container-fluid p-1 my-15 border">
+                 <table>
+                    <tr>
+                     <td>
+                        <div class="form-group1">
+                            <label  class="text-body">Tipo(*)</label rowspan="1" colspan="1">
+                            <input type="text"  size=40   class="form-control" name="Tipo" required="true" disabled>
+                        </div>
+                     </td>                            
+                     <td>
+                        <div class="form-group1">
+                        <label  class="text-body">Email(*)</label>
+                        <input type="text" size=40  class="form-control" name="Email" required="true">
+                        </div>
+                     </td>
+                    </tr>
+                            
+                    <tr>
+                     <td>
+                        <div class="form-group1">
+                        <label  class="text-body">Nombre(*)</label>
+                        <input type="text"  size=40     class="form-control" name="username" required="true" disabled>
+                        </div>
+                     </td>
+                     <td>
+                        <div class="form-group1">
+                        <label  class="text-body">Preferente</label>
+                        <input type="text" size=40   class="form-control" name="Preferente" required="false" >
+                        </div>
+                     </td>
+                    </tr>
+
+                    <tr>
+                     <td>
+                        <div class="form-group1">
+                        <label  class="text-body">Telefono(*)</label>
+                        <input type="number"  size=40   class="form-control" name="Telefono" required="true">
+                        </div>
+                     </td>
+                      <td>
+                        <div class="form-group1">
+                        <label class="text-body">Estado</label>
+                        <input type="text"size=40 class="form-control" name="Estado" required="false">
+                        </div>
+                     </td>
+                    </tr>                            
+                 </table>
+            </div>
+                        <p ></p>
+                        <p ></p>
+                        <p ></p>
+
+                 <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <button class="btn btn-primary" type="submit" id="btnGuardar"><i class="fa fa-save"></i>  Guardar</button>
+                    <button class="btn btn-danger" onclick="cancelarform()" type="button"><i class="fa fa-arrow-circle-left"></i> Cancelar</button>
+                 </div>
+		<!--fin de modal editar usuario--->
 		<!--fin centro-->
     </div>
 </div>
