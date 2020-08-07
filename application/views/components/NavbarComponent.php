@@ -3,7 +3,7 @@
         <nav class="sidebar-nav">
             <ul id="sidebarnav">
                 <li class="sidebar-item"> <a class="sidebar-link has-arrow" href="javascript:void(0)"
-                        aria-expanded="false"><i data-feather="file-text" class="feather-icon"></i><span
+                        aria-expanded="false"><i data-feather="box" class="feather-icon"></i><span
                             class="hide-menu">Proveedores</span></a>
                     <ul aria-expanded="false" class="collapse  first-level base-level-line">
                         <li class="sidebar-item">
@@ -15,16 +15,17 @@
             </ul>
             <ul id="sidebarnav">
                 <li class="sidebar-item"> <a class="sidebar-link has-arrow" href="javascript:void(0)"
-                        aria-expanded="false"><i data-feather="file-text" class="feather-icon"></i><span
+                        aria-expanded="false"><i data-feather="monitor" class="feather-icon"></i><span
                             class="hide-menu">Equipos técnicos</span></a>
                     <ul aria-expanded="false" class="collapse  first-level base-level-line">
                         <li class="sidebar-item">
-                            <a href="#" class="sidebar-link"><span class="hide-menu">Nuevo equipo</span></a>
+                            <a href="<?php base_url()?>EquipmentController" class="sidebar-link"><span
+                                    class="hide-menu">Nuevo equipo</span></a>
                         </li>
                     </ul>
                 </li>
                 <li class="sidebar-item"> <a class="sidebar-link has-arrow" href="javascript:void(0)"
-                        aria-expanded="false"><i data-feather="file-text" class="feather-icon"></i><span
+                        aria-expanded="false"><i data-feather="briefcase" class="feather-icon"></i><span
                             class="hide-menu">Servicios</span></a>
                     <ul aria-expanded="false" class="collapse  first-level base-level-line">
                         <li class="sidebar-item">
@@ -34,7 +35,7 @@
                     </ul>
                 </li>
                 <li class="sidebar-item"> <a class="sidebar-link has-arrow" href="javascript:void(0)"
-                        aria-expanded="false"><i data-feather="grid" class="feather-icon"></i><span
+                        aria-expanded="false"><i data-feather="calendar" class="feather-icon"></i><span
                             class="hide-menu">Calendario</span></a>
                     <ul aria-expanded="false" class="collapse  first-level base-level-line">
                         <li class="sidebar-item">
@@ -44,7 +45,7 @@
                     </ul>
                 </li>
                 <li class="sidebar-item"> <a class="sidebar-link has-arrow" href="javascript:void(0)"
-                        aria-expanded="false"><i data-feather="grid" class="feather-icon"></i><span
+                        aria-expanded="false"><i data-feather="users" class="feather-icon"></i><span
                             class="hide-menu">Empleados</span></a>
                     <ul aria-expanded="false" class="collapse  first-level base-level-line">
                         <li class="sidebar-item">
@@ -54,7 +55,7 @@
                     </ul>
                 </li>
                 <li class="sidebar-item"> <a class="sidebar-link has-arrow" href="javascript:void(0)"
-                        aria-expanded="false"><i data-feather="file-text" class="feather-icon"></i><span
+                        aria-expanded="false"><i data-feather="folder-plus" class="feather-icon"></i><span
                             class="hide-menu">Importar archivos</span></a>
                     <ul aria-expanded="false" class="collapse  first-level base-level-line">
                         <li class="sidebar-item">
