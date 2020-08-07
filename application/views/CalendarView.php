@@ -52,6 +52,18 @@
                                 </td>
                                 <td scope="col"></td>
                             </tr>
+                            <tr class="text-center">
+                                <td scope="col"><input type="checkbox" class="form-check-input"></td>
+                                <td scope="col">
+                                    <div class="col-sm-12">
+                                        <select name="categoria" class="custom-select">
+                                            <option selected=""></option>
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td scope="col"></td>
+                            </tr>
                         </tbody>
                     </table>
                     <div class="form-group text-center">
@@ -72,8 +84,6 @@
                         </tr>
                     </thead>
                     <tbody>
-
-
                     </tbody>
                 </table>
             </div>
