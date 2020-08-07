@@ -8,14 +8,37 @@ class NotificationModel extends CI_Model {
     private $_idPerson;
 
     public function getidNotification(){
-        return $this->_idNotifica
+        return $this->_idNotification;
     }
 
-    public public function setIdNotification()
-    {
+   public function setIdNotification($idNotification){
+        $this->$_idNotification = $idNotification;
         
     }
 
+    public function getNotificationDate(){
+        return $this->_notificationDate;
+    }
 
+    public function setNotificationDate($NotificationDate){
+        $this->$_notificationDate = $NotificationDate;
+        
+    }
+    
+    public function getDescription(){
+        return $this->_description;
+    }
+
+    public function setDescription($Description){
+        $this->$_description = $Description;
+    }
+
+    public function getIdPerson(){
+        return $this->$_idPerson;
+    }
+
+    public function setIdPerson($IdPerson){
+        $this->$_idPerson = $IdPerson;
+    }
   
 }
