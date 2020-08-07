@@ -70,7 +70,7 @@ class PersonalModel extends CI_Model {
 
     public function setRFC($RFC) {
         $this->_RFC = $RFC;
-    } 
+    }  
 
     public function getInDate() {
         return $this->_in_date;
