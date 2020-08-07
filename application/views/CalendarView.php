@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="card">
             <div class="card-body">
-                <form action="<?php echo site_url()?>/ImportFileController/subirArchivo" method="POST"
+                <form action="" method="POST"
                     enctype="multipart/form-data" class="mt-3 form-horizontal">
                     <div class="form-group row">
                         <label for="inputHorizontalDnger" class="col-sm-3 col-form-label">Evento</label>
@@ -35,39 +35,14 @@
                         <thead>
                             <tr class="text-center">
                                 <th scope="col" width="25%">
-                                    <button type="submit" class="btn btn-outline-info">Agregar</button>
-                                    <button type="submit" class="btn btn-danger" disabled>Eliminar</button>
+                                    <button id="btn-add" class="btn btn-outline-info">Agregar</button>
+                                    <button class="btn btn-danger" disabled>Eliminar</button>
                                 </th>
                                 <th scope="col">Personal</th>
                                 <th scope="col">Puesto</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr class="text-center">
-                                <td scope="col"><input type="checkbox" class="form-check-input"></td>
-                                <td scope="col">
-                                    <div class="col-sm-12">
-                                        <select name="categoria" class="custom-select">
-                                            <option selected=""></option>
-                                            <option value=""></option>
-                                        </select>
-                                    </div>
-                                </td>
-                                <td scope="col"></td>
-                            </tr>
-                            <tr class="text-center">
-                                <td scope="col"><input type="checkbox" class="form-check-input"></td>
-                                <td scope="col">
-                                    <div class="col-sm-12">
-                                        <select name="categoria" class="custom-select">
-                                            <option selected=""></option>
-                                            <option value=""></option>
-                                        </select>
-                                    </div>
-                                </td>
-                                <td scope="col"></td>
-                            </tr>
-                        </tbody>
+                        <tbody id="tbl-box" class="text-center"></tbody>
                     </table>
                     <div class="form-group text-center">
                         <button type="submit" class="btn btn-outline-info">Guardar</button>
@@ -91,3 +66,52 @@
                 </table>
             </div>
         </div>
+
+        <input type="text">
+
+<script >
+
+    const btnAdd = document.getElementById("btn-add");
+    const select = document.getElementById("persons");
+    const tblBox = document.getElementById("tbl-box");
+
+    let jsons = 
+    [
+        {
+            "name": "Molecule Man",
+            "age": 29,
+            "secretIdentity": "Dan Jukes",
+            "powers": [
+            "Radiation resistance",
+            "Turning tiny",
+            "Radiation blast"
+            ]
+        },
+        {
+            "name": "Madame Uppercut",
+            "age": 39,
+            "secretIdentity": "Jane Wilson",
+            "powers": [
+            "Million tonne punch",
+            "Damage resistance",
+            "Superhuman reflexes"
+            ]
+        }
+    ]
+
+    let select = document.createElement("select");
+    select.setAttribute("id", "select-input");
+    document.body.appendChild(select);   
+
+    for (let entry of jsons) {
+        let option = document.createElement("option");
+        let t = document.createTextNode(entry["name"]);
+        option.appendChild(t);
+        document.getElementById("select-input").appendChild(option);
+    }
+   
+            
+    btnAdd.addEventListener("click", (e) => {});
+
+
+</script>
