@@ -69,7 +69,7 @@
                             class="hide-menu">Empleados</span></a>
                     <ul aria-expanded="false" class="collapse  first-level base-level-line">
                         <li class="sidebar-item">
-                            <a href="<?php base_url()?>EmployeeController" class="sidebar-link"><span
+                            <a href="<?php base_url()?>StaffController" class="sidebar-link"><span
                                     class="hide-menu">Nuevo empleado</span></a>
                         </li>
                         <li class="sidebar-item">
