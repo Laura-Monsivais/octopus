@@ -2,8 +2,7 @@
     <div class="col-md-12">
         <div class="box">
             <div class="box-header with-border">
-                <h1 class="box-title">Equipos
-                </h1>
+                <h1 class="box-title">Equipos</h1>
                 <div class="card">
                     <div class="card-body">
                         <form class="needs-validation" novalidate>
@@ -71,9 +70,9 @@
                                     <label for="validationCustom05">Mantenimiento</label>
                                     <select name="" class="custom-select">
                                         <option selected="Mantenimiento"></option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
+                                        <option value="1">Tipo 1</option>
+                                        <option value="2">Tipo 2</option>
+                                        <option value="3">Tipo 3</option>
                                     </select>
                                 </div>
                             </div>
@@ -81,27 +80,32 @@
                                 <button class="btn btn-primary" type="submit">Guardar</button>
                             </div>
                         </form>
+                    </div>
+                </div>
 
-                        <script>
-                            (function() {
-                                'use strict';
-                                window.addEventListener('load', function() {
+                <script>
+                    (function() {
+                        'use strict';
+                        window.addEventListener('load', function() {
 
-                                    var forms = document.getElementsByClassName('needs-validation');
+                            var forms = document.getElementsByClassName('needs-validation');
 
-                                    var validation = Array.prototype.filter.call(forms, function(form) {
-                                        form.addEventListener('submit', function(event) {
-                                            if (form.checkValidity() === false) {
-                                                event.preventDefault();
-                                                event.stopPropagation();
-                                            }
-                                            form.classList.add('was-validated');
-                                        }, false);
-                                    });
+                            var validation = Array.prototype.filter.call(forms, function(form) {
+                                form.addEventListener('submit', function(event) {
+                                    if (form.checkValidity() === false) {
+                                        event.preventDefault();
+                                        event.stopPropagation();
+                                    }
+                                    form.classList.add('was-validated');
                                 }, false);
-                            })();
-                        </script>
-                        <table class="table table-hover">
+                            });
+                        }, false);
+                    })();
+                </script>
+
+                <div class="card">
+                    <div class="card-body">
+                        <table class="table table-bordered table-hover">
                             <thead class="thead-dark">
                                 <tr>
                                     <th scope="col">Nombre</th>
@@ -110,7 +114,7 @@
                                     <th scope="col">Modelo</th>
                                     <th scope="col">Costo</th>
                                     <th scope="col">Stock</th>
-                                    <th scope="col">Fecha de Adquisición</th>
+                                    <th scope="col">Fecha de adquisición</th>
                                     <th scope="col">Mantenimiento</th>
                                     <th scope="col"><i class="fas fa-cogs"></i></th>
                                 </tr>
