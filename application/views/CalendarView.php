@@ -30,15 +30,30 @@
                             </select>
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <label for="inputHorizontalDnger" class="col-sm-3 col-form-label">Personas</label>
-                        <div class="col-sm-9">
-                            <select name="categoria" class="custom-select">
-                                <option selected=""></option>
-                                <option value=""></option>
-                            </select>
-                        </div>
-                    </div>
+
+                    <table class="table table-bordered">
+                        <thead class="text-center">
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">Personal</th>
+                                <th scope="col">Puesto</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="text-center">
+                                <td scope="col"><input type="checkbox" class="form-check-input"></td>
+                                <td scope="col">
+                                    <div class="col-sm-12">
+                                        <select name="categoria" class="custom-select">
+                                            <option selected=""></option>
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+                                </td>
+                                <td scope="col"></td>
+                            </tr>
+                        </tbody>
+                    </table>
                     <div class="form-group text-center">
                         <button type="submit" class="btn btn-outline-info">Guardar</button>
                     </div>
