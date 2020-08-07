@@ -37,6 +37,5 @@ class LoginModel extends CI_Model {
                 return password_verify($password, $userExisting["contrasena"]) ? true : false;
             }
         }
-        return false;
     }
 }

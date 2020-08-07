@@ -1,6 +1,6 @@
 <div class="page-wrapper">
     <div class="container-fluid">
-    
+
         <div class="content-wrapper">
             <!-- Main content -->
             <section class="content">
@@ -9,37 +9,38 @@
                     <div class="col-md-12">
                         <div class="box">
                             <div class="box-header with-border">
-                                <h1 class="box-title">Tipo de usuarios 
+                                <h1 class="box-title">Tipo de usuarios
                                     <button class="btn btn-success" id="btnagregar" onclick="mostrarform(true)">
-										<i class="fa fa-plus-circle"></i>Agregar
-									</button>
-								</h1>
+                                        <i class="fa fa-plus-circle"></i>Agregar
+                                    </button>
+                                </h1>
                                 <div class="box-tools pull-right"></div>
                             </div>
                             <!--box-header-->
                             <!--centro-->
-							<div class="panel-body table-responsive" id="listadoregistros">
-							  <table id="tbllistado" class="table table-striped table-bordered table-condensed table-hover">
-								<thead>
-								  <th>Opciones</th>
-								  <th>Username</th>
-								  <th>Email</th>
-								  <th>Password</th>
-								  <th>Fecha/registro</th>
-								</thead>
-								<tbody>
-								</tbody>
-								<tfoot>
-								  <th>Opciones</th>
-								  <th>Username</th>
-								  <th>Email</th>
-								  <th>Password</th>
-								  <th>Fecha/registro</th>
-								</tfoot>   
-							  </table>
-							</div>
-							
-							<!--
+                            <div class="panel-body table-responsive" id="listadoregistros">
+                                <table id="tbllistado"
+                                    class="table table-striped table-bordered table-condensed table-hover">
+                                    <thead>
+                                        <th>Opciones</th>
+                                        <th>Username</th>
+                                        <th>Email</th>
+                                        <th>Password</th>
+                                        <th>Fecha/registro</th>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                    <tfoot>
+                                        <th>Opciones</th>
+                                        <th>Username</th>
+                                        <th>Email</th>
+                                        <th>Password</th>
+                                        <th>Fecha/registro</th>
+                                    </tfoot>
+                                </table>
+                            </div>
+
+                            <!--
 							<div class="panel-body" style="height: 400px;" id="formularioregistros">
 							  <form action="" name="formulario" id="formulario" method="POST">
 								<div class="form-group col-lg-6 col-md-6 col-xs-12">
@@ -59,14 +60,14 @@
 							  </form>
 							</div>
 							-->
-							<!--fin centro-->
-						</div>
-					</div>
-				</div>
-				<!-- /.box -->
-			</section>
-		<!-- /.content -->
-		</div>
-		
+                            <!--fin centro-->
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box -->
+            </section>
+            <!-- /.content -->
+        </div>
+
     </div>
 </div>
