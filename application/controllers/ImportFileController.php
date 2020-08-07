@@ -1,5 +1,6 @@
 <?php
 defined("BASEPATH") OR exit("No direct script access allowed");
+
 class ImportFileController extends CI_Controller {
 
 	function __construct() {
@@ -18,10 +19,11 @@ class ImportFileController extends CI_Controller {
 		$this->load->view("ImportFileView", $data);
 		$this->load->view("components/FooterComponent");
 	}
+	
 
     public function subirArchivo() {
         $config['upload_path'] = './uploads/archivos/';
-        $config['allowed_types'] = 'pdf|xlsx|doc';
+        $config['allowed_types'] = 'pdf|xlsx|docx|pptx';
         $config['max_size'] = '20048';
         $this->load->library('upload', $config);
  
@@ -29,6 +31,7 @@ class ImportFileController extends CI_Controller {
             $data['errorArch'] = $this->upload->display_errors();
             $this->index($data);
         } else {	
+			
 	     	$titulo = $this->input->post('titImagen');
 			$categoria = $this->input->post('categoria');
 
@@ -50,5 +53,10 @@ class ImportFileController extends CI_Controller {
 
 	public function descargarArchivo($idArchivo) {
 		$this->index();
-    }
-}
+		$data = file_get_contents('./uploads/archivos/'.$idArchivo); 
+       force_download($idArchivo,$data);
+	}
+	
+		}
+	
+
