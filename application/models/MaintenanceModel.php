@@ -2,17 +2,20 @@
 if (!defined("BASEPATH")) exit("No direct script access allowed");
 
 class MaintenanceModel extends CI_Model {
-	public function __construct(){
-		$this->load->database();
+	function __construct()
+	{
+		parent::__construct();
 	}
-	public function add($mantenimiento){
+	
+	public function getMantenimiento()
+	{
+		return $this->db->query("SELECT * FROM mantenimiento")->result();
+	}
+	
+	public function setMantenimiento( $clave, $tipo, $observacion, $fechainicio, $fechafin) {
+	$data = array("clave" => $clave, "tipo" => $tipo, "observacion" => $observacion, "fecha_inicio" => $fechainicio, "fecha_fin" => $fechafin );
+	return $this->db->insert("mantenimiento", $data);
 
-  $this->db->insert('mantenimiento', $mantenimiento);
+
 }
 }
-  
-    
-	
-	
-
-

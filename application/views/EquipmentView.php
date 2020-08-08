@@ -141,10 +141,11 @@
                                 <td>1</td>
                                 <td>06/08/2020</td>
                                 <td>1</td>
-                                <td><i title="Actualizar" class="fas fa-pencil-alt mr-2" type="button" data-toggle="modal"
-                                        data-target="#signup-modal"></i><i title="Eliminar" class="fas fa-trash mr-2"
-                                        id="btn_delete"></i><i title="Mantenimiento" class="fas fa-people-carry mr-2" type="button"
-                                        data-toggle="modal" data-target="#signup-modal-mtto"></td>
+                                <td><i title="Actualizar" class="fas fa-pencil-alt mr-2" type="button"
+                                        data-toggle="modal" data-target="#signup-modal"></i><i title="Eliminar"
+                                        class="fas fa-trash mr-2" id="btn_delete"></i><i title="Mantenimiento"
+                                        class="fas fa-people-carry mr-2" type="button" data-toggle="modal"
+                                        data-target="#signup-modal-mtto"></td>
                             </tr>
                         </tbody>
                     </table>
@@ -254,144 +255,158 @@
                         </div><!-- /.modal-dialog -->
                     </div><!-- /.modal -->
 
-					<!-- /.modal mtto -->
-					<form action="<?php echo site_url()?>/MaintenanceController/AgregarMantenimiento" method="POST">
-                    <div id="signup-modal-mtto" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered modal-lg">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h4 class="modal-title" id="topModalLabel">Mantenimiento</h4>
-                                    <button type="button" class="close" data-dismiss="modal"
-                                        aria-hidden="true">×</button>
-                                </div>
-                                <div class="modal-body">
-                                    <form class="needs-validation" novalidate>
-                                        <div class="form-row">
-                                            <div class="col-md-4 mb-3">
-                                                <label for="validationCustom01">Clave</label>
-                                                <input type="text" class="form-control" id="cl"
-                                                    placeholder="Nombre" required>
-                                                <div class="invalid-feedback">
-                                                    Completa Nombre.
+                    <!-- /.modal mtto -->
+                    <form action="<?php echo site_url()?>/MaintenanceController/AgregarMantenimiento" method="POST"
+                        class="needs-validation" novalidate>
+                        <div id="signup-modal-mtto" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title" id="topModalLabel">Mantenimiento</h4>
+                                        <button type="button" class="close" data-dismiss="modal"
+                                            aria-hidden="true">×</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form class="needs-validation" novalidate>
+                                            <div class="form-row">
+                                                <div class="col-md-4 mb-3">
+                                                    <label for="validationCustom01">Clave</label>
+                                                    <input type="text" class="form-control" name="cl"
+                                                        placeholder="Nombre" required>
+                                                    <div class="invalid-feedback">
+                                                        Completa Nombre.
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-8 mb-3">
+                                                    <label for="validationCustom02">Tipo de Mantenimiento</label>
+                                                    <input type="text" class="form-control" name="mtto"
+                                                        placeholder="Descripción" required>
+                                                    <div class="invalid-feedback">
+                                                        Completa Tipo Mantenimiento.
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-8 mb-3">
-                                                <label for="validationCustom02">Tipo de Mantenimiento</label>
-                                                <input type="text" class="form-control" id="mtto"
-                                                    placeholder="Descripción" required>
-                                                <div class="invalid-feedback">
-                                                    Completa Tipo Mantenimiento.
+                                            <div class="form-row">
+                                                <div class="col-md-12 mb-3">
+                                                    <label for="validationCustom03">Observación</label>
+                                                    <input type="text" class="form-control" name="obs"
+                                                        placeholder="Observación">
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="col-md-12 mb-3">
-                                                <label for="validationCustom03">Observación</label>
-                                                <input type="text" class="form-control" id="obs"
-                                                    placeholder="Observación">
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="col-md-6 mb-3">
-                                                <label for="validationCustom05">Fecha de Entrada</label>
-                                                <input type="date" class="form-control" id="fechaE"
-                                                    required>
-                                                <div class="invalid-feedback">
-                                                    Completa Fecha de Entrada.
+                                            <div class="form-row">
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="validationCustom05">Fecha de Entrada</label>
+                                                    <input type="date" class="form-control" name="fechaE" required>
+                                                    <div class="invalid-feedback">
+                                                        Completa Fecha de Entrada.
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="validationCustom05">Fecha de Salida</label>
+                                                    <input type="date" class="form-control" name="fechaS" required>
+                                                    <div class="invalid-feedback">
+                                                        Completa Fecha de Salida.
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6 mb-3">
-                                                <label for="validationCustom05">Fecha de Salida</label>
-                                                <input type="date" class="form-control" id="FechaS"
-                                                    required>
-                                                <div class="invalid-feedback">
-                                                    Completa Fecha de Salida.
-                                                </div>
+                                            <div class="form-group text-center">
+                                                <button class="btn btn-primary" type="submit" name="btn_guardar_mtto">Guardar</button>
                                             </div>
-                                        </div>
-                                        <div class="form-group text-center">
-                                            <button class="btn btn-primary" type="submit">Guardar</button>
-                                        </div>
-                                    </form>
+                                        </form>
 
-                                </div>
-                            </div><!-- /.modal-content -->
-                        </div><!-- /.modal-dialog -->
-                    </div><!-- /.modal -->
+                                    </div>
+                                </div><!-- /.modal-content -->
+                            </div><!-- /.modal-dialog -->
+                        </div><!-- /.modal -->
 
 
-                    <script>
-                    $("#btn_delete").click(function() {
-                        Swal.fire({
-                            title: "¿Estás seguro?",
-                            text: "¡No podrás revertir esto!",
-                            icon: "warning",
-                            showCancelButton: true,
-                            confirmButtonText: "Sí, eliminar!",
-                            confirmButtonColor: "#d33",
-                            cancelButtonText: "Cancelar",
-                            cancelButtonColor: "#3085d6",
-                            showLoaderOnConfirm: true,
-                            preConfirm: () => {
-                                /* let id = this.hoshinGuidelines[index].id; */
-                                return axios //En esta parte va la petición Ajax
-                                    .delete(route("Usuarios.destroy", {
-                                        id: item.id
-                                    }).url())
-                                    .then((response) => {
-                                        this.users_data.splice(this.users_items.indexOf(
-                                                item),
-                                            1); //Remove the user of the list.
-                                        return "eliminated";
-                                    })
-                                    .catch((error) => {
-                                        Swal.showValidationMessage(
-                                            `Se produjo un error: ${error}`);
-                                    });
-                            },
-                            allowOutsideClick: () => !Swal.isLoading(),
-                        }).then((result) => {
-                            if (result.value) {
-                                Swal.fire("Eliminado!", "Equipo Eliminado.", "success");
-                            }
-                        });
-                    });;
-                    </script>
+                        <script>
+                        $("#btn_delete").click(function() {
+                            Swal.fire({
+                                title: "¿Estás seguro?",
+                                text: "¡No podrás revertir esto!",
+                                icon: "warning",
+                                showCancelButton: true,
+                                confirmButtonText: "Sí, eliminar!",
+                                confirmButtonColor: "#d33",
+                                cancelButtonText: "Cancelar",
+                                cancelButtonColor: "#3085d6",
+                                showLoaderOnConfirm: true,
+                                preConfirm: () => {
+                                    /* let id = this.hoshinGuidelines[index].id; */
+                                    return axios //En esta parte va la petición Ajax
+                                        .delete(route("Usuarios.destroy", {
+                                            id: item.id
+                                        }).url())
+                                        .then((response) => {
+                                            this.users_data.splice(this.users_items.indexOf(
+                                                    item),
+                                                1); //Remove the user of the list.
+                                            return "eliminated";
+                                        })
+                                        .catch((error) => {
+                                            Swal.showValidationMessage(
+                                                `Se produjo un error: ${error}`);
+                                        });
+                                },
+                                allowOutsideClick: () => !Swal.isLoading(),
+                            }).then((result) => {
+                                if (result.value) {
+                                    Swal.fire("Eliminado!", "Equipo Eliminado.", "success");
+                                }
+                            });
+                        });;
+                        </script>
 
-                    <script>
-                    $("#btn_mtto").click(function() {
-                        Swal.fire({
-                            title: "¿Estás seguro?",
-                            text: "¡No podrás revertir esto!",
-                            icon: "warning",
-                            showCancelButton: true,
-                            confirmButtonText: "Sí, eliminar!",
-                            confirmButtonColor: "#d33",
-                            cancelButtonText: "Cancelar",
-                            cancelButtonColor: "#3085d6",
-                            showLoaderOnConfirm: true,
-                            preConfirm: () => {
-                                /* let id = this.hoshinGuidelines[index].id; */
-                                return axios //En esta parte va la petición Ajax
-                                    .delete(route("Usuarios.destroy", {
-                                        id: item.id
-                                    }).url())
-                                    .then((response) => {
-                                        this.users_data.splice(this.users_items.indexOf(
-                                                item),
-                                            1); //Remove the user of the list.
-                                        return "eliminated";
-                                    })
-                                    .catch((error) => {
-                                        Swal.showValidationMessage(
-                                            `Se produjo un error: ${error}`);
-                                    });
-                            },
-                            allowOutsideClick: () => !Swal.isLoading(),
-                        }).then((result) => {
-                            if (result.value) {
-                                Swal.fire("Eliminado!", "Equipo Eliminado.", "success");
-                            }
-                        });
-                    });;
-                    </script>
+                        <script>
+                        $("#btn_mtto").click(function() {
+                            Swal.fire({
+                                title: "¿Estás seguro?",
+                                text: "¡No podrás revertir esto!",
+                                icon: "warning",
+                                showCancelButton: true,
+                                confirmButtonText: "Sí, eliminar!",
+                                confirmButtonColor: "#d33",
+                                cancelButtonText: "Cancelar",
+                                cancelButtonColor: "#3085d6",
+                                showLoaderOnConfirm: true,
+                                preConfirm: () => {
+                                    /* let id = this.hoshinGuidelines[index].id; */
+                                    return axios //En esta parte va la petición Ajax
+                                        .delete(route("Usuarios.destroy", {
+                                            id: item.id
+                                        }).url())
+                                        .then((response) => {
+                                            this.users_data.splice(this.users_items.indexOf(
+                                                    item),
+                                                1); //Remove the user of the list.
+                                            return "eliminated";
+                                        })
+                                        .catch((error) => {
+                                            Swal.showValidationMessage(
+                                                `Se produjo un error: ${error}`);
+                                        });
+                                },
+                                allowOutsideClick: () => !Swal.isLoading(),
+                            }).then((result) => {
+                                if (result.value) {
+                                    Swal.fire("Eliminado!", "Equipo Eliminado.", "success");
+                                }
+                            });
+                        });;
+						</script>
+						
+
+
+						<SCRIPT LANGUAGE=JAVASCRIPT><!--
+						$("#btn_guardar_mtto").click(function() {
+							function limpiar() {
+								setTimeout('document.formulario.reset()',2000);
+								return false;
+							}
+							</SCRIPT>
+							<FORM NAME="formulario" onSubmit="return limpiar()">
+							<INPUT TYPE="INPUT">
+							<INPUT TYPE="SUBMIT" value="enviar">
+							</FORM>
+						}
