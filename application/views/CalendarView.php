@@ -23,7 +23,7 @@
                     <div class="form-group row">
                         <label for="inputHorizontalDnger" class="col-sm-3 col-form-label">Fecha importante</label>
                         <div class="col-sm-9">
-                            <select name="dateImportant" class="custom-select">
+                            <select name="name" class="custom-select">
                                 <option selected=""></option>
                                 <option value="Si">Si</option>
                                 <option value="No">No</option>
@@ -65,14 +65,6 @@
                     </tbody>
                 </table>
             </div>
-        </div>
-
-
-        <?php 
-        
-        
-        ?>
-
 <script type="text/javascript">
     alert("HOLA")
 
