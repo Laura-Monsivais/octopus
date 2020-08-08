@@ -83,12 +83,13 @@
                                 <div class="col-md-5 mb-3">
                                     <label for="validationCustom05">Persona Asignada</label>
                                     <select name="categoria" class="custom-select">
-                                        <option selected="HACCP">HACCP</option>
+										<option selected="HACCP">HACCP</option>
                                         <option value="POES">POES</option>
                                         <option value="BPDM">BPDM</option>
                                         <option value="Fichas Técnicas">Fichas técnicas</option>
                                     </select>
-                                </div>
+								</div>
+
                             </div>
                             <div class="form-group text-center">
                                 <button class="btn btn-primary" type="submit">Guardar</button>
@@ -396,17 +397,4 @@
                         });;
 						</script>
 						
-
-
-						<SCRIPT LANGUAGE=JAVASCRIPT><!--
-						$("#btn_guardar_mtto").click(function() {
-							function limpiar() {
-								setTimeout('document.formulario.reset()',2000);
-								return false;
-							}
-							</SCRIPT>
-							<FORM NAME="formulario" onSubmit="return limpiar()">
-							<INPUT TYPE="INPUT">
-							<INPUT TYPE="SUBMIT" value="enviar">
-							</FORM>
 						}

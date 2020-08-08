@@ -41,11 +41,4 @@ class MaintenanceController extends CI_Controller {
 			}
 		}
 
-		
-
-			
-		
-	
-
-
 	}
