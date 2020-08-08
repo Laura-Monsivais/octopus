@@ -1,93 +1,80 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+if (!defined("BASEPATH")) exit("No direct script access allowed");
 
 /**
  * 
  */
 class ServiceModel extends CI_Model {
 
-	private $_type;
-    private $_emission_date;
-    private $_expiration_date;
-    private $_cost;
-    private $_payment_type;
-    private $_pending;
-    private $_id_personal;
-
-    public function getType() {
-        return $this->_type;
-    } 
-
-    public function setType($type) {
-        $this->_type = $type;
-    } 
-
-    public function getEmissionDate() {
-        return $this->_emission_date;
-    } 
-
-    public function setEmissionDate($emission_date) {
-        $this->_emission_date = $emission_date;
-    } 
-
-    public function getExpirationDate() {
-        return $this->_expiration_date;
-    } 
-
-    public function setExpirationDate($expiration_date) {
-        $this->_expiration_date = $expiration_date;
-    } 
-
-    public function getCost() {
-        return $this->_cost;
-    } 
-
-    public function setCost($cost) {
-        $this->_cost = $cost;
-    } 
-
-    public function getPaymentType() {
-        return $this->_payment_type;
-    } 
-
-    public function setPaymentType($payment_type) {
-        $this->_payment_type = $payment_type;
-    }
-
-    public function getPending() {
-        return $this->_pending;
-    } 
-
-    public function setPending($pending) {
-        $this->_pending = $pending;
-    }
-
-    public function getIdPersonal() {
-        return $this->_id_personal;
-    } 
-
-    public function setIdPersonal($id_personal) {
-        $this->_id_personal = $id_personal;
+    public function __construct()
+    {
+        $this->load->database();
     }
 
     public function selectAllServices() {
-        $query = $this->db->query("SELECT * FROM servicio");
+        $this->db->select('*');
+        $this->db->from('servicio s');
+        $this->db->join('personal p', 's.id_personal = p.id_personal');
+        $query = $this->db->get();
 
-        return $query->result();
+        return $query->result_array();
+    }
+
+    public function selectAllPersonal() {
+        $query = $this->db->query("SELECT id_personal, nombre, apellido_paterno, apellido_materno FROM personal");
+
+        return $query->result_array();
     }
 
     public function addService($tipo,$fecha_emision,$fecha_expiracion,$costo,$tipo_pago,$pendiente,$id_personal){
-        $query = $this->db->query("INSERT INTO usuarios VALUES(NULL,'$tipo','$fecha_emision','$fecha_expiracion','$costo','$tipo_pago','$pendiente','$id_personal');");
-        if($query == true){
-          return true;
-        }else{
+        $query = $this->db->query("INSERT INTO servicio VALUES(NULL,'$tipo','$fecha_emision','$fecha_expiracion','$costo','$tipo_pago','$pendiente','$id_personal')");
+
+        $result = $query;
+        if ($result) {
+            return true;
+        } else {
             return false;
         }
-
     }
 
+    public function removeService($id_servicio){
+        $this->db->where('id_servicio', $id_servicio);
+        $result = $this->db->delete('servicio');
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
+    //public function modifyService($id_servicio,$tipo,$fecha_emision,$fecha_expiracion,$costo,$tipo_pago,$pendiente,$id_personal) {
+          /*$query = $this->db->query("UPDATE servicio SET tipo = '$tipo', fecha_emision = '$fecha_emision', fecha_expiracion = '$fecha_expiracion', costo ='$costo', tipo_pago ='$tipo_pago', pendiente ='$pendiente', id_personal ='$id_personal' WHERE id_servicio = $id_servicio");
+          if($query == true) {
+              return true;
+          }else{
+              return false;
+          }*/
 
+    public function modifyServicePayment($id_servicio,$data) {
+        $this->db->where('id_servicio', $id_servicio);
+        $result = $this->db->update('servicio', $data);
 
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function modifyService($id_servicio,$data) {
+        $this->db->where('id_servicio', $id_servicio);
+        $result = $this->db->update('servicio', $data);
+
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
 }
