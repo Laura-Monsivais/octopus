@@ -48,6 +48,10 @@ class CalendarModel extends CI_Model {
         return $this->db->query("SELECT * FROM calendario")->result_array();
     }
 
+    public function queryAllPersons() {
+        return $this->db->query("SELECT id_personal, nombre FROM personal")->result_array();
+    }
+
     public function deleteEvent($idEvent) {
         $this->db->where("id_calendario", $idEvent); 
         $this->db->delete("calendario"); 

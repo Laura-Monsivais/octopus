@@ -37,14 +37,13 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr class="text-center">
-                                <th scope="col">Nombre de la persona</th>
-                                <th scope="col">Puesto</th>
+                                <th scope="col">Invitar nueva persona al evento</th>
                             </tr>
                         </thead>
                         <tbody id="tbl-box" class="text-center"></tbody>
                     </table>
                     <div class="form-group text-center">
-                        <button type="submit" class="btn btn-outline-info" disabled>Guardar</button>
+                        <button type="submit" class="btn btn-outline-info">Guardar</button>
                     </div>
                 </form>
             </div>
@@ -83,49 +82,37 @@
 
         <?php 
 
-        $jsonEvents = json_encode($events);
+        $jsonPersons = json_encode($persons);
     
         ?>
 
         <script type="text/javascript">
+        let jsons = '<?php echo $jsonPersons ?>';
 
-        let json = '<?php echo $jsonEvents ?>';
+        const buttonAdd = document.getElementById("btn-add");
+        const tableBody = document.getElementById("tbl-box");
+        const buttonDrop = document.getElementById("btn-drop");
 
-        document.write(json);
+        buttonAdd.addEventListener("click", (e) => {
+            e.preventDefault();
+            let row = tableBody.insertRow(0);
+            let cell1 = row.insertCell(0);
+            let select = document.createElement("select");
+            select.setAttribute("id", "select-input");
+            select.classList.add("form-control");
+            document.body.appendChild(select);
 
-        // const buttonAdd = document.getElementById("btn-add");
-        // const tableBody = document.getElementById("tbl-box");
-        // const buttonDrop = document.getElementById("btn-drop");        
-        
-        // let jsons = [{
-        //         "name": "Persona 1",
-        //     },
-        //     {
-        //         "name": "Persona 2",
-        //     }
-        // ];
+            for (let person of JSON.parse(jsons)) {
+                let option = document.createElement("option");
+                let t = document.createTextNode(person["nombre"]);
+                option.appendChild(t);
+                cell1.appendChild(select);
+                document.getElementById("select-input").appendChild(option);
+            }
+        });
 
-        // buttonAdd.addEventListener("click", (e) => {
-        //     e.preventDefault();
-        //     let row = tableBody.insertRow(0);
-        //     let cell1 = row.insertCell(0);
-        //     let cell2 = row.insertCell(1);
-        //     let select = document.createElement("select");
-        //     select.setAttribute("id", "select-input");
-        //     select.classList.add("form-control");
-        //     document.body.appendChild(select);
-
-        //     for (let entry of jsons) {
-        //         let option = document.createElement("option");
-        //         let t = document.createTextNode(entry["name"]);
-        //         option.appendChild(t);
-        //         cell1.appendChild(select);
-        //         document.getElementById("select-input").appendChild(option);
-        //     }
-        // });
-
-        // buttonDrop.addEventListener("click", (e) => {
-        //     e.preventDefault();
-        //     tableBody.deleteRow(0);
-        // });
+        buttonDrop.addEventListener("click", (e) => {
+            e.preventDefault();
+            tableBody.deleteRow(0);
+        });
         </script>

@@ -10,7 +10,8 @@ class CalendarController extends CI_Controller {
 
 	public function index() {
 		$data = array(
-			"events" => $this->CalendarModel->queryAllEvents()
+			"events" => $this->CalendarModel->queryAllEvents(),
+			"persons" => $this->CalendarModel->queryAllPersons()
 		);
 		$this->load->view("components/LoaderComponent");
 		$this->load->view("components/HeaderComponent");
