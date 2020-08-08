@@ -11,25 +11,11 @@
     <meta name="author" content="">
     <link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url() ?>assets/src/assets/images/favicon.png">
     <title>OCTOPUS</title>
-    <link href="<?php echo base_url() ?>assets/src/assets/extra-libs/c3/c3.min.css" rel="stylesheet">
-    <link href="<?php echo base_url() ?>assets/src/assets/libs/chartist/dist/chartist.min.css" rel="stylesheet">
-    <link href="<?php echo base_url() ?>assets/src/assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
     <link href="<?php echo base_url() ?>assets/src/dist/css/style.min.css" rel="stylesheet">
-
     <script src="<?php echo base_url() ?>assets/src/assets/libs/jquery/dist/jquery.min.js"></script>
 </head>
 
 <body>
-    <!-- ============================================================== -->
-    <!-- Preloader - style you can find in spinners.css -->
-    <!-- ============================================================== -->
-    <div class="preloader">
-        <div class="lds-ripple">
-            <div class="lds-pos"></div>
-            <div class="lds-pos"></div>
-        </div>
-    </div>
-
     <div id="main-wrapper" data-theme="light" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full" data-sidebar-position="fixed" data-header-position="fixed" data-boxed-layout="full">
         <header class="topbar" data-navbarbg="skin6">
             <nav class="navbar top-navbar navbar-expand-md">
@@ -123,6 +109,8 @@
                 </div>
             </nav>
         </header>
+
+
         <!-- <?php //if (!$this->session->userdata("usuario")): 
                 ?>
         <div id="info-header-modal" class="modal fade show" tabindex="-1" role="dialog"
