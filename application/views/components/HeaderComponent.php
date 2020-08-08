@@ -13,6 +13,12 @@
     <title>OCTOPUS</title>
     <link href="<?php echo base_url() ?>assets/src/dist/css/style.min.css" rel="stylesheet">
     <script src="<?php echo base_url() ?>assets/src/assets/libs/jquery/dist/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+    * {
+        font-family: 'Roboto', sans-serif;
+      }
+    </style>
 </head>
 
 <body>
