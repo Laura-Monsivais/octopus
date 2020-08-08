@@ -8,7 +8,7 @@
                         <label for="inputHorizontalDnger" class="col-sm-3 col-form-label">Evento</label>
                         <div class="col-sm-9">
                             <div class="custom-file">
-                                <input type="text" name="titImagen" class="form-control">
+                                <input type="text" name="evento" class="form-control">
                             </div>
                         </div>
                     </div>
@@ -16,14 +16,14 @@
                         <label for="inputHorizontalDnger" class="col-sm-3 col-form-label">Fecha</label>
                         <div class="col-sm-9">
                             <div class="custom-file">
-                                <input type="date" name="titImagen" class="form-control">
+                                <input type="date" name="fecha" class="form-control">
                             </div>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="inputHorizontalDnger" class="col-sm-3 col-form-label">Fecha importante</label>
                         <div class="col-sm-9">
-                            <select name="categoria" class="custom-select">
+                            <select name="dateImportant" class="custom-select">
                                 <option selected=""></option>
                                 <option value="Si">Si</option>
                                 <option value="No">No</option>
@@ -67,13 +67,18 @@
             </div>
         </div>
 
-        <input type="text">
 
-<script >
+        <?php 
+        
+        
+        ?>
 
-    const btnAdd = document.getElementById("btn-add");
-    const select = document.getElementById("persons");
-    const tblBox = document.getElementById("tbl-box");
+<script type="text/javascript">
+    alert("HOLA")
+
+    // const btnAdd = document.getElementById("btn-add");
+    // const select = document.getElementById("persons");
+    // const tblBox = document.getElementById("tbl-box");
 
     let jsons = 
     [
@@ -111,7 +116,7 @@
     }
    
             
-    btnAdd.addEventListener("click", (e) => {});
+    // btnAdd.addEventListener("click", (e) => {});
 
 
 </script>
