@@ -47,7 +47,7 @@
                                 <tbody id="tbl-box" class="text-center"></tbody>
                             </table>
                             <div class="form-group text-center">
-                                <button type="submit" class="btn btn-outline-info" disabled>Guardar</button>
+                                <button type="submit" class="btn btn-outline-info">Guardar</button>
                             </div>
                         </form>
                     </div>
@@ -72,6 +72,7 @@
                                 echo "<td >" . $event["evento"] . "</td>";
                                 echo "<td >" . $event["fecha"] . "</td>";
                                 echo "<td >" . $isImportant = $event["fecha_importe"] ? "Si" : "No" . "</td>";
+                                echo "<td ></td>";
                                 echo "<td class='text-center'>
                                         <a class='btn btn-outline-info disabled' href='${path}/CalendarController/processDeleteEvent/" . $event["id_calendario"] . "'>&nbsp;&nbsp;Editar&nbsp;&nbsp;</a>
                                         <a class='btn btn-danger' href='${path}/CalendarController/processDeleteEvent/" . $event["id_calendario"] . "'>Eliminar</a>
