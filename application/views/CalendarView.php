@@ -66,49 +66,6 @@
                 </table>
             </div>
 <script type="text/javascript">
-    alert("HOLA")
-
-    // const btnAdd = document.getElementById("btn-add");
-    // const select = document.getElementById("persons");
-    // const tblBox = document.getElementById("tbl-box");
-
-    let jsons = 
-    [
-        {
-            "name": "Molecule Man",
-            "age": 29,
-            "secretIdentity": "Dan Jukes",
-            "powers": [
-            "Radiation resistance",
-            "Turning tiny",
-            "Radiation blast"
-            ]
-        },
-        {
-            "name": "Madame Uppercut",
-            "age": 39,
-            "secretIdentity": "Jane Wilson",
-            "powers": [
-            "Million tonne punch",
-            "Damage resistance",
-            "Superhuman reflexes"
-            ]
-        }
-    ]
-
-    let select = document.createElement("select");
-    select.setAttribute("id", "select-input");
-    document.body.appendChild(select);   
-
-    for (let entry of jsons) {
-        let option = document.createElement("option");
-        let t = document.createTextNode(entry["name"]);
-        option.appendChild(t);
-        document.getElementById("select-input").appendChild(option);
-    }
    
-            
-    // btnAdd.addEventListener("click", (e) => {});
-
 
 </script>
