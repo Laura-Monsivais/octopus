@@ -80,40 +80,52 @@
             </div>
         </div>
 
-        <script>
-        const buttonAdd = document.getElementById("btn-add");
-        const tableBody = document.getElementById("tbl-box");
-        const buttonDrop = document.getElementById("btn-drop");
 
-        let jsons = [{
-                "name": "Persona 1",
-            },
-            {
-                "name": "Persona 2",
-            }
-        ];
+        <?php 
 
-        buttonAdd.addEventListener("click", (e) => {
-            e.preventDefault();
-            var row = tableBody.insertRow(0);
-            var cell1 = row.insertCell(0);
-            var cell2 = row.insertCell(1);
-            let select = document.createElement("select");
-            select.setAttribute("id", "select-input");
-            select.classList.add("form-control");
-            document.body.appendChild(select);
+        $jsonEvents = json_encode($events);
+    
+        ?>
 
-            for (let entry of jsons) {
-                let option = document.createElement("option");
-                let t = document.createTextNode(entry["name"]);
-                option.appendChild(t);
-                cell1.appendChild(select);
-                document.getElementById("select-input").appendChild(option);
-            }
-        });
+        <script type="text/javascript">
 
-        buttonDrop.addEventListener("click", (e) => {
-            e.preventDefault();
-            tableBody.deleteRow(0);
-        });
+        let json = '<?php echo $jsonEvents ?>';
+
+        document.write(json);
+
+        // const buttonAdd = document.getElementById("btn-add");
+        // const tableBody = document.getElementById("tbl-box");
+        // const buttonDrop = document.getElementById("btn-drop");        
+        
+        // let jsons = [{
+        //         "name": "Persona 1",
+        //     },
+        //     {
+        //         "name": "Persona 2",
+        //     }
+        // ];
+
+        // buttonAdd.addEventListener("click", (e) => {
+        //     e.preventDefault();
+        //     let row = tableBody.insertRow(0);
+        //     let cell1 = row.insertCell(0);
+        //     let cell2 = row.insertCell(1);
+        //     let select = document.createElement("select");
+        //     select.setAttribute("id", "select-input");
+        //     select.classList.add("form-control");
+        //     document.body.appendChild(select);
+
+        //     for (let entry of jsons) {
+        //         let option = document.createElement("option");
+        //         let t = document.createTextNode(entry["name"]);
+        //         option.appendChild(t);
+        //         cell1.appendChild(select);
+        //         document.getElementById("select-input").appendChild(option);
+        //     }
+        // });
+
+        // buttonDrop.addEventListener("click", (e) => {
+        //     e.preventDefault();
+        //     tableBody.deleteRow(0);
+        // });
         </script>
