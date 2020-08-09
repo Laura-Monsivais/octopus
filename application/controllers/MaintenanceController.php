@@ -24,7 +24,7 @@ class MaintenanceController extends CI_Controller
 		$this->load->view("components/LoaderComponent");
 		$this->load->view("components/HeaderComponent");
 		$this->load->view("components/NavbarComponent");
-		$this->load->view("MaintenanceUpdateView");
+		$this->load->view("MaintenanceAddView");
 		$this->load->view("components/FooterComponent");
 	}
 
