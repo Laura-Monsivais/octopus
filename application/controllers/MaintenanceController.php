@@ -12,6 +12,7 @@ class MaintenanceController extends CI_Controller
 
 	public function index()
 	{
+		
 
 		$this->load->view("components/LoaderComponent");
 		$this->load->view("components/HeaderComponent");

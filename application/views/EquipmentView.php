@@ -1,25 +1,25 @@
-
-	<div class="page-wrapper">
+<div class="page-wrapper">
     <div class="col-md-12">
         <div class="box">
             <div class="box-header with-border">
                 <h1 class="box-title">Equipos</h1>
                 <div class="card">
                     <div class="card-body">
-                        <form class="needs-validation" novalidate>
+                        <form action="<?php echo site_url() ?>/EquipmentController/AgregarEquipo" method="POST"
+                            class="needs-validation" novalidate>
                             <div class="form-row">
                                 <div class="col-md-4 mb-3">
                                     <label for="validationCustom01">Nombre</label>
                                     <input type="text" class="form-control" id="validationCustom01" placeholder="Nombre"
-                                        required>
+                                        required name="nombreE">
                                     <div class="invalid-feedback">
                                         Completa Nombre.
-            ¿                        </div>
+                                        ¿ </div>
                                 </div>
                                 <div class="col-md-8 mb-3">
                                     <label for="validationCustom02">Descripción</label>
                                     <input type="text" class="form-control" id="validationCustom02"
-                                        placeholder="Descripción" required>
+                                        placeholder="Descripción" required name="desc">
                                     <div class="invalid-feedback">
                                         Completa Descripción.
                                     </div>
@@ -29,7 +29,7 @@
                                 <div class="col-md-2 mb-3">
                                     <label for="validationCustom03">Marca</label>
                                     <input type="text" class="form-control" id="validationCustom03" placeholder="Marca"
-                                        required>
+                                        required name="marca">
                                     <div class="invalid-feedback">
                                         Completa Marca.
                                     </div>
@@ -37,7 +37,7 @@
                                 <div class="col-md-2 mb-3">
                                     <label for="validationCustom03">Modelo</label>
                                     <input type="text" class="form-control" id="validationCustom03" placeholder="Modelo"
-                                        required>
+                                        required name="modelo">
                                     <div class="invalid-feedback">
                                         Completa Modelo.
                                     </div>
@@ -49,7 +49,8 @@
                                             <span class="input-group-text" id="inputGroupPrepend">$</span>
                                         </div>
                                         <input type="number" class="form-control" id="validationCustomUsername"
-                                            placeholder="Costo" aria-describedby="inputGroupPrepend" required>
+                                            placeholder="Costo" aria-describedby="inputGroupPrepend" required
+                                            name="costo">
                                         <div class="invalid-feedback">
                                             Completa Costo.
                                         </div>
@@ -58,7 +59,7 @@
                                 <div class="col-md-4 mb-3">
                                     <label for="validationCustom04">Stock</label>
                                     <input type="number" class="form-control" id="validationCustom04"
-                                        placeholder="Stock" required>
+                                        placeholder="Stock" required name="stock">
                                     <div class="invalid-feedback">
                                         Completa Stock.
                                     </div>
@@ -68,27 +69,41 @@
                                 <div class="col-md-4 mb-3">
                                     <label for="validationCustom05">Fecha de Adquisición</label>
                                     <input type="date" class="form-control" id="validationCustom05" placeholder="Fecha"
-                                        required>
+                                        required name="fechaA">
                                     <div class="invalid-feedback">
                                         Completa Fecha de Adquisición.
                                     </div>
                                 </div>
-                                <div class="col-md-3 mb-3 d-flex"
+                                <div class="col-md-2 mb-3 d-flex"
                                     style="flex-direction:column;justify-content: flex-end;">
                                     <div class="form-check">
-                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck1"
+                                            name="mttoTF" value="">
                                         <label class="form-check-label" for="exampleCheck1">¿Requiere
                                             Mantenimiento?</label>
                                     </div>
                                 </div>
-                                <div class="col-md-5 mb-3">
-                                    <label for="validationCustom05">Persona Asignada</label>
-                                    <select name="" class="custom-select">
-                                    </select>
+								<script>
+                                var checkbox = document.getElementsByName("mttoTF");
+                                for (var i in checkbox)
+                                    checkbox[i].value = checkbox[i].checked ? 1 : 0;
+                                </script>
+                                <div class="col-md-2 d-flex" style="flex-direction:column;justify-content: flex-end;">
+                                    <div class="form-group text-center">
+                                        <button id="btn_person" class="btn btn-outline-dark"
+                                            onClick="document.getElementById(this.id).disabled=true;">Buscar
+                                            Empleado</button>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <table>
+                                        <label for="validationCustom03">Empleado Asignado</label>
+                                        <tbody name="tbl-box" id="tbl-box" class="text-center" ></tbody>
+                                    </table>
                                 </div>
                             </div>
-                            <div class="form-group text-center">
-                                <button class="btn btn-primary" type="submit">Guardar</button>
+                            <div class="form-group text-right" style="flex-direction:column;justify-content: flex-end;">
+                                <button class="btn btn-outline-success" type="submit">Guardar</button>
                             </div>
                         </form>
                     </div>
@@ -232,14 +247,8 @@
                                                         Mantenimiento?</label>
                                                 </div>
                                             </div>
-                                            <div class="col-md-4 mb-3">
-                                                <label for="validationCustom05">Persona Asignada</label>
-                                                <select name="categoria" class="custom-select">
-                                                    <option selected="HACCP">HACCP</option>
-                                                    <option value="POES">POES</option>
-                                                    <option value="BPDM">BPDM</option>
-                                                    <option value="Fichas Técnicas">Fichas técnicas</option>
-                                                </select>
+                                            <div class="form-group text-center">
+                                                <button class="btn btn-primary" type="submit">Guardar</button>
                                             </div>
                                         </div>
                                         <div class="form-group text-center">
@@ -395,3 +404,34 @@
                         </script>
 
                         }
+
+                        <?php $jsonPersons = json_encode($persons);?>
+                        <script type="text/javascript">
+                        let jsons = '<?php echo $jsonPersons ?>';
+                        const buttonAdd = document.getElementById("btn_person");
+                        const tableBody = document.getElementById("tbl-box");
+                        const buttonDrop = document.getElementById("btn-drop");
+                        buttonAdd.addEventListener("click", (e) => {
+                            e.preventDefault();
+                            let row = tableBody.insertRow(0);
+                            let cell1 = row.insertCell(0);
+                            let select = document.createElement("select");
+                            select.setAttribute("id", "select-input");
+                            select.classList.add("form-control");
+                            document.body.appendChild(select);
+
+                            for (let person of JSON.parse(jsons)) {
+                                let option = document.createElement("option");
+								let t = document.createTextNode(person["id_personal"]);
+								
+                                option.appendChild(t);
+                                cell1.appendChild(select);
+                                document.getElementById("select-input").appendChild(option);
+                            }
+                        });
+
+                        buttonDrop.addEventListener("click", (e) => {
+                            e.preventDefault();
+                            tableBody.deleteRow(0);
+                        });
+                        </script>
