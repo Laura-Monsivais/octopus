@@ -1,5 +1,4 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+<?php defined('BASEPATH') OR exit('No direct script access allowed');
 
 class NotificationModel extends CI_Model {
 
@@ -32,10 +31,20 @@ class NotificationModel extends CI_Model {
         $this->$_idPerson = $IdPerson;
     }
 
+    function __construct() { 
+		parent::__construct();
+		$this->load->model("PersonalModel");  
+    } 
+    
     public function detonateMaintenanceNotification($idEquipment, $maintenanceRequired, 
         $personAssign) {
-        if ($maintenanceRequired) {
-            $
-        }
+        $personId = $this->PersonalModel->getPersonaById($personAssign);
+
+        print_r($personId);
+
+
+        // if ($maintenanceRequired) {
+        //     $
+        // }
     }
 }
