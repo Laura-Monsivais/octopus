@@ -11,15 +11,12 @@ class MaintenanceController extends CI_Controller
 		$this->load->model("NotificationModel");
 	}
 
-
-	
-
 	public function index() {
 
 		$this->load->view("components/LoaderComponent");
 		$this->load->view("components/HeaderComponent");
 		$this->load->view("components/NavbarComponent");
-		$this->load->view("MaintenanceView", $data);		
+		$this->load->view("MaintenanceView");		
 		$this->load->view("components/FooterComponent");}
 	
 
