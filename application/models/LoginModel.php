@@ -31,11 +31,12 @@ class LoginModel extends CI_Model {
     private function processingLogin() {
         $username = $this->getUsername();
         $password = $this->getPassword();
-        $usersExisting = $this->db->get_where("personal", array("usuario" => $username))->result_array();
-        if (count($usersExisting) > 0) { 
-            foreach ($usersExisting as $userExisting) {
-                return password_verify($password, $userExisting["contrasena"]) ? true : false;
-            }
+        $query = "SELECT contrasena FROM personal WHERE usuario = ? LIMIT 1"; 
+        $userHash = $this->db->query($query, $username)->result_array();
+        if (password_verify($password, $userHash[0]["contrasena"])) {
+            return true;
+        } else {
+            return false;
         }
     }
 }
