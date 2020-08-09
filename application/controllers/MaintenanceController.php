@@ -8,6 +8,7 @@ class MaintenanceController extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model("MaintenanceModel");
+		$this->load->model("NotificationModel");
 	}
 
 	public function index()

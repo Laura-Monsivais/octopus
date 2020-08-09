@@ -14,5 +14,17 @@ class PersonalModel extends CI_Model {
     public function deleteAdministator($idAdministator) {
         $this->db->where("id_personal", $idAdministator); 
         $this->db->delete("personal"); 
-	}
+    }
+    
+    public function queryAllPersonalByAssistence() {
+        $sql = "SELECT p.id_personal, p.nombre, p.apellido_paterno, p.apellido_materno, p.telefono, 
+            a.horario, a.fecha, a.falto, a.nota FROM personal p INNER JOIN asistencia a ON p.id_personal = a.id_personal";
+        return $this->db->query($sql)->result_array();        
+    }
+
+    public function queryAllPersonal() {
+        $this->db->select("id_personal, nombre, apellido_paterno, apellido_materno");
+        $this->db->from("personal");
+        return  $this->db->get()->result_array();
+    }
 }
