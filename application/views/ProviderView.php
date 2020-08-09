@@ -101,7 +101,7 @@
                             <div class="row">
                                 <div class="col-6">
                                     <div>		
-                                        <input type="search" class="form-control" placeholder="Buscar por nombre del proveedor" aria-controls="tbllistado">
+                                        <input type="search" name="Search" class="form-control" placeholder="Buscar por nombre del proveedor" aria-controls="tbllistado">
                                     </div>
                                 </div>	
                             </div>
@@ -124,19 +124,23 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
+                                    <?php 
+                                        $path = site_url();
+                                        foreach ($providers as $person) {
+                                            echo "<tr >";
+                                            echo "<td class='text-center'>
+                                                <a class='btn btn-outline-info disabled' href='${path}/ProviderController/processEditAdministrador/" . $person["id_proveedor"] . "'>&nbsp;&nbsp;Editar&nbsp;&nbsp;</a>
+                                                <a class='btn btn-danger' href='${path}/ProviderController/processDeleteProvider/" . $person["id_proveedor"] . "'>Eliminar</a>
+                                                </td>";
+                                            echo "<td >" . $person["nombre"] . "</td>";
+                                            echo "<td >" . $person["tipo"] . "</td>";
+                                            echo "<td >" . $person["preferente"] . "</td>";
+                                            echo "<td >" . $person["telefono"] . "</td>";
+                                            echo "<td >" . $person["correo"] . "</td>";
+                                            echo "<td >" . $person["direccion"] . "</td>";
+                                            echo "</tr>";
+                                        }
+                                    ?>
                                 </tbody>
                             </table>
 						</div>

@@ -48,4 +48,13 @@ class ProviderModel extends CI_Model {
     public function queryAllProviders() {
         return $this->db->query("SELECT * FROM proveedor")->result_array();
     }
+
+    public function deleteProvider($idProvider) {
+        $this->db->where("id_proveedor", $idProvider); 
+        $this->db->delete("proveedor"); 
+    }
+    
+    public function getProviderByName($Search) {
+        return $this->db->get_where("proveedor", string("nombre" -> $Search))->result_array();
+    }
 }

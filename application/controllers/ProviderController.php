@@ -10,10 +10,13 @@ class ProviderController extends CI_Controller {
 	}
 
 	public function index() {
+		$data = array(
+			"providers" => $this->ProviderModel->queryAllProviders()
+		);
 		$this->load->view("components/LoaderComponent");
 		$this->load->view("components/HeaderComponent");
 		$this->load->view("components/NavbarComponent");
-		$this->load->view("ProviderView");
+		$this->load->view("ProviderView", $data);
 		$this->load->view("components/FooterComponent");
 	}
 
@@ -27,10 +30,21 @@ class ProviderController extends CI_Controller {
 		$Email = $this->input->post('Email');
 		$Status = 1;
 		if($Name!=null and $Type!=null and $Preferential!=null and $Phone!=null and 
-		$Address!=null and $Email!=null and $Status!=null){
-			$this->ProviderModel->setProvider($Name, $Type, $Preferential, $Phone, $Address, $Email,
-				$Status);
+			$Address!=null and $Email!=null and $Status!=null){
+				$this->ProviderModel->setProvider($Name, $Type, $Preferential, $Phone, $Address, $Email,
+					$Status);
 		}
 		redirect('ProviderController');
+	}
+
+	public function processDeleteProvider($idProvider) {
+		$this->ProviderModel->deleteProvider($idProvider); 
+		redirect("ProviderController");
+	}
+
+	public function processSearchProvider() {
+		$Search = $this->input->post('Search');
+		$this->ProviderModel->getProviderByName	($Search); 
+		redirect("ProviderController");
 	}
 }
