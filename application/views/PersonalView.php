@@ -5,7 +5,7 @@
                 <h1 class="box-title">Usuarios y permisos</h1>
                 <div class="card">
                     <div class="card-body">
-                        <form action="<?php echo site_url()?>/AdministrationController/validateFormData" method="POST"
+                        <form action="<?php echo site_url()?>/PersonalController/validateFormData" method="POST"
                             encname="multipart/form-data" class="mt-3 form-horizontal">
                             <div class="form-row">
                                 <div class="form-group col-md-6">
@@ -152,8 +152,8 @@
                                     foreach ($people as $person) {
                                         echo "<tr >";
                                         echo "<td class='text-center'>
-                                                <a class='btn btn-outline-info disabled' href='${path}/AdministrationController/processEditAdministrador/" . $person["id_personal"] . "'>&nbsp;&nbsp;Editar&nbsp;&nbsp;</a>
-                                                <a class='btn btn-danger' href='${path}/AdministrationController/processDeleteAdministrador/" . $person["id_personal"] . "'>Eliminar</a>
+                                                <a class='btn btn-outline-info disabled' href='${path}/PersonalController/processEditAdministrador/" . $person["id_personal"] . "'>&nbsp;&nbsp;Editar&nbsp;&nbsp;</a>
+                                                <a class='btn btn-danger' href='${path}/PersonalController/processDeleteAdministrador/" . $person["id_personal"] . "'>Eliminar</a>
                                             </td>";
                                         echo "<td >" . $person["nombre"] . "</td>";
                                         echo "<td >" . $person["apellido_paterno"] . "</td>";
