@@ -75,7 +75,7 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
                             <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="<?php base_url()?>AdministrationController">
+                                <a class="dropdown-item" href="<?php base_url()?>PersonalController">
                                     <i data-feather="settings" class="svg-icon mr-2 ml-1"></i>Gestión de administradores y permisos
                                 </a>
                             <div class="dropdown-divider"></div>

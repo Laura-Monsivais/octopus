@@ -2,21 +2,21 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class AdministrationController extends CI_Controller {
+class PersonalController extends CI_Controller {
 
 	function __construct() {
 		parent::__construct();
-		$this->load->model("AdministrationModel");
+		$this->load->model("PersonalModel");
 	}
 
 	public function index() {
 		$data = array(
-			"people" => $this->AdministrationModel->queryAllAdministators()
+			"people" => $this->PersonalModel->queryAllAdministators()
 		);
 		$this->load->view("components/LoaderComponent");
 		$this->load->view("components/HeaderComponent");
 		$this->load->view("components/NavbarComponent");
-		$this->load->view("AdministrationView", $data);		
+		$this->load->view("PersonalView", $data);		
 		$this->load->view("components/FooterComponent");
 	}
 
@@ -40,13 +40,13 @@ class AdministrationController extends CI_Controller {
 			"experiencia" => $this->input->post("experiencia"),
 			"estatus" => 1
 		);
-		$this->AdministrationModel->processAddAdministator($posts);
-		redirect("AdministrationController");
+		$this->PersonalModel->processAddAdministator($posts);
+		redirect("PersonalController");
 	}
 
 	public function processDeleteAdministrador($idAdministrador) {
-		$this->AdministrationModel->deleteAdministator($idAdministrador); 
-		redirect("AdministrationController");
+		$this->PersonalModel->deleteAdministator($idAdministrador); 
+		redirect("PersonalController");
 	}
 
 	private function generateEncryption($password) {
