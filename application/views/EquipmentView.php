@@ -124,7 +124,7 @@
                 <div class="card">
                     <div class="card-body table-responsive">
                         <table class="table table-striped table-bordered table-hover">
-                            <thead class="thead-dark text-center">
+                            <thead class="thead-	 text-center">
                                 <tr class="text-center">
                                     <th scope="col"></th>
                                     <th scope="col">Nombre</th>
@@ -136,7 +136,8 @@
                                     <th scope="col">Fecha de adquisición</th>
                                     <th scope="col">Mantenimiento</th>
                                     <th scope="col">Empleado Asignado</th>
-                                    <td scope="col" colspan="2"><i class="fas fa-cogs" class="thead-dark "lass="d-flex align-items-center"></i></th</td>
+                                    <td scope="col" colspan="2"><i class="fas fa-cogs" class="thead-dark "
+                                            lass="d-flex align-items-center"></i></th</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -165,14 +166,13 @@
 							</td>"; 
 							if ($equipo["matenimiento"] == 1) {
 								echo "<td class='text-center'><a class='btn btn-dark'>
-							<ititle='Actualizar' class='fas fa-pencil-alt' type='button' data-toggle='modal' data-target='#signup-modal'><i>
+							<i title='Actualizar' class='fas fa-pencil-alt' type='button' data-toggle='modal' data-target='#signup-modal' 
+							onClick='selPersona(".$equipo["id_equipo"].",".$equipo["nombre"].",".$equipo["descripcion"].",".$equipo["marca"].",".$equipo["modelo"].",
+							".$equipo["costo"].", ".$equipo["stock"].", ".$equipo["fecha_adquisicion"].", ".$equipo["matenimiento"].", ".$equipo["id_personal"].");'><i>
 							</td>"; 
 							 } else {
 									 
 									}
-
-
-
 									echo "</tr>";
 								}
 							?>
@@ -182,23 +182,25 @@
                 </div>
                 </table>
                 <!-- /.modal actualizar -->
-                <form action="<?php echo site_url() ?>/EquipmentController/ModificarEquipo" method="POST"
+                <form action="<?php echo site_url() ?>/EquipmentController/ActualizarEquipo" method="POST"
                     class="needs-validation" novalidate>
                     <div id="signup-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered modal-lg">
                             <div class="modal-content">
-                                <div class="modal-header">
-                                    <h4 class="modal-title" id="topModalLabel">Editar Equipo</h4>
+                                <div class="modal-header bg-info">
+                                    <h4 class="modal-title font-weight-bold text-white" id="topModalLabel">Editar Equipo
+                                    </h4>
                                     <button type="button" class="close" data-dismiss="modal"
                                         aria-hidden="true">×</button>
                                 </div>
                                 <div class="modal-body">
                                     <form class="needs-validation" novalidate>
+									<input type="hidden" id="id_equipo" name="id_equipo">
                                         <div class="form-row">
                                             <div class="col-md-4 mb-3">
                                                 <label for="validationCustom01">Nombre</label>
                                                 <input type="text" class="form-control" id="validationCustom01"
-                                                    placeholder="Nombre" required name="nombreE">
+                                                    placeholder="Nombre" name="nombreE required ">
                                                 <div class="invalid-feedback">
                                                     Completa Nombre.
                                                 </div>
@@ -206,7 +208,7 @@
                                             <div class="col-md-8 mb-3">
                                                 <label for="validationCustom02">Descripción</label>
                                                 <input type="text" class="form-control" id="validationCustom02"
-                                                    placeholder="Descripción" required name=desc>
+                                                    placeholder="Descripción" name=desc required>
                                                 <div class="invalid-feedback">
                                                     Completa Descripción.
                                                 </div>
@@ -216,7 +218,7 @@
                                             <div class="col-md-2 mb-3">
                                                 <label for="validationCustom03">Marca</label>
                                                 <input type="text" class="form-control" id="validationCustom03"
-                                                    placeholder="Marca" required name="marca">
+                                                    placeholder="Marca" name="marca" required">
                                                 <div class="invalid-feedback">
                                                     Completa Marca.
                                                 </div>
@@ -224,7 +226,7 @@
                                             <div class="col-md-2 mb-3">
                                                 <label for="validationCustom03">Modelo</label>
                                                 <input type="text" class="form-control" id="validationCustom03"
-                                                    placeholder="Modelo" required name="modelo">
+                                                    placeholder="Modelo" name="modelo" required>
                                                 <div class="invalid-feedback">
                                                     Completa Modelo.
                                                 </div>
@@ -246,7 +248,7 @@
                                             <div class="col-md-4 mb-3">
                                                 <label for="validationCustom04">Stock</label>
                                                 <input type="number" class="form-control" id="validationCustom04"
-                                                    placeholder="Stock" required name="stock">
+                                                    placeholder="Stock" name="stock" required >
                                                 <div class="invalid-feedback">
                                                     Completa Stock.
                                                 </div>
@@ -256,7 +258,7 @@
                                             <div class="col-md-4 mb-3">
                                                 <label for="validationCustom05">Fecha de Adquisición</label>
                                                 <input type="date" class="form-control" id="validationCustom05"
-                                                    placeholder="Fecha" required name="fechaA">
+                                                    placeholder="Fecha" name="fechaA" required>
                                                 <div class="invalid-feedback">
                                                     Completa Fecha de Adquisición.
                                                 </div>
@@ -286,7 +288,8 @@
 
                                         <div class="form-group text-right"
                                             style="flex-direction:column;justify-content: flex-end;">
-                                            <button class="btn btn-outline-success" type="submit">Guardar</button>
+                                            <button class="btn btn-outline-success" type="submit"
+                                                name="btnActualizar">Actualizar</button>
                                         </div>
                                     </form>
 
@@ -435,4 +438,55 @@
                                 }
                             });
                         });;
+                        </script>
+
+                        <script>
+                        //con esta funcion pasamos los paremtros a los text del modal.
+                        selPersona = function(nombre, descripcion, marca, modelo, costo, stock, fecha_adquisicion,
+                            matenimiento, id_personal) {
+                            $('#nombreE').val(nombre);
+                            $('#desc').val(descripcion);
+                            $('#marca').val(marca);
+                            $('#modelo').val(modelo);
+                            $('#costo').val(costo);
+                            $('#stock').val(stock);
+                            $('#fechaA').val(fecha_adquisicion);
+                            $('#mttoTF').val(matenimiento);
+                            $('#id_peronal').val(id_personal);
+
+
+                        };
+
+
+                        //metodo update del modal
+                        $('#btn_Actualizar').click(function() {
+                            var nombreE = $('#nombreE').val();
+                            var desc = $('#desc').val();
+                            var marca = $('#marca').val();
+                            var modelo = $('#modelo').val();
+                            var costo = $('#costo').val();
+                            var stock = $('#stock').val();
+                            var fechaA = $('#fechaA').val();
+                            var mttoTF = $('#mttoTF').val();
+                            var id_personal = $('#id_personal').val();
+                            $.post(baseurl + "/EquipmentController/ModificarEquipo/", {
+                                    nombreE: nombreE,
+                                    desc: desc,
+                                    marca: marca,
+                                    modelo: modelo,
+                                    costo: costo,
+                                    stock: stock,
+                                    fechaA: fechaA,
+                                    mttoTF: mttoTF,
+                                    id_personal: id_personal;
+                                },
+                                function(data) {
+                                    if (data == 1) {
+                                        alert('Se grabo');
+                                        $('#mbtnCerrarModal').click();
+
+                                        location.reload();
+                                    }
+                                });
+                        });
                         </script>
