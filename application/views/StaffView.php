@@ -5,6 +5,9 @@
                 <h1 class="box-title font-weight-bold text-info">Toma de asistencia</h1>
                 <div class="card">
                     <div class="card-body table-responsive">
+                    <hr>
+                        <a class='btn btn-success' href='${path}/AssistanceController/takeAssistance/" . $person["id_personal"] . "'>Lista de todas las asitencias</a>
+                    <hr>
                         <table class="table table-striped table-bordered table-hover">
                             <thead class="thead-dark text-center">
                                 <tr>
