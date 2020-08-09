@@ -11,7 +11,7 @@ class StaffController extends CI_Controller {
 
 	public function index() {
 		$data = array(
-			"people" => $this->PersonalModel->queryAllAdministators()
+			"people" => $this->PersonalModel->queryAllPersonalByAssistence()
 		);
 		$this->load->view("components/LoaderComponent");
 		$this->load->view("components/HeaderComponent");

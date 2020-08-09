@@ -30,21 +30,4 @@ class NotificationModel extends CI_Model {
     public function setIdPerson($IdPerson){
         $this->$_idPerson = $IdPerson;
     }
-
-    function __construct() { 
-		parent::__construct();
-        //$this->load->model("PersonalModel");
-        //$this->load->model("CalendarModel");  
-    } 
-    
-    // private function prepareMaintenanceNotification($idEquipment, $maintenanceRequired) {
-    //     //$personId = $this->PersonalModel->getPersonaById($personAssign);
-    //     if ($maintenanceRequired) {
-    //         print_r($maintenanceRequired);
-    //     }
-    // }
-
-    // public function detonateMaintenanceNotification() {
-    //     $this->prepareMaintenanceNotification();
-    // }
 }

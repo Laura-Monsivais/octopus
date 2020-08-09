@@ -34,10 +34,10 @@
                                         echo "<td >" . $person["apellido_paterno"] . "</td>";
                                         echo "<td >" . $person["apellido_materno"] . "</td>";
                                         echo "<td >" . $person["telefono"] . "</td>";
-                                        echo "<td >" . $person["nombre"] . "</td>";
-                                        echo "<td >" . $person["nombre"] . "</td>";
-                                        echo "<td >" . $person["nombre"] . "</td>";
-                                        echo "<td >" . $person["nombre"] . "</td>";
+                                        echo "<td >" . $person["horario"] . "</td>";
+                                        echo "<td >" . $person["fecha"] . "</td>";
+                                        echo "<td >" . $assitence = $person["falto"] ? "Si"  : "No" . "</td>";
+                                        echo "<td >" . $person["nota"] . "</td>";
                                         echo "</tr>";
                                     }
                                 ?>

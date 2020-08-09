@@ -16,17 +16,9 @@ class PersonalModel extends CI_Model {
         $this->db->delete("personal"); 
     }
     
-    // public function getPersonaById($personAssign) {
-    //     return $personAssign;
-
-
-    //     // $query = "SELECT id_personal FROM personal WHERE nombre = ? AND apellido_paterno = ? AND appellidp_materno  = ?LIMIT 1"; 
-        
-        
-    //     // $userValid = $this->db->query($query, array("nombre" => $username, "apellido_paterno"  => $fatherName, 
-    //     //     "appellido_materno" => $motherName)->result_array();
-    //     // if ($userId != null) {
-    //     //     return $userId;
-    //     // }
-    // }
+    public function queryAllPersonalByAssistence() {
+        $sql = "SELECT p.id_personal, p.nombre, p.apellido_paterno, p.apellido_materno, p.telefono, 
+            a.horario, a.fecha, a.falto, a.nota FROM personal p INNER JOIN asistencia a ON p.id_personal = a.id_personal";
+        return $this->db->query($sql)->result_array();        
+    }
 }
