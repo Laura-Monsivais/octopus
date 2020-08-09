@@ -2,19 +2,10 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class NotificationModel extends CI_Model {
-    private $_idNotification;
+
     private $_notificationDate;
     private $_description;
     private $_idPerson;
-
-    public function getidNotification(){
-        return $this->_idNotification;
-    }
-
-   public function setIdNotification($idNotification){
-        $this->$_idNotification = $idNotification;
-        
-    }
 
     public function getNotificationDate(){
         return $this->_notificationDate;
@@ -40,5 +31,11 @@ class NotificationModel extends CI_Model {
     public function setIdPerson($IdPerson){
         $this->$_idPerson = $IdPerson;
     }
-  
+
+    public function detonateMaintenanceNotification($idEquipment, $maintenanceRequired, 
+        $personAssign) {
+        if ($maintenanceRequired) {
+            $
+        }
+    }
 }
