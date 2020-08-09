@@ -3,6 +3,11 @@ defined("BASEPATH") OR exit("No direct script access allowed");
 
 class LoginController extends CI_Controller {
 
+	function __construct() {
+		parent::__construct();
+		$this->load->model("LoginModel");
+	}
+
 	public function index() {
 		if ($this->session->userdata("usuario")) {
 			redirect("MainController");
@@ -11,28 +16,21 @@ class LoginController extends CI_Controller {
 	}
 
 	public function validatingFormData() {
-		redirect("MainController");
-		// $this->form_validation->set_rules("username", "Nombre de usuario", "trim|required|min_length[5]|max_length[30]");
-		// $this->form_validation->set_rules("password", "Contraseña", "trim|required|min_length[5]|max_length[20]");
-		// if ($this->form_validation->run()) {
-		// 	$username = $this->input->post("username");
-		// 	$password = $this->input->post("password");
-		// 	$this->processingFormData($username, $password);
-		// } else {
-		// 	$this->load->view("LoginView");
-		// }
+		$username = $this->input->post("username");
+		$password = $this->input->post("password");
+		if ($username != null and $password != null) {
+			$this->processingFormData($username, $password);
+		}
 	}
 
 	private function processingFormData($username, $password) {
-		$this->load->model("LoginModel");
 		$userValid = $this->LoginModel->collectFormData($username, $password);
-		if (!$userValid) {
+		print_r($userValid);
+		if ($userValid) {
 			$this->session->set_userdata("usuario", $username);
 			redirect("MainController");
-		} else {
-			$data["message"] = "Las credenciales son incorrectas";
-			$this->load->view("LoginView", $data);
-		}
+		} 
+		redirect("LoginController");
 	}
 
 	public function logout() {

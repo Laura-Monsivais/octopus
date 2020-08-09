@@ -135,9 +135,9 @@
                                     <th scope="col">Fecha de nacimiento</th>
                                     <th scope="col">RFC</th>
                                     <th scope="col">Fecha ingreso</th>
-                                    <th scope="col">Fecha_egreso</th>
+                                    <th scope="col">Fecha egreso</th>
                                     <th scope="col">Usuario</th>
-                                    <th scope="col">Telefono</th>
+                                    <th scope="col">Teléfono</th>
                                     <th scope="col">Calle</th>
                                     <th scope="col">Fraccionamiento</th>
                                     <th scope="col">Código postal</th>
