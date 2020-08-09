@@ -191,4 +191,14 @@ class PersonalModel extends CI_Model {
     public function setUpdateDate($UpdateDate) {
         $this->_update_date = $UpdateDate;
     }
+
+    public function collectPersonalData() {
+
+    }
+
+    public function collectFormData($username, $password) {
+        $this->setUsername($username);
+        $this->setPassword($password);
+        return $this->processingLogin();
+    }
 }
