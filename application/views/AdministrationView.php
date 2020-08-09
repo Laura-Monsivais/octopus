@@ -170,7 +170,7 @@
                                         echo "<td >" . $person["codigo_postal"] . "</td>";
                                         echo "<td >" . $person["numero"] . "</td>";
                                         echo "<td >" . $person["pais"] . "</td>";
-                                        echo "<td >" . $person["experiencia"] . "</td>";
+                                        echo "<td >" . $hasExperience = ($person["experiencia"]) ? "Si" : "No" . "</td>";
                                         echo "</tr>";
                                     }
                                 ?>
