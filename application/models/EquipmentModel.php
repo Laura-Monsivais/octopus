@@ -14,7 +14,7 @@ class EquipmentModel extends CI_Model {
 	}
 	
 	public function setEquipo( $nombreE, $desc, $marca, $modelo, $costo, $stock, $fechaA, $mttoTF, $idperson) {
-	$data = array("nombre_equipo" => $nombreE, "descripcion" => $desc, "marca" => $marca, "modelo" => $modelo, 
+	$data = array("nombre" => $nombreE, "descripcion" => $desc, "marca" => $marca, "modelo" => $modelo, 
 	"costo" => $costo, "stock" => $stock, "fecha_adquisicion" => $fechaA, "matenimiento" => $mttoTF, "id_personal" => $idperson );
 	return $this->db->insert("equipo", $data);
 	}

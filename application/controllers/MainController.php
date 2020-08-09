@@ -9,13 +9,13 @@ class MainController extends CI_Controller {
     } 
 
 	public function index() {
-		$data = array(
-			"notificationMaintenance" => $this->NotificationModel->detonateMaintenanceNotification()
-		);
+		// $data = array(
+		// 	"notificationMaintenance" => $this->NotificationModel->detonateMaintenanceNotification()
+		// );
 		$this->load->view("components/LoaderComponent");
 		$this->load->view("components/HeaderComponent");
 		$this->load->view("components/NavbarComponent");
-		$this->load->view("MainView", $data);		
+		$this->load->view("MainView");		
 		$this->load->view("components/FooterComponent");
 	}
 }

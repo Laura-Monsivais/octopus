@@ -6,42 +6,33 @@
                     enctype="multipart/form-data" class="mt-3 form-horizontal">
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                        <label for="inputEmail4">Horario</label>
-                        <input type="email" class="form-control">
+                            <label>Horario</label>
+                            <select name="falto" class="custom-select">
+                                <option value="">Diurno</option>
+                                <option value="">Nocturno</option>
+                                <option value="">Mixto</option>
+                            </select>
                         </div>
                         <div class="form-group col-md-6">
-                        <label for="inputPassword4">Fecha</label>
-                        <input type="password" class="form-control">
+                            <label>Falto</label>
+                            <select name="falto" class="custom-select">
+                                <option value="0">No</option>
+                                <option value="1">Sí</option>
+                            </select>
                         </div>
                         <div class="form-group col-md-6">
-                        <label for="inputEmail4">Falto</label>
-                        <input type="email" class="form-control">
+                            <label>Fecha</label>
+                            <input type="date" name="fecha" class="form-control">
                         </div>
                         <div class="form-group col-md-6">
-                        <label for="inputPassword4">Nota</label>
-                        <input type="password" class="form-control">
+                            <label>Nota</label>
+                            <input type="password" class="form-control">
                         </div>
                 </form>
             </div>
             <div class="form-group text-center">
-                        <button type="submit" class="btn btn-outline-info">Guardar</button>
-                    </div>
-        </div>
-        <div class="card">
-            <div class="card-body table-responsive">
-                <table class="table table-striped table-bordered table-hover">
-                    <thead class="thead-dark text-center">
-                        <tr>
-                            <th scope="col">Horario</th>
-                            <th scope="col">Fecha</th>
-                            <th scope="col">Falto</th>
-                            <th scope="col">Nota</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-
-                    </tbody>
-                </table>
+                <button type="submit" class="btn btn-outline-info">Guardar</button>
+                <a class="btn btn-outline-success" href="<?php echo site_url()?>/StaffController">Regresar</a>
             </div>
         </div>
+    </div>

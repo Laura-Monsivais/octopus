@@ -37,14 +37,14 @@ class NotificationModel extends CI_Model {
         //$this->load->model("CalendarModel");  
     } 
     
-    private function prepareMaintenanceNotification($idEquipment, $maintenanceRequired) {
-        //$personId = $this->PersonalModel->getPersonaById($personAssign);
-        if ($maintenanceRequired) {
-            print_r($maintenanceRequired);
-        }
-    }
+    // private function prepareMaintenanceNotification($idEquipment, $maintenanceRequired) {
+    //     //$personId = $this->PersonalModel->getPersonaById($personAssign);
+    //     if ($maintenanceRequired) {
+    //         print_r($maintenanceRequired);
+    //     }
+    // }
 
-    public function detonateMaintenanceNotification() {
-        $this->prepareMaintenanceNotification();
-    }
+    // public function detonateMaintenanceNotification() {
+    //     $this->prepareMaintenanceNotification();
+    // }
 }

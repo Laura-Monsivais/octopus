@@ -10,4 +10,8 @@ class AssistanceController extends CI_Controller {
 		$this->load->view("AssistanceView");		
 		$this->load->view("components/FooterComponent");
 	}
+
+	public function takeAssistance($idPerson) {
+		$this->index();
+	}
 }
