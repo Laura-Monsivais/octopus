@@ -62,7 +62,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle pl-md-3 position-relative" href="<?php base_url()?>MainController">
                             <span><i data-feather="bell" class="svg-icon"></i></span>
-                            <span class="badge badge-primary notify-no rounded-circle">0</span>
+                            <span class="badge badge-primary notify-no rounded-circle"><?php echo 1; ?></span>
                         </a>
                     </li>
                 </ul>

@@ -2,32 +2,24 @@
 
 class NotificationModel extends CI_Model {
 
-    private $_notificationDate;
-    private $_description;
-    private $_idPerson;
+    function __construct() {
+		parent::__construct();
+		$this->load->model("PersonalModel");
+	}
 
-    public function getNotificationDate(){
-        return $this->_notificationDate;
+    public function detonateAssistanceNotification($assistence, $idPerson) {
+        if ($assistence) {
+            $personInfo = $this->PersonalModel->queryPersonalById($idPerson);
+            $currentDate = date("Y-m-d");
+            $assistanceNotificationDescription = "La empleado " . $personInfo[0]["nombre"] . " " 
+                .  $personInfo[0]["apellido_paterno"] . " " .  $personInfo[0]["apellido_materno"] . " no asistió en día de hoy, 
+                 su número de teléfono es " .  $personInfo[0]["telefono"] . " para contactarlo";
+            $data = array("fecha_lanzamiento" => $currentDate, "descripcion" => $assistanceNotificationDescription);
+            $this->db->insert("notificación", $data); 
+        }
     }
 
-    public function setNotificationDate($NotificationDate){
-        $this->$_notificationDate = $NotificationDate;
-        
-    }
-    
-    public function getDescription(){
-        return $this->_description;
-    }
-
-    public function setDescription($Description){
-        $this->$_description = $Description;
-    }
-
-    public function getIdPerson(){
-        return $this->$_idPerson;
-    }
-
-    public function setIdPerson($IdPerson){
-        $this->$_idPerson = $IdPerson;
+    public function queryAllNotification() { 
+        return $this->db->query("SELECT * FROM notificación")->result_array();
     }
 }

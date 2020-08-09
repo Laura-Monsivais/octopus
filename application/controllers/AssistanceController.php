@@ -7,6 +7,7 @@ class AssistanceController extends CI_Controller {
 		parent::__construct();
 		$this->load->model("AssistanceModel");
 		$this->load->model("PersonalModel");
+		$this->load->model("NotificationModel"); 
 	}
 
 	public function index() {
@@ -30,6 +31,7 @@ class AssistanceController extends CI_Controller {
 				and $idPerson != null) {
 			$this->AssistanceModel->addAssistanceInfoToPerson($schedule, $date, 
 				$notAssist, $note, $idPerson);
+			$this->NotificationModel->detonateAssistanceNotification($notAssist, $idPerson);
 			redirect("StaffController");
 		}
 	}
