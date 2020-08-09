@@ -51,16 +51,16 @@
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label>Nombre de usuario</label>
-                                    <input type="text" name="nombreUsario" class="form-control" maxlength="30" required>
+                                    <input type="text" name="nombreUsario" class="form-control" minlength="5" maxlength="30" required>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label>Contraseña</label>
-                                    <input type="password" name="contrasena" class="form-control" maxlength="30"
+                                    <input type="password" name="contrasena" class="form-control" minlength="8" maxlength="30"
                                         required>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label>Vuelve a escribir la contraseña</label>
-                                    <input type="password" name="" class="form-control" maxlength="30" required>
+                                    <input type="password" name="" class="form-control" minlength="8" maxlength="30" required>
                                 </div>
                             </div>
                             <div class="form-row">

@@ -38,11 +38,11 @@
                         </div>
                         <div class="form-group">
                             <label class="text-body">Nombre de usuario</label>
-                            <input type="text"     class="form-control" name="username" required="true" maxlength="30">
+                            <input type="text"     class="form-control" name="username" required="true" minlength="5" maxlength="30">
                         </div>
                         <div class="form-group">
                             <label class="text-body">Contraseña</label>
-                            <input type="password" class="form-control" name="password" required="true" maxlength="30">
+                            <input type="password" class="form-control" name="password" required="true" minlength="8" maxlength="30">
                         </div>
                         <div class="form-group text-center">
                             <button type="submit" class="btn btn-rounded btn-outline-primary">Iniciar sesión</button>
