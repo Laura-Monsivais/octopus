@@ -4,14 +4,19 @@
             <div class="box-header with-border ">
                 <h1 class="box-title font-weight-bold text-info">Toma de asistencia</h1>
                 <div class="card">
-                    <div class="card-body table-responsive">
-                    <hr>
-                        <a class='btn btn-success' href='${path}/AssistanceController/takeAssistance/" . $person["id_personal"] . "'>Lista de todas las asitencias</a>
-                    <hr>
+                    <div class="card-body table-responsive text-center">
+                        <a class="btn btn-success" href="<?php echo site_url()?>/AssistanceController">Tomar nueva
+                            asistencia</a>
+                        <hr>
+                        <div>
+                            <input type="search" id="search-input" class="form-control"
+                                placeholder="Filitar por cualquier elemento visible en la tabla"
+                                aria-controls="tbllistado">
+                        </div>
+                        <hr>
                         <table class="table table-striped table-bordered table-hover">
                             <thead class="thead-dark text-center">
                                 <tr>
-                                    <th scope="col">Acción</th>
                                     <th scope="col">Nombre</th>
                                     <th scope="col">Apellido paterno</th>
                                     <th scope="col">Apellido materno</th>
@@ -22,14 +27,11 @@
                                     <th scope="col">Nota</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="table-body">
                                 <?php 
                                     $path = site_url();
                                     foreach ($people as $person) {
                                         echo "<tr >";
-                                        echo "<td class='text-center'>
-                                                <a class='btn btn-outline-info' href='${path}/AssistanceController/setPersonId/" . $person["id_personal"] . "'>Tomar</a>
-                                            </td>";
                                         echo "<td >" . $person["nombre"] . "</td>";
                                         echo "<td >" . $person["apellido_paterno"] . "</td>";
                                         echo "<td >" . $person["apellido_materno"] . "</td>";
@@ -45,3 +47,13 @@
                         </table>
                     </div>
                 </div>
+                <script>
+                $(document).ready(function() {
+                    $("#search-input").on("keyup", function() {
+                        var value = $(this).val().toLowerCase();
+                        $("#table-body tr").filter(function() {
+                            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                        });
+                    });
+                });
+                </script>
