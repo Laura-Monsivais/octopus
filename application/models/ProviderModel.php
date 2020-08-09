@@ -15,20 +15,6 @@ class ProviderModel extends CI_Model {
     private $_updateTime;
     private $_idPersonal;
 
-    public function getProvider($idProvider) {
-        $provider = $this->db->get_where("proveedor", string("id_proveedor" -> $idProvider));
-        return $provider;
-        // $_name = $provider["nombre"];
-        // $_type = $provider["tipo"];
-        // $_preferential = $provider["preferente"];
-        // $_phone = $provider["telefono"];
-        // $_address = $provider["direccion"];
-        // $_email = $provider["correo"];
-        // $_status = $provider["estatus"];
-        // $_createTime = $provider["fecha_creacion"];
-        // $_updateTime = $provider["fecha_actualizacion"];
-        // $_idPersonal = $provider["id_personal"];
-    }
     public function setProvider($Name, $Type, $Preferential, $Phone, $Address, $Email,
     $Status) {
         $data = array("id_proveedor" => null,
@@ -53,8 +39,19 @@ class ProviderModel extends CI_Model {
         $this->db->where("id_proveedor", $idProvider); 
         $this->db->delete("proveedor"); 
     }
-    
-    public function getProviderByName($Search) {
-        return $this->db->get_where("proveedor", string("nombre" -> $Search))->result_array();
+
+    public function modifyProvider($idProvider,$data) {
+        $this->db->where('id_proveedor', $idProvider);
+        $result = $this->db->update('proveedor', $data);
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function getProviderForModify($idProvider) {
+       $query = $this->db->query("SELECT * FROM proveedor WHERE id_proveedor = {$idProvider}");
+        return $query->row();
     }
 }
