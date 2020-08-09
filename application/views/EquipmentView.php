@@ -10,11 +10,11 @@
                             <div class="form-row">
                                 <div class="col-md-4 mb-3">
                                     <label for="validationCustom01">Nombre</label>
-                                    <input type="text" class="form-control" id="validationCustom01" placeholder="Nombre" name="nombreE"
-                                        required >
+                                    <input type="text" class="form-control" id="validationCustom01" placeholder="Nombre"
+                                        name="nombreE" required>
                                     <div class="invalid-feedback">
                                         Completa Nombre.
-                                         </div>
+                                    </div>
                                 </div>
                                 <div class="col-md-8 mb-3">
                                     <label for="validationCustom02">Descripción</label>
@@ -81,16 +81,16 @@
                                         <option value="1">Si</option>
                                         <option value="0">No</option>
                                     </select>
-									<div class="invalid-feedback">
+                                    <div class="invalid-feedback">
                                         Completa Fecha de Adquisición.
                                     </div>
                                 </div>
                                 <div class="col-md-4 mb-3">
                                     <label for="validationCustom05">Persona Asignada</label>
                                     <select name="id_personal" class="custom-select" id="validationCustom05" required>
-									<div class="invalid-feedback">
-                                        Completa Fecha de Adquisición.
-                                    </div>
+                                        <div class="invalid-feedback">
+                                            Completa Fecha de Adquisición.
+                                        </div>
                                         <option selected=""></option>
                                         <?php  
                                     $results = $this->EquipmentModel->selectAllPersonal();
@@ -142,11 +142,11 @@
                                     <th scope="col">Fecha de adquisición</th>
                                     <th scope="col">Mantenimiento</th>
                                     <th scope="col">Empleado Asignado</th>
-									<th scope="col" ></th>
-									<th scope="col"></th>
-									<th scope="col" style= "border-top-style: dotted;"></th>
-									
-                                    
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                    <th scope="col" style="border-top-style: dotted;"></th>
+
+
                                 </tr>
                             </thead>
                             <tbody>
@@ -174,13 +174,20 @@
 							<i title='Eliminar' class='fas fa-trash' id='btn_delete'></i></a>
 							</td>"; 
 							if ($equipo["matenimiento"] == 1) {
-								echo "<td  class='text-center'><a class='btn btn-dark' href='${path}/EquipmentController/ModificarEquipo/" .  $equipo["id_equipo"] . "'>
+								echo "<td  class='text-center'><a class='btn btn-outline-primary' href='${path}/EquipmentController/ModificarEquipo/" .  $equipo["id_equipo"] . "'>
 								<i title='Actualizar' class='fas fa-pencil-alt' ></i></a>
-								<td class='text-center'><a class='btn btn-info' href='${path}/MaintenanceController/indexMtto/" .  $equipo["id_equipo"] . "'>
-								<i title='Mantenimiento' class='fas fa-align-center'></i></a>
+								<td class='text-center'><a class='btn btn-warning' href='${path}/MaintenanceController/indexMtto/" .  $equipo["id_equipo"] . "'>
+								<i title='Mantenimiento' class='fas fa-people-carry'></i></a>
 								
 							</td>"; 
 							 } else {
+								 
+
+								echo "<td class='text-center'><a class='btn btn-secondary' href='javascript:void()'><i title='Terminado' class='fas fa-pencil-alt' '></i></a></td>"; 
+								echo "<td class='text-center'><a class='btn btn-secondary' href='javascript:void()'><i title='Terminado' class='fas fa-people-carry' '></i></a></td>"; 
+
+
+
 									 
 									}
 									echo "</tr>";

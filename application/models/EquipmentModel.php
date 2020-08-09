@@ -31,6 +31,15 @@ class EquipmentModel extends CI_Model {
         $query = $this->db->get();
 
         return $query->result_array();
+	}
+	
+	public function EquipmentMantenimiento() {
+        $this->db->select('*');
+        $this->db->from('equipo e');
+        $this->db->join('mantenimiento_equipo em', 'em.id_equipo = p.id_equipo');
+        $query = $this->db->get();
+
+        return $query->result_array();
     }
 
 	public function ListoMantenimiento($id_equipo,$data) {

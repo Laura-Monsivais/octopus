@@ -10,7 +10,8 @@ class EquipmentController extends CI_Controller {
 
 	public function index() {
 		$data = array(
-			"equiposList" => $this->EquipmentModel->EquipmentPersonal()
+			"equiposList" => $this->EquipmentModel->EquipmentPersonal(),
+		
 		);
 		$this->load->view("components/LoaderComponent");
 		$this->load->view("components/HeaderComponent");
