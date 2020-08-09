@@ -16,17 +16,17 @@ class PersonalModel extends CI_Model {
         $this->db->delete("personal"); 
     }
     
-    public function getPersonaById($personAssign) {
-        return $personAssign;
+    // public function getPersonaById($personAssign) {
+    //     return $personAssign;
 
 
-        // $query = "SELECT id_personal FROM personal WHERE nombre = ? AND apellido_paterno = ? AND appellidp_materno  = ?LIMIT 1"; 
+    //     // $query = "SELECT id_personal FROM personal WHERE nombre = ? AND apellido_paterno = ? AND appellidp_materno  = ?LIMIT 1"; 
         
         
-        // $userValid = $this->db->query($query, array("nombre" => $username, "apellido_paterno"  => $fatherName, 
-        //     "appellido_materno" => $motherName)->result_array();
-        // if ($userId != null) {
-        //     return $userId;
-        // }
-    }
+    //     // $userValid = $this->db->query($query, array("nombre" => $username, "apellido_paterno"  => $fatherName, 
+    //     //     "appellido_materno" => $motherName)->result_array();
+    //     // if ($userId != null) {
+    //     //     return $userId;
+    //     // }
+    // }
 }
