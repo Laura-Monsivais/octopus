@@ -1,9 +1,6 @@
 <?php
 if (!defined("BASEPATH")) exit("No direct script access allowed");
 
-/**
- * 
- */
 class ServiceModel extends CI_Model {
 
     public function __construct()
@@ -47,18 +44,9 @@ class ServiceModel extends CI_Model {
         }
     }
 
-    //public function modifyService($id_servicio,$tipo,$fecha_emision,$fecha_expiracion,$costo,$tipo_pago,$pendiente,$id_personal) {
-          /*$query = $this->db->query("UPDATE servicio SET tipo = '$tipo', fecha_emision = '$fecha_emision', fecha_expiracion = '$fecha_expiracion', costo ='$costo', tipo_pago ='$tipo_pago', pendiente ='$pendiente', id_personal ='$id_personal' WHERE id_servicio = $id_servicio");
-          if($query == true) {
-              return true;
-          }else{
-              return false;
-          }*/
-
     public function modifyServicePayment($id_servicio,$data) {
         $this->db->where('id_servicio', $id_servicio);
         $result = $this->db->update('servicio', $data);
-
         if ($result) {
             return true;
         } else {
@@ -69,12 +57,16 @@ class ServiceModel extends CI_Model {
     public function modifyService($id_servicio,$data) {
         $this->db->where('id_servicio', $id_servicio);
         $result = $this->db->update('servicio', $data);
-
         if ($result) {
             return true;
         } else {
             return false;
         }
+    }
+
+    public function getServiceForModify($id_servicio) {
+       $query = $this->db->query("SELECT * FROM servicio WHERE id_servicio = {$id_servicio}");
+        return $query->row();
     }
 
 }

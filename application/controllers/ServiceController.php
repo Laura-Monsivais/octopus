@@ -16,7 +16,7 @@ class ServiceController extends CI_Controller {
 		$this->load->view("components/LoaderComponent");
 		$this->load->view("components/HeaderComponent");
 		$this->load->view("components/NavbarComponent");
-		$this->load->view("ServiceView", $data);		
+		$this->load->view("ServiceView", $data);	
 		$this->load->view("components/FooterComponent");
 	}
 
@@ -56,28 +56,36 @@ class ServiceController extends CI_Controller {
 		if ($isModify) {
 			redirect('/ServiceController', 'location');
 		} 
-
 	}
 
+	public function modifyService($id = null) {
+		$id = $this->db->escape($id);
+		$data = $this->ServiceModel->getServiceForModify($id);		
+		$this->load->view("components/LoaderComponent");
+		$this->load->view("components/HeaderComponent");
+		$this->load->view("components/NavbarComponent");
+		$this->load->view("ServiceUpdateView", compact("data"));
+		$this->load->view("components/FooterComponent");
+	}
 
-	public function updateService($id) {
+	public function updateService() {
+		$id = $this->input->post('idU');
 		$serviceData = array(
-		    'tipo' => $data['tipo'],
-		    'fecha_emision' => $data['fecha_emision'],
-		    'fecha_expiracion' => $data['fecha_expiracion'],
-		    'costo' => $data['costo'],
-		    'pendiente' => $data['pendiente'],
-		    'tipo_pago' => $data['tipo_pago'],
-		    'personal' => $data['personal']
+		    'tipo' => $this->input->post('tipoU'),
+		    'fecha_emision' => $this->input->post('fecha_emisionU'),
+		    'fecha_expiracion' => $this->input->post('fecha_expiracionU'),
+		    'costo' => $this->input->post('costoU'),
+		    'tipo_pago' => $this->input->post('tipo_pagoU'),
+		    'pendiente' => $this->input->post('pendienteU'),
+		    'id_personal' => $this->input->post('personalU')
 		);
 
-		$isModify = $this->ServiceModel->modifyService($id, $serviceData);		
+		$isModify = $this->ServiceModel->modifyService($id,$serviceData);		
 		if ($isModify) {
 			redirect('/ServiceController', 'location');
 		} 
-
 	}
-
+	
 }
 
 

@@ -1,4 +1,3 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <div class="page-wrapper">
     <div class="container-fluid">
         <div class="card">
@@ -103,10 +102,9 @@
                         </tr>
                     </thead>
                     <tbody>
-
                     <?php 
                         $services = json_decode(json_encode($serviceList), true);
-                        $path = site_url();//'.$service['id_servicio'].'
+                        $path = site_url();
                         foreach ($services as $service) {
                             echo "<tr id=".$service["id_servicio"].">";
                             if ($service["pendiente"] == 0) {
@@ -114,7 +112,7 @@
                             } else {
                                 echo "<td class='text-center'><a class='btn btn-primary' href='${path}/ServiceController/updateServiceByPayment/" .  $service["id_servicio"] . "'>Pagar</a></td>"; 
                             }
-                            echo "<td >" . $service["tipo"] . "</td>";
+                            echo "<td data-target='tipoU'>" . $service["tipo"] . "</td>";
                             echo "<td >" . $service["fecha_emision"] . "</td>";
                             echo "<td >" . $service["fecha_expiracion"] . "</td>";
                             echo "<td >" . $service["costo"] . "</td>";
@@ -123,9 +121,17 @@
                             echo "<td >" . $service["nombre"] . ' ' .  $service["apellido_paterno"] . ' ' .  $service["apellido_materno"] . "</td>";
                             echo "<td class='text-center'><a class='btn btn-danger' href='${path}/ServiceController/deleteService/" .  $service["id_servicio"] . "'>Eliminar</a>
                             </td>"; 
-                            echo '<td>
-                                  <a class="btn btn-primary" href="#" data-id="" data-role="update" id="btnUpdate">Editar</a>
-                            </td>';
+
+                            if ($service["pendiente"] == 1) {
+                               echo "<td class='text-center'><a class='btn btn-primary' href='${path}/ServiceController/modifyService/" .  $service["id_servicio"] . "' >Editar</a>
+                            </td>";  
+                            } else {
+                                    echo "<td class='text-center'><a class='btn btn-secondary' href='javascript:void()' >Editar</a>
+                                    </td>"; 
+                            }
+
+
+
                             echo "</tr>";
                         }
                     ?>
@@ -134,101 +140,5 @@
             </div>
         </div>
 
-<div class="modal" id="myModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title">Actualizar usuario administrador</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-      <div class="modal-body">
-            <form action="#" method="POST">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Ingresar nombre" id="nameUp" name="nameUp">
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Ingresar nombre de usuario" id="usernameUp" name="usernameUp">
-                </div>
-                <div class="form-group">
-                  <label class="form-check-label" for="can_viewUp" >Ver 
-                    <input type="text" class="form-control" placeholder="Ingresar Si o No" id="can_viewUp" name="can_viewUp">
-                  </label>
-                  <label class="form-check-label" for="can_createUp" >Crear 
-                    <input type="text" class="form-control" placeholder="Ingresar Si o No" id="can_createUp" name="can_createUp">
-                  </label>
-                  <label class="form-check-label" for="can_editUp" >Editar 
-                    <input type="text" class="form-control" placeholder="Ingresar Si o No" id="can_editUp" name="can_editUp">
-                  </label>
-                  <label class="form-check-label" for="can_deleteUp" >Eliminar 
-                    <input type="text" class="form-control" placeholder="Ingresar Si o No" id="can_deleteUp" name="can_deleteUp">
-                  </label>
-                  <label class="form-check-label" for="statusUp" >Estatus 
-                    <input type="text" class="form-control" placeholder="Ingresar Activo o Inactivo" id="statusUp" name="statusUp">
-                  </label>
-                  <!--<input type="hidden" id="user_idUp">-->
-                </div>
-                
-                <div class="mb-4"></div>
-          </form>
-      </div>
-      <div class="modal-footer">
-        <a href="#" id="saveChanges" class="btn btn-danger" >Actualizar</a>
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-      </div>
-
-    </div>
-  </div>
-</div>
 
 
-<script>
-  $(document).ready(function(){  
-     $(document).on('click' , 'a[data-role=update]', function(event) {
-      //var id = $(this).data('id'); 
-      event.preventDefault();
-      $('#myModal').modal('toggle'); 
-      alert("hola");
-      /*var name = $('#'+id).children('td[data-target=nameU]').text();
-      var username = $('#'+id).children('td[data-target=usernameU]').text();
-      var can_view = $('#'+id).children('td[data-target=can_viewU]').text();
-      var can_create = $('#'+id).children('td[data-target=can_createU]').text();
-      var can_edit = $('#'+id).children('td[data-target=can_editU]').text();
-      var can_delete = $('#'+id).children('td[data-target=can_deleteU]').text();
-      var status = $('#'+id).children('td[data-target=statusU]').text();
-
-      $('#nameUp').val(name);
-      $('#usernameUp').val(username);
-      $('#can_viewUp').val(can_view);
-      $('#can_createUp').val(can_create);
-      $('#can_editUp').val(can_edit);
-      $('#can_deleteUp').val(can_delete);
-      $('#statusUp').val(status);
-      $('#user_idUp').val(id);*/
-         
-   
-
-
-    /*$('#saveChanges').click(function() {
-      var user_idUp = $('#user_idUp').val();
-      var nameUp = $('#nameUp').val();
-      var usernameUp = $('#usernameUp').val();
-      var can_viewUp = $('#can_viewUp').val();
-      var can_createUp = $('#can_createUp').val();
-      var can_editUp = $('#can_editUp').val();
-      var can_deleteUp = $('#can_deleteUp').val();
-      var statusUp = $('#statusUp').val();
-
-      $.ajax({
-        url : '../config/useradminmanagementUpdate.php',
-        method : 'post',
-        data : {user_idUp : user_idUp, nameUp : nameUp, usernameUp : usernameUp, can_viewUp : can_viewUp, can_createUp : can_createUp, can_editUp : can_editUp, can_deleteUp : can_deleteUp, statusUp : statusUp},
-        success : function(response) {                    
-                    alert("Se ha modificado correctamente el usuario");
-                    $('#myModal').modal('toggle');
-                    window.location.href = "../public/usermanagement.php";
-                  }
-      });
-    });*/
-  });
-
-</script>
