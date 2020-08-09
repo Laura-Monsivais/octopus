@@ -10,7 +10,7 @@ class EquipmentController extends CI_Controller {
 
 	public function index() {
 		$data = array(
-			"persons" => $this->EquipmentModel->queryAllPersons()
+			"equiposList" => $this->EquipmentModel->UnionEquipoPersonal()
 		);
 		$this->load->view("components/LoaderComponent");
 		$this->load->view("components/HeaderComponent");
@@ -34,7 +34,7 @@ class EquipmentController extends CI_Controller {
 			$stock = $this->input->post('stock');
 			$fechaA = $this->input->post('fechaA');
 			$mttoTF = $this->input->post('mttoTF');
-			
+			$idperson = $this->input->post('id_personal');
 	
 			if (!$this->EquipmentModel->setEquipo($nombreE, $desc, $marca, $modelo, $costo, $stock, $fechaA, $mttoTF, $idperson)) {
 				$this->input->post(null, false);
@@ -43,6 +43,46 @@ class EquipmentController extends CI_Controller {
 				return redirect(site_url() . "/EquipmentController");
 			}
 		}
+		public function ModificarEquipo($idEquipo = null) {
+			$idEquipo = $this->db->escape($idEquipo);
+			$data = $this->EquipmentModel->getServiceForModify($idEquipo);		
+			$this->load->view("components/LoaderComponent");
+			$this->load->view("components/HeaderComponent");
+			$this->load->view("components/NavbarComponent");
+			$this->load->view("EquipmentView", compact("data"));
+			$this->load->view("components/FooterComponent");
+		}
+
+		public function ActualizarEquipo() {
+			$idEquipo = $this->input->post('id_equipo');
+			$EquipoData = array(
+				
+				'nombre' => $this->input->post('nombreE'),
+				'descripcion' => $this->input->post('desc'),
+				'marca' => $this->input->post('marca'),
+				'modelo' => $this->input->post('modelo'),
+				'costo' => $this->input->post('costo'),
+				'stock' => $this->input->post('stock'),
+				'fecha_adquisicion' => $this->input->post('fechaA'),
+				'matenimiento' => $this->input->post('mttoTF'),
+				'id_personal' => $this->input->post('id_personal')
+			);
+	
+			$isModify = $this->EquipmentModel->UpdateEquipment($idEquipo,$EquipoData);		
+			if ($isModify) {
+				redirect('/EquipmentController', 'location');
+			} 
+		}
+		public function deleteService($idEquipo) {
+			$isDelete = $this->EquipmentModel->DeleteEquipment($idEquipo);		
+			if ($isDelete) {
+				redirect('/EquipmentController', 'location');
+			} 
+		}
+		
+
+			
+		}
 
 
-	}
+	
