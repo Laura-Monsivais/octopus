@@ -1,8 +1,8 @@
 <div class="page-wrapper">
-    <div class="col-md-12">
+<div class="col-md-12">
         <div class="box">
-            <div class="box-header with-border">
-                <h1 class="box-title">Usuarios y permisos</h1>
+            <div class="box-header with-border ">
+                <h1 class="box-title font-weight-bold text-info">Gestión de usuarios</h1>
                 <div class="card">
                     <div class="card-body">
                         <form action="<?php echo site_url()?>/PersonalController/validateFormData" method="POST"

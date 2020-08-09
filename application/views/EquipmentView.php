@@ -10,8 +10,8 @@
                             <div class="form-row">
                                 <div class="col-md-4 mb-3">
                                     <label for="validationCustom01">Nombre</label>
-                                    <input type="text" class="form-control" id="validationCustom01" placeholder="Nombre"
-                                        name="nombreE" required>
+                                    <input type="text" class="form-control" id="validationCustom01" name="nombreE"
+                                        required >
                                     <div class="invalid-feedback">
                                         Completa Nombre.
                                     </div>
@@ -19,7 +19,7 @@
                                 <div class="col-md-8 mb-3">
                                     <label for="validationCustom02">Descripción</label>
                                     <input type="text" class="form-control" id="validationCustom02"
-                                        placeholder="Descripción" required name="desc">
+                                        required name="desc">
                                     <div class="invalid-feedback">
                                         Completa Descripción.
                                     </div>
@@ -28,7 +28,7 @@
                             <div class="form-row">
                                 <div class="col-md-2 mb-3">
                                     <label for="validationCustom03">Marca</label>
-                                    <input type="text" class="form-control" id="validationCustom03" placeholder="Marca"
+                                    <input type="text" class="form-control" id="validationCustom03"
                                         required name="marca">
                                     <div class="invalid-feedback">
                                         Completa Marca.
@@ -36,7 +36,7 @@
                                 </div>
                                 <div class="col-md-2 mb-3">
                                     <label for="validationCustom03">Modelo</label>
-                                    <input type="text" class="form-control" id="validationCustom03" placeholder="Modelo"
+                                    <input type="text" class="form-control" id="validationCustom03"
                                         required name="modelo">
                                     <div class="invalid-feedback">
                                         Completa Modelo.
@@ -49,7 +49,7 @@
                                             <span class="input-group-text" id="inputGroupPrepend">$</span>
                                         </div>
                                         <input type="number" class="form-control" id="validationCustomUsername"
-                                            placeholder="Costo" aria-describedby="inputGroupPrepend" required
+                                            aria-describedby="inputGroupPrepend" required
                                             name="costo">
                                         <div class="invalid-feedback">
                                             Completa Costo.
@@ -59,7 +59,7 @@
                                 <div class="col-md-4 mb-3">
                                     <label for="validationCustom04">Stock</label>
                                     <input type="number" class="form-control" id="validationCustom04"
-                                        placeholder="Stock" required name="stock">
+                                        required name="stock">
                                     <div class="invalid-feedback">
                                         Completa Stock.
                                     </div>
@@ -67,15 +67,15 @@
                             </div>
                             <div class="form-row">
                                 <div class="col-md-4 mb-3">
-                                    <label for="validationCustom05">Fecha de Adquisición</label>
-                                    <input type="date" class="form-control" id="validationCustom05" placeholder="Fecha"
+                                    <label for="validationCustom05">Fecha de adquisición</label>
+                                    <input type="date" class="form-control" id="validationCustom05"
                                         required name="fechaA">
                                     <div class="invalid-feedback">
                                         Completa Fecha de Adquisición.
                                     </div>
                                 </div>
                                 <div class="col-md-4 mb-3">
-                                    <label for="validationCustom05">¿Requiere Mantenimiento?</label>
+                                    <label for="validationCustom05">¿Requiere mantenimiento?</label>
                                     <select name="mttoTF" class="custom-select" required>
                                         <option selected=""></option>
                                         <option value="1">Si</option>
@@ -86,7 +86,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-4 mb-3">
-                                    <label for="validationCustom05">Persona Asignada</label>
+                                    <label for="validationCustom05">Persona asignada</label>
                                     <select name="id_personal" class="custom-select" id="validationCustom05" required>
                                         <div class="invalid-feedback">
                                             Completa Fecha de Adquisición.
@@ -160,7 +160,7 @@
                             } else {
                                 echo "<td class='text-center'><a class='btn btn-success' href='${path}/EquipmentController/EndMaintenance/" .  $equipo["id_equipo"] . "'><i title='Terminar Mantenimiento' class='fas fa-check-circle' ></a></td>"; 
 							}
-							echo "<td data-target='nombre'>" . $equipo["nombre_equipo"] . "</td>";
+							echo "<td data-target='nombre'>" . $equipo["nombre"] . "</td>";
                             echo "<td >" . $equipo["descripcion"] . "</td>";
                             echo "<td >" . $equipo["marca"] . "</td>";
 							echo "<td >" . $equipo["modelo"] . "</td>";
