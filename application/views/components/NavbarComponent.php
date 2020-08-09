@@ -21,6 +21,8 @@
                         <li class="sidebar-item">
                             <a href="<?php base_url()?>EquipmentController" class="sidebar-link"><span
                                     class="hide-menu">Nuevo equipo</span></a>
+                            <a href="<?php base_url()?>MaintenanceController" class="sidebar-link"><span
+                                    class="hide-menu">Mantenimiento</span></a>
                         </li>
                     </ul>
                 </li>

@@ -13,6 +13,12 @@
     <title>OCTOPUS</title>
     <link href="<?php echo base_url() ?>assets/src/dist/css/style.min.css" rel="stylesheet">
     <script src="<?php echo base_url() ?>assets/src/assets/libs/jquery/dist/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+    * {
+        font-family: 'Roboto', sans-serif;
+      }
+    </style>
 </head>
 
 <body>
@@ -23,8 +29,7 @@
                     <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
                     <div class="navbar-brand">
                         <a href="<?php base_url() ?>MainController">
-                            <span class="logo-icon"><img src="<?php echo base_url() ?>assets/src/assets/images/logo-icon.png" alt="homepage" class="dark-logo" /></span>
-                            <span class="logo-text">OCTOPUS</span>
+                            <span class="logo-icon"><img src="<?php echo base_url() ?>assets/src/assets/images/OCTOPUS.png" alt="homepage" class="dark-logo" width="200"  height="60px"  /></span>
                         </a>
                     </div>
                     <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="ti-more"></i>
