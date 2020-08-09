@@ -25,7 +25,9 @@
                 <div class="card-body">
                     <form action="<?php echo site_url()?>/LoginController/validatingFormData" method="POST">
                         <div class="form-group text-center text-secondary">
-                            <h1>OCTOPUS</h1>
+                        <span class="logo-icon"><img
+                                src="<?php echo base_url() ?>assets/src/assets/images/OCTOPUS.png" alt="homepage"
+                                class="dark-logo" width="200" height="60px" /></span>
                         </div>
                         <div class="form-group">
                             <?php if (validation_errors()): ?>
