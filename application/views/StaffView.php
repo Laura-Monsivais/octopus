@@ -28,7 +28,7 @@
                                     foreach ($people as $person) {
                                         echo "<tr >";
                                         echo "<td class='text-center'>
-                                                <a class='btn btn-outline-info' href='${path}/AssistanceController/takeAssistance/" . $person["id_personal"] . "'>Tomar</a>
+                                                <a class='btn btn-outline-info' href='${path}/AssistanceController/setPersonId/" . $person["id_personal"] . "'>Tomar</a>
                                             </td>";
                                         echo "<td >" . $person["nombre"] . "</td>";
                                         echo "<td >" . $person["apellido_paterno"] . "</td>";
