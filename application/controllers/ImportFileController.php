@@ -8,55 +8,50 @@ class ImportFileController extends CI_Controller {
 		$this->load->model("ImportFileModel");
 	}
 	
-	public function index($data = "") {
+	public function index() {
 		$data = array(
 			"listaArchivos" => $this->ImportFileModel->obtenerArchivos()
 		);
-		
 		$this->load->view("components/LoaderComponent");
 		$this->load->view("components/HeaderComponent");
 		$this->load->view("components/NavbarComponent");
 		$this->load->view("ImportFileView", $data);
 		$this->load->view("components/FooterComponent");
 	}
-	
 
     public function subirArchivo() {
-        $config['upload_path'] = './uploads/archivos/';
-        $config['allowed_types'] = 'pdf|xlsx|docx|pptx';
+        $path = $config['upload_path'] = './uploads/archivos/';
+		$this->verificarRutaExistente($path);
+		$config['allowed_types'] = 'pdf|xlsx|docx|pptx';
         $config['max_size'] = '20048';
         $this->load->library('upload', $config);
  
-        if (!$this->upload->do_upload("fileImagen")) {
-            $data['errorArch'] = $this->upload->display_errors();
-            $this->index($data);
-        } else {	
-			
-	     	$titulo = $this->input->post('titImagen');
-			$categoria = $this->input->post('categoria');
-
-			if ($titulo =! null or $categoria != null) {
+		$titulo = $this->input->post('titImagen');
+		$categoria = $this->input->post('categoria');
+		if ($titulo =! null and $categoria != null) {
+        	if ($this->upload->do_upload("fileImagen")) {
 				$file_info = $this->upload->data();
 				$archivo = $file_info['file_name'];
-
-
-
-				$subir = $this->ImportFileModel->subir($titulo,$archivo,$categoria);      
-				$data['estado'] = "Archivo subido.";
-				$data['archivo'] = $archivo;
-				$data['error'] = "";
-				$data['errorArch'] = "";
-				$this->index($data);
+				$subir = $this->ImportFileModel->subir($titulo, $archivo, $categoria);      
 			}
-        }
+		}
+		redirect("ImportFileController");
     }
 
-	public function descargarArchivo($idArchivo) {
-		$this->index();
-		$data = file_get_contents('./uploads/archivos/'.$idArchivo); 
-       force_download($idArchivo,$data);
+	public function descargarArchivo($rutaArchivo) {
+		$data = file_get_contents('./uploads/archivos/'.$rutaArchivo); 
+		force_download($rutaArchivo, $data);
+		redirect("ImportFileController");
 	}
-	
-		}
-	
 
+	public function eliminarArchivoActual($idArchivo) {
+		$this->ImportFileModel->eliminarArchivo($idArchivo); 
+		redirect("ImportFileController");
+	}
+
+	private function verificarRutaExistente($path) {
+		if (!file_exists($path)) {
+			mkdir($path, 0777, true);
+		}		
+	}
+}
