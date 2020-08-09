@@ -10,7 +10,7 @@ class EquipmentController extends CI_Controller {
 
 	public function index() {
 		$data = array(
-			"equiposList" => $this->EquipmentModel->UnionEquipoPersonal()
+			"equiposList" => $this->EquipmentModel->EquipmentPersonal()
 		);
 		$this->load->view("components/LoaderComponent");
 		$this->load->view("components/HeaderComponent");
@@ -21,7 +21,7 @@ class EquipmentController extends CI_Controller {
 		public function create()
 		{
 			$mante = $this->EquipmentModel->getEquipo();
-			$this->load->view("EquipmentView");
+			
 		}
 	
 		public function AgregarEquipo()
@@ -45,11 +45,11 @@ class EquipmentController extends CI_Controller {
 		}
 		public function ModificarEquipo($idEquipo = null) {
 			$idEquipo = $this->db->escape($idEquipo);
-			$data = $this->EquipmentModel->getServiceForModify($idEquipo);		
+			$data = $this->EquipmentModel->getEquipmentForModify($idEquipo);		
 			$this->load->view("components/LoaderComponent");
 			$this->load->view("components/HeaderComponent");
 			$this->load->view("components/NavbarComponent");
-			$this->load->view("EquipmentView", compact("data"));
+			$this->load->view("updateEquipment", compact("data"));
 			$this->load->view("components/FooterComponent");
 		}
 
@@ -57,7 +57,7 @@ class EquipmentController extends CI_Controller {
 			$idEquipo = $this->input->post('id_equipo');
 			$EquipoData = array(
 				
-				'nombre' => $this->input->post('nombreE'),
+				'nombre_equipo' => $this->input->post('nombreE'),
 				'descripcion' => $this->input->post('desc'),
 				'marca' => $this->input->post('marca'),
 				'modelo' => $this->input->post('modelo'),
@@ -79,7 +79,17 @@ class EquipmentController extends CI_Controller {
 				redirect('/EquipmentController', 'location');
 			} 
 		}
-		
+	
+		public function EndMaintenance($idEquipo) {
+			$EquipoData = array(
+				'matenimiento' => 0
+			);
+	
+			$isModify = $this->EquipmentModel->ModifyMtto($idEquipo, $EquipoData);		
+			if ($isModify) {
+				redirect('/EquipmentController', 'location');
+			} 
+		}
 
 			
 		}

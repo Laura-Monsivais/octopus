@@ -14,7 +14,7 @@ class EquipmentModel extends CI_Model {
 	}
 	
 	public function setEquipo( $nombreE, $desc, $marca, $modelo, $costo, $stock, $fechaA, $mttoTF, $idperson) {
-	$data = array("nombre" => $nombreE, "descripcion" => $desc, "marca" => $marca, "modelo" => $modelo, 
+	$data = array("nombre_equipo" => $nombreE, "descripcion" => $desc, "marca" => $marca, "modelo" => $modelo, 
 	"costo" => $costo, "stock" => $stock, "fecha_adquisicion" => $fechaA, "matenimiento" => $mttoTF, "id_personal" => $idperson );
 	return $this->db->insert("equipo", $data);
 	}
@@ -24,7 +24,7 @@ class EquipmentModel extends CI_Model {
 
         return $query->result_array();
 	}
-	public function UnionEquipoPersonal() {
+	public function EquipmentPersonal() {
         $this->db->select('*');
         $this->db->from('equipo e');
         $this->db->join('personal p', 'e.id_personal = p.id_personal');
@@ -52,7 +52,7 @@ class EquipmentModel extends CI_Model {
             return false;
         }
 	}
-	public function getServiceForModify($id_equipo) {
+	public function getEquipmentForModify($id_equipo) {
 		$query = $this->db->query("SELECT * FROM equipo WHERE id_equipo= {$id_equipo}");
 		 return $query->row();
 	 }
@@ -66,7 +66,15 @@ class EquipmentModel extends CI_Model {
             return false;
         }
     }
- 
+	public function ModifyMtto($idEquipo,$data) {
+		$this->db->where('id_equipo', $idEquipo);
+		$result = $this->db->update('equipo', $data);
+		if ($result) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 	
 	
 }

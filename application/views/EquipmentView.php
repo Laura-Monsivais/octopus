@@ -1,8 +1,8 @@
 <div class="page-wrapper">
     <div class="col-md-12">
         <div class="box">
-            <div class="box-header with-border">
-                <h1 class="box-title">Equipos</h1>
+            <div class="box-header with-border ">
+                <h1 class="box-title font-weight-bold text-info">Equipos</h1>
                 <div class="card">
                     <div class="card-body">
                         <form action="<?php echo site_url() ?>/EquipmentController/AgregarEquipo" method="POST"
@@ -10,11 +10,11 @@
                             <div class="form-row">
                                 <div class="col-md-4 mb-3">
                                     <label for="validationCustom01">Nombre</label>
-                                    <input type="text" class="form-control" id="validationCustom01" placeholder="Nombre"
-                                        required name="nombreE">
+                                    <input type="text" class="form-control" id="validationCustom01" placeholder="Nombre" name="nombreE"
+                                        required >
                                     <div class="invalid-feedback">
                                         Completa Nombre.
-                                        ¿ </div>
+                                         </div>
                                 </div>
                                 <div class="col-md-8 mb-3">
                                     <label for="validationCustom02">Descripción</label>
@@ -76,15 +76,21 @@
                                 </div>
                                 <div class="col-md-4 mb-3">
                                     <label for="validationCustom05">¿Requiere Mantenimiento?</label>
-                                    <select name="mttoTF" class="custom-select">
+                                    <select name="mttoTF" class="custom-select" required>
                                         <option selected=""></option>
                                         <option value="1">Si</option>
                                         <option value="0">No</option>
                                     </select>
+									<div class="invalid-feedback">
+                                        Completa Fecha de Adquisición.
+                                    </div>
                                 </div>
                                 <div class="col-md-4 mb-3">
                                     <label for="validationCustom05">Persona Asignada</label>
-                                    <select name="id_personal" class="custom-select" id="validationCustom05">
+                                    <select name="id_personal" class="custom-select" id="validationCustom05" required>
+									<div class="invalid-feedback">
+                                        Completa Fecha de Adquisición.
+                                    </div>
                                         <option selected=""></option>
                                         <?php  
                                     $results = $this->EquipmentModel->selectAllPersonal();
@@ -124,7 +130,7 @@
                 <div class="card">
                     <div class="card-body table-responsive">
                         <table class="table table-striped table-bordered table-hover">
-                            <thead class="thead-	 text-center">
+                            <thead class="thead-dark text-center">
                                 <tr class="text-center">
                                     <th scope="col"></th>
                                     <th scope="col">Nombre</th>
@@ -136,8 +142,11 @@
                                     <th scope="col">Fecha de adquisición</th>
                                     <th scope="col">Mantenimiento</th>
                                     <th scope="col">Empleado Asignado</th>
-                                    <td scope="col" colspan="2"><i class="fas fa-cogs" class="thead-dark "
-                                            lass="d-flex align-items-center"></i></th</td>
+									<th scope="col" ></th>
+									<th scope="col"></th>
+									<th scope="col" style= "border-top-style: dotted;"></th>
+									
+                                    
                                 </tr>
                             </thead>
                             <tbody>
@@ -147,11 +156,11 @@
                         foreach ($equipos as $equipo) {
                             echo "<tr id=".$equipo["id_equipo"].">";
                             if ($equipo["matenimiento"] == 0) {
-                               echo "<td class='text-center'><a class='btn btn-secondary' href='javascript:void()'>Terminar Mantenimiento</a></td>"; 
+                               echo "<td class='text-center'><a class='btn btn-secondary' href='javascript:void()'><i title='Terminado' class='fas fa-check-circle' '></i></a></td>";  
                             } else {
-                                echo "<td class='text-center'><a class='btn btn-primary' href='${path}/EquipmentController/updateServiceByPayment/" .  $equipo["id_equipo"] . "'>Terminar</a></td>"; 
+                                echo "<td class='text-center'><a class='btn btn-success' href='${path}/EquipmentController/EndMaintenance/" .  $equipo["id_equipo"] . "'><i title='Terminar Mantenimiento' class='fas fa-check-circle' ></a></td>"; 
 							}
-							echo "<td data-target='nombreE'>" . $equipo["nombre"] . "</td>";
+							echo "<td data-target='nombre'>" . $equipo["nombre_equipo"] . "</td>";
                             echo "<td >" . $equipo["descripcion"] . "</td>";
                             echo "<td >" . $equipo["marca"] . "</td>";
 							echo "<td >" . $equipo["modelo"] . "</td>";
@@ -165,10 +174,11 @@
 							<i title='Eliminar' class='fas fa-trash' id='btn_delete'></i></a>
 							</td>"; 
 							if ($equipo["matenimiento"] == 1) {
-								echo "<td class='text-center'><a class='btn btn-dark'>
-							<i title='Actualizar' class='fas fa-pencil-alt' type='button' data-toggle='modal' data-target='#signup-modal' 
-							onClick='selPersona(".$equipo["id_equipo"].",".$equipo["nombre"].",".$equipo["descripcion"].",".$equipo["marca"].",".$equipo["modelo"].",
-							".$equipo["costo"].", ".$equipo["stock"].", ".$equipo["fecha_adquisicion"].", ".$equipo["matenimiento"].", ".$equipo["id_personal"].");'><i>
+								echo "<td  class='text-center'><a class='btn btn-dark' href='${path}/EquipmentController/ModificarEquipo/" .  $equipo["id_equipo"] . "'>
+								<i title='Actualizar' class='fas fa-pencil-alt' ></i></a>
+								<td class='text-center'><a class='btn btn-info' href='${path}/MaintenanceController/indexMtto/" .  $equipo["id_equipo"] . "'>
+								<i title='Mantenimiento' class='fas fa-align-center'></i></a>
+								
 							</td>"; 
 							 } else {
 									 
@@ -181,312 +191,3 @@
                     </div>
                 </div>
                 </table>
-                <!-- /.modal actualizar -->
-                <form action="<?php echo site_url() ?>/EquipmentController/ActualizarEquipo" method="POST"
-                    class="needs-validation" novalidate>
-                    <div id="signup-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered modal-lg">
-                            <div class="modal-content">
-                                <div class="modal-header bg-info">
-                                    <h4 class="modal-title font-weight-bold text-white" id="topModalLabel">Editar Equipo
-                                    </h4>
-                                    <button type="button" class="close" data-dismiss="modal"
-                                        aria-hidden="true">×</button>
-                                </div>
-                                <div class="modal-body">
-                                    <form class="needs-validation" novalidate>
-									<input type="hidden" id="id_equipo" name="id_equipo">
-                                        <div class="form-row">
-                                            <div class="col-md-4 mb-3">
-                                                <label for="validationCustom01">Nombre</label>
-                                                <input type="text" class="form-control" id="validationCustom01"
-                                                    placeholder="Nombre" name="nombreE required ">
-                                                <div class="invalid-feedback">
-                                                    Completa Nombre.
-                                                </div>
-                                            </div>
-                                            <div class="col-md-8 mb-3">
-                                                <label for="validationCustom02">Descripción</label>
-                                                <input type="text" class="form-control" id="validationCustom02"
-                                                    placeholder="Descripción" name=desc required>
-                                                <div class="invalid-feedback">
-                                                    Completa Descripción.
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="col-md-2 mb-3">
-                                                <label for="validationCustom03">Marca</label>
-                                                <input type="text" class="form-control" id="validationCustom03"
-                                                    placeholder="Marca" name="marca" required">
-                                                <div class="invalid-feedback">
-                                                    Completa Marca.
-                                                </div>
-                                            </div>
-                                            <div class="col-md-2 mb-3">
-                                                <label for="validationCustom03">Modelo</label>
-                                                <input type="text" class="form-control" id="validationCustom03"
-                                                    placeholder="Modelo" name="modelo" required>
-                                                <div class="invalid-feedback">
-                                                    Completa Modelo.
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4 mb-3">
-                                                <label for="validationCustomUsername">Costo</label>
-                                                <div class="input-group">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text" id="inputGroupPrepend">$</span>
-                                                    </div>
-                                                    <input type="number" class="form-control"
-                                                        id="validationCustomUsername" placeholder="Costo"
-                                                        aria-describedby="inputGroupPrepend" required>
-                                                    <div class="invalid-feedback" name="costo">
-                                                        Completa Costo.
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4 mb-3">
-                                                <label for="validationCustom04">Stock</label>
-                                                <input type="number" class="form-control" id="validationCustom04"
-                                                    placeholder="Stock" name="stock" required >
-                                                <div class="invalid-feedback">
-                                                    Completa Stock.
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="col-md-4 mb-3">
-                                                <label for="validationCustom05">Fecha de Adquisición</label>
-                                                <input type="date" class="form-control" id="validationCustom05"
-                                                    placeholder="Fecha" name="fechaA" required>
-                                                <div class="invalid-feedback">
-                                                    Completa Fecha de Adquisición.
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4 mb-3">
-                                                <label for="validationCustom05">¿Requiere Mantenimiento?</label>
-                                                <select name="mttoTF" class="custom-select">
-                                                    <option selected=""></option>
-                                                    <option value="1">Si</option>
-                                                    <option value="0">No</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-md-4 mb-3">
-                                                <label for="validationCustom05">Persona Asignada</label>
-                                                <select name="id_personal" class="custom-select"
-                                                    id="validationCustom05">
-                                                    <option selected=""></option>
-                                                    <?php  
-                                    $results = $this->EquipmentModel->selectAllPersonal();
-                                    foreach ($results as $person) {
-                                        echo '<option value='.$person["id_personal"].'>' . $person["nombre"] . ' ' . $employee["apellido_paterno"] . ' ' . $employee["apellido_materno"] . '</option>';
-                                    }
-                                ?>
-                                                </select>
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group text-right"
-                                            style="flex-direction:column;justify-content: flex-end;">
-                                            <button class="btn btn-outline-success" type="submit"
-                                                name="btnActualizar">Actualizar</button>
-                                        </div>
-                                    </form>
-
-                                </div>
-                            </div><!-- /.modal-content -->
-                        </div><!-- /.modal-dialog -->
-                    </div><!-- /.modal -->
-
-                    <!-- /.modal mtto -->
-                    <form action="<?php echo site_url() ?>/MaintenanceController/AgregarMantenimiento" method="POST"
-                        class="needs-validation" novalidate>
-                        <div id="signup-modal-mtto" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered modal-lg">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h4 class="modal-title" id="topModalLabel">Mantenimiento</h4>
-                                        <button type="button" class="close" data-dismiss="modal"
-                                            aria-hidden="true">×</button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form class="needs-validation" novalidate>
-                                            <div class="form-row">
-                                                <div class="col-md-4 mb-3">
-                                                    <label for="validationCustom01">Clave</label>
-                                                    <input type="text" class="form-control" name="cl"
-                                                        placeholder="Nombre" required>
-                                                    <div class="invalid-feedback">
-                                                        Completa Nombre.
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-8 mb-3">
-                                                    <label for="validationCustom02">Tipo de Mantenimiento</label>
-                                                    <input type="text" class="form-control" name="mtto"
-                                                        placeholder="Descripción" required>
-                                                    <div class="invalid-feedback">
-                                                        Completa Tipo Mantenimiento.
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-row">
-                                                <div class="col-md-12 mb-3">
-                                                    <label for="validationCustom03">Observación</label>
-                                                    <input type="text" class="form-control" name="obs"
-                                                        placeholder="Observación">
-                                                </div>
-                                            </div>
-                                            <div class="form-row">
-                                                <div class="col-md-6 mb-3">
-                                                    <label for="validationCustom05">Fecha de Entrada</label>
-                                                    <input type="date" class="form-control" name="fechaE" required>
-                                                    <div class="invalid-feedback">
-                                                        Completa Fecha de Entrada.
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6 mb-3">
-                                                    <label for="validationCustom05">Fecha de Salida</label>
-                                                    <input type="date" class="form-control" name="fechaS" required>
-                                                    <div class="invalid-feedback">
-                                                        Completa Fecha de Salida.
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group text-center">
-                                                <button class="btn btn-primary" type="submit"
-                                                    name="btn_guardar_mtto">Guardar</button>
-                                            </div>
-                                        </form>
-
-                                    </div>
-                                </div><!-- /.modal-content -->
-                            </div><!-- /.modal-dialog -->
-                        </div><!-- /.modal -->
-
-
-                        <script>
-                        $("#btn_delete").click(function() {
-                            Swal.fire({
-                                title: "¿Estás seguro?",
-                                text: "¡No podrás revertir esto!",
-                                icon: "warning",
-                                showCancelButton: true,
-                                confirmButtonText: "Sí, eliminar!",
-                                confirmButtonColor: "#d33",
-                                cancelButtonText: "Cancelar",
-                                cancelButtonColor: "#3085d6",
-                                showLoaderOnConfirm: true,
-                                preConfirm: () => {
-                                    /* let id = this.hoshinGuidelines[index].id; */
-                                    return axios //En esta parte va la petición Ajax
-                                        .delete(route("Usuarios.destroy", {
-                                            id: item.id
-                                        }).url())
-                                        .then((response) => {
-                                            this.users_data.splice(this.users_items.indexOf(
-                                                    item),
-                                                1); //Remove the user of the list.
-                                            return "eliminated";
-                                        })
-                                        .catch((error) => {
-                                            Swal.showValidationMessage(
-                                                `Se produjo un error: ${error}`);
-                                        });
-                                },
-                                allowOutsideClick: () => !Swal.isLoading(),
-                            }).then((result) => {
-                                if (result.value) {
-                                    Swal.fire("Eliminado!", "Equipo Eliminado.", "success");
-                                }
-                            });
-                        });;
-                        </script>
-
-                        <script>
-                        $("#btn_mtto").click(function() {
-                            Swal.fire({
-                                title: "¿Estás seguro?",
-                                text: "¡No podrás revertir esto!",
-                                icon: "warning",
-                                showCancelButton: true,
-                                confirmButtonText: "Sí, eliminar!",
-                                confirmButtonColor: "#d33",
-                                cancelButtonText: "Cancelar",
-                                cancelButtonColor: "#3085d6",
-                                showLoaderOnConfirm: true,
-                                preConfirm: () => {
-                                    /* let id = this.hoshinGuidelines[index].id; */
-                                    return axios //En esta parte va la petición Ajax
-                                        .delete(route("Usuarios.destroy", {
-                                            id: item.id
-                                        }).url())
-                                        .then((response) => {
-                                            this.users_data.splice(this.users_items.indexOf(
-                                                    item),
-                                                1); //Remove the user of the list.
-                                            return "eliminated";
-                                        })
-                                        .catch((error) => {
-                                            Swal.showValidationMessage(
-                                                `Se produjo un error: ${error}`);
-                                        });
-                                },
-                                allowOutsideClick: () => !Swal.isLoading(),
-                            }).then((result) => {
-                                if (result.value) {
-                                    Swal.fire("Eliminado!", "Equipo Eliminado.", "success");
-                                }
-                            });
-                        });;
-                        </script>
-
-                        <script>
-                        //con esta funcion pasamos los paremtros a los text del modal.
-                        selPersona = function(nombre, descripcion, marca, modelo, costo, stock, fecha_adquisicion,
-                            matenimiento, id_personal) {
-                            $('#nombreE').val(nombre);
-                            $('#desc').val(descripcion);
-                            $('#marca').val(marca);
-                            $('#modelo').val(modelo);
-                            $('#costo').val(costo);
-                            $('#stock').val(stock);
-                            $('#fechaA').val(fecha_adquisicion);
-                            $('#mttoTF').val(matenimiento);
-                            $('#id_peronal').val(id_personal);
-
-
-                        };
-
-
-                        //metodo update del modal
-                        $('#btn_Actualizar').click(function() {
-                            var nombreE = $('#nombreE').val();
-                            var desc = $('#desc').val();
-                            var marca = $('#marca').val();
-                            var modelo = $('#modelo').val();
-                            var costo = $('#costo').val();
-                            var stock = $('#stock').val();
-                            var fechaA = $('#fechaA').val();
-                            var mttoTF = $('#mttoTF').val();
-                            var id_personal = $('#id_personal').val();
-                            $.post(baseurl + "/EquipmentController/ModificarEquipo/", {
-                                    nombreE: nombreE,
-                                    desc: desc,
-                                    marca: marca,
-                                    modelo: modelo,
-                                    costo: costo,
-                                    stock: stock,
-                                    fechaA: fechaA,
-                                    mttoTF: mttoTF,
-                                    id_personal: id_personal;
-                                },
-                                function(data) {
-                                    if (data == 1) {
-                                        alert('Se grabo');
-                                        $('#mbtnCerrarModal').click();
-
-                                        location.reload();
-                                    }
-                                });
-                        });
-                        </script>
