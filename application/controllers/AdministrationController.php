@@ -30,7 +30,7 @@ class AdministrationController extends CI_Controller {
 			"RFC" => $this->input->post("RFC"),
 			"fecha_ingreso" => $this->input->post("fechaIngreso"),
 			"usuario" => $this->input->post("nombreUsario"),
-			"contrasena" => $this->input->post("contrasena"),
+			"contrasena" => $this->generateEncryption($this->input->post("contrasena")),
 			"telefono" => $this->input->post("telefono"),
 			"calle" => $this->input->post("calle"),
 			"fraccionamiento" => $this->input->post("fraccionamiento"),
@@ -48,4 +48,9 @@ class AdministrationController extends CI_Controller {
 		$this->AdministrationModel->deleteAdministator($idAdministrador); 
 		redirect("AdministrationController");
 	}
+
+	private function generateEncryption($password) {
+		$option = ["cost" => 12];
+		return password_hash($password, PASSWORD_DEFAULT, $option);
+    }
 }
