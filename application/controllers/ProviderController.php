@@ -47,20 +47,24 @@ class ProviderController extends CI_Controller {
 		$this->load->view("components/LoaderComponent");
 		$this->load->view("components/HeaderComponent");
 		$this->load->view("components/NavbarComponent");
-		$this->load->view("ServiceUpdateView", compact("data"));
+		$this->load->view("ProviderUpdateView", compact("data"));
 		$this->load->view("components/FooterComponent");
 	}
 
-	public function updateService() {
-		$id = $this->input->post('idU');
+	public function updateProvider() {
+		$id = $this->input->post('id_proveedor');
 		$serviceData = array(
-		    'tipo' => $this->input->post('tipoU'),
-		    'fecha_emision' => $this->input->post('fecha_emisionU'),
-		    'fecha_expiracion' => $this->input->post('fecha_expiracionU'),
-		    'costo' => $this->input->post('costoU'),
-		    'tipo_pago' => $this->input->post('tipo_pagoU'),
-		    'pendiente' => $this->input->post('pendienteU'),
-		    'id_personal' => $this->input->post('personalU')
+		    'nombre' => $this->input->post('UName'),
+		    'tipo' => $this->input->post('UType'),
+		    'preferente' => $this->input->post('UPreferential'),
+		    'telefono' => $this->input->post('UPhone'),
+		    'direccion' =>  $this->input->post('UAddress'),
+			'correo' => $this->input->post('UEmail'),
+			'estatus' => 1,
+			'fecha_creacion' => null,
+			'fecha_actualizacion' => null,
+			'id_personal' => null,
+		    'id_proveedor' => $this->input->post('id_proveedor')
 		);
 
 		$isModify = $this->ProviderModel->modifyProvider($id,$serviceData);		

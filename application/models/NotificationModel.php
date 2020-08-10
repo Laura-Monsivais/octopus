@@ -19,11 +19,11 @@ class NotificationModel extends CI_Model {
     }
 
     public function queryAllNotification() { 
-        return $this->db->query("SELECT * FROM notificación")->result_array();
+        return $this->db->query("SELECT * FROM notificacion")->result_array();
     }
 
     public function countAllNotification() { 
-        $array = $this->db->query("SELECT * FROM notificación")->result_array();
+        $array = $this->db->query("SELECT * FROM notificacion")->result_array();
         return count($array);
     }
 }

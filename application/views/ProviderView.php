@@ -129,7 +129,7 @@
                                         foreach ($providers as $person) {
                                             echo "<tr >";
                                             echo "<td class='text-center'>
-                                                <a class='btn btn-outline-info disabled' href='${path}/ProviderController/processEditAdministrador/" . $person["id_proveedor"] . "'>&nbsp;&nbsp;Editar&nbsp;&nbsp;</a>
+                                                <a class='btn btn-outline-info' href='${path}/ProviderController/modifyProvider/" . $person["id_proveedor"] . "'>&nbsp;&nbsp;Editar&nbsp;&nbsp;</a>
                                                 <a class='btn btn-danger' href='${path}/ProviderController/processDeleteProvider/" . $person["id_proveedor"] . "'>Eliminar</a>
                                                 </td>";
                                             echo "<td >" . $person["nombre"] . "</td>";
