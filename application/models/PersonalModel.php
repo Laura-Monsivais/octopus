@@ -21,4 +21,15 @@ class PersonalModel extends CI_Model {
             a.horario, a.fecha, a.falto, a.nota FROM personal p INNER JOIN asistencia a ON p.id_personal = a.id_personal";
         return $this->db->query($sql)->result_array();        
     }
+
+    public function queryAllPersonal() {
+        $this->db->select("id_personal, nombre, apellido_paterno, apellido_materno");
+        $this->db->from("personal");
+        return  $this->db->get()->result_array();
+    }
+
+    public function queryPersonalById($idPerson) {
+        $query = "SELECT * FROM personal WHERE id_personal = ?"; 
+        return $this->db->query($query, $idPerson)->result_array();       
+    }
 }
