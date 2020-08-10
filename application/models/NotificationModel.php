@@ -10,7 +10,7 @@ class NotificationModel extends CI_Model {
     public function detonateAssistanceNotification($assistence, $idPerson) {
         if ($assistence) {
             $personInfo = $this->PersonalModel->queryPersonalById($idPerson);
-            $assistanceNotificationDescription = "La empleado " . $personInfo[0]["nombre"] . " " 
+            $assistanceNotificationDescription = "El empleado " . $personInfo[0]["nombre"] . " " 
                 .  $personInfo[0]["apellido_paterno"] . " " .  $personInfo[0]["apellido_materno"] . " no asistió en día de hoy, 
                  su número de teléfono es " .  $personInfo[0]["telefono"] . " para contactarlo";
             $data = array("descripcion" => $assistanceNotificationDescription);
