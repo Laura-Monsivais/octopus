@@ -1,5 +1,8 @@
 <div class="page-wrapper">
-    <div class="container-fluid">
+<div class="col-md-12">
+        <div class="box">
+            <div class="box-header with-border ">
+                <h1 class="box-title font-weight-bold text-info">Importar/descargar archivos</h1>
         <div class="card">
             <div class="card-body">
                 <form action="<?php echo site_url()?>/ImportFileController/subirArchivo" method="POST"
@@ -59,7 +62,10 @@
                             echo "<td >" . $archivo["nombre_archivo"] . "</td>";
                             echo "<td >" . $archivo["ruta"] . "</td>";
                             echo "<td >" . $archivo["categoria"] . "</td>";
-                            echo "<td class='text-center'><a class='btn btn-primary' href='${path}/ImportFileController/descargarArchivo/" . $archivo["ruta"] . "'>Descargar</a></td>"; 
+                            echo "<td class='text-center'>
+                                <a class='btn btn-success' href='${path}/ImportFileController/descargarArchivo/" . $archivo["ruta"] . "'>Descargar</a>
+                                <a class='btn btn-outline-danger' href='${path}/ImportFileController/eliminarArchivoActual/" . $archivo["id_archivo"] . "'>Eliminar</a>
+                            </td>"; 
                             echo "</tr>";
                         }
                     ?>
