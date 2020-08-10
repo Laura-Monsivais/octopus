@@ -8,7 +8,7 @@
                         <label for="inputHorizontalDnger" class="col-sm-3 col-form-label">Nombre completo</label>
                         <div class="col-sm-9">
                             <div class="custom-file">
-                                <input type="text" name="Name" class="form-control" maxlength="10" required>
+                                <input type="text" name="Name" class="form-control" maxlength="50" required>
                             </div>
                         </div>
                     </div>
@@ -56,38 +56,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <table class="table table-bordered">
-                        <thead>
-                            <tr class="text-center">
-                                <td scope="col" width="20%">Calle</td>
-                                <td scope="col" width="15%">C.P.</td>
-                                <td scope="col" width="20%">Municipio</td>
-                                <td scope="col">Estado</td>
-                                <td scope="col">País</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="text-center">
-                                <td scope="col"><input type="text" name="" class="form-control" required></td>
-                                <td scope="col"><input type="text" name="" class="form-control" required></td>
-                                <td scope="col"><input type="text" name="" class="form-control" required></td>
-                                <td scope="col">
-                                    <div class="col-sm-12">
-                                        <select name="categoria" class="custom-select">
-                                            <option value=""></option>
-                                        </select>
-                                    </div>
-                                </td>
-                                <td scope="col">
-                                    <div class="col-sm-12">
-                                        <select name="categoria" class="custom-select">
-                                            <option value=""></option>
-                                        </select>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table> -->
                     <div class="form-group text-center">
                         <button type="submit" class="btn btn-outline-info">Guardar</button>
                     </div>
@@ -97,34 +65,30 @@
 
         <div class="card">
             <div class="card-body">
-                    <div class="table-responsive">
-                            <div class="row">
-                                <div class="col-6">
-                                    <div>		
-                                        <input type="search" name="Search" class="form-control" placeholder="Buscar por nombre del proveedor" aria-controls="tbllistado">
-                                    </div>
-                                </div>	
+                <div class="table-responsive">
+                    <div class="row">
+                        <div class="col-6">
+                            <div>
+                                <input type="search" name="Search" class="form-control"
+                                    placeholder="Buscar por nombre del proveedor" aria-controls="tbllistado">
                             </div>
-                            <hr>
-                            <table class="table table-striped table-bordered table-hover">
-                                <thead class="thead-dark text-center">
-                                    <tr>
-                                        <th scope="col">Acciones</th>
-                                        <th scope="col">Nombre</th>
-                                        <th scope="col">Tipo</th>
-                                        <th scope="col">Preferible</th>
-                                        <th scope="col">Teléfono</th>
-                                        <th scope="col">Correo electrónico</th>
-                                        <th scope="col">Dirección</th>
-                                        <!-- <th scope="col">Calle</th>
-                                        <th scope="col">C.P.</th>
-                                        <th scope="col">Municipio</th>
-                                        <th scope="col">Estado</th>
-                                        <th scope="col">País</th> -->
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php 
+                        </div>
+                    </div>
+                    <hr>
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead class="thead-dark text-center">
+                            <tr>
+                                <th scope="col">Acciones</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Tipo</th>
+                                <th scope="col">Preferible</th>
+                                <th scope="col">Teléfono</th>
+                                <th scope="col">Correo electrónico</th>
+                                <th scope="col">Dirección</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php 
                                         $path = site_url();
                                         foreach ($providers as $person) {
                                             echo "<tr >";
@@ -141,10 +105,10 @@
                                             echo "</tr>";
                                         }
                                     ?>
-                                </tbody>
-                            </table>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
