@@ -44,7 +44,7 @@ class PersonalModel extends CI_Model {
          return $query->row();
      }
 
-     public function modifyPersonal($id_servicio,$data) {
+     public function modifyPersonal($id_personal,$data) {
         $this->db->where('id_personal', $id_personal);
         $result = $this->db->update('personal', $data);
         if ($result) {

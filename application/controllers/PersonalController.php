@@ -15,7 +15,7 @@ class PersonalController extends CI_Controller {
 			"countNotifications" => $this->NotificationModel->countAllNotification()
 		);
 		$this->load->view("components/LoaderComponent");
-		$this->load->view("components/HeaderComponent");
+		$this->load->view("components/HeaderComponent", $data);
 		$this->load->view("components/NavbarComponent");
 		$this->load->view("PersonalView", $data);		
 		$this->load->view("components/FooterComponent");
@@ -69,23 +69,23 @@ class PersonalController extends CI_Controller {
 	public function updatePersonal() {
 		$id = $this->input->post('idU');
 		$PersonalData = array(
-		    'nombre' => $this->input->post('nombreU'),
-			'apellido_paterno' => $this->input->post('apellido_paternoU'),
-			'apellido_materno' => $this->input->post('apellido_maternoU'),
-			'edad' => $this->input->post('edadU'),
-			'fecha_nacimiento' => $this->input->post('fecha_nacimientoU'),
-			'RFC' => $this->input->post('RFCU'),
-			'fecha_ingreso' => $this->input->post('fecha_ingresoU'),
-			'usuario' => $this->input->post('usuarioU'),
-			'contrasena' => $this->generateEncryption($this->input->post('contrasenaU')),
-			'telefono' => $this->input->post('telefonoU'),
-			'calle' => $this->input->post('calleU'),
-			'fraccionamiento' => $this->input->post('fraccionamientoU'),
-			'codigo_postal' => $this->input->post('codigo_postalU'),
-			'numero' => $this->input->post('numeroU'),
-			'pais' => $this->input->post('paisU'),
-			'experiencia' => $this->input->post('experienciaU'),
-			'estatus' => 1
+		    "nombre" => $this->input->post("nombre"),
+			"apellido_paterno" => $this->input->post("apellidoPaterno"),
+			"apellido_materno" => $this->input->post("apellidoMaterno"),
+			"edad" => $this->input->post("edad"),
+			"fecha_nacimiento" => $this->input->post("fechaNacimiento"),
+			"RFC" => $this->input->post("RFC"),
+			"fecha_ingreso" => $this->input->post("fechaIngreso"),
+			"usuario" => $this->input->post("nombreUsario"),
+			"contrasena" => $this->generateEncryption($this->input->post("contrasena")),
+			"telefono" => $this->input->post("telefono"),
+			"calle" => $this->input->post("calle"),
+			"fraccionamiento" => $this->input->post("fraccionamiento"),
+			"codigo_postal" => $this->input->post("codigoPostal"),
+			"numero" => $this->input->post("numero"),
+			"pais" => $this->input->post("pais"),
+			"experiencia" => $this->input->post("experiencia"),
+			"estatus" => 1
 		);
 
 		$isModify = $this->PersonalModel->modifyPersonal($id,$PersonalData);		

@@ -2,6 +2,7 @@
     <div class="col-md-12">
         <div class="box">
             <div class="box-header with-border ">
+                <h1 class="box-title font-weight-bold text-info">Gestión de usuarios</h1>
                 <div class="card">
                     <div class="card-body">
                         <form action="<?php echo site_url()?>/PersonalController/updatePersonal" method="POST"
@@ -118,7 +119,7 @@
                             <input type="hidden" name="idU" class="form-control" maxlength="10"
                                 value="<?php echo $data->id_personal; ?>">
                             <div class="form-group text-center">
-                                <button type="submit" class="btn btn-outline-info">Actualizar</button>
+                                <button type="submit" class="btn btn-outline-info">Guardar</button>
                                 <a class='btn btn-primary'
                                     href='<?php echo site_url()?>/PersonalController'>Regresar</a>
                             </div>

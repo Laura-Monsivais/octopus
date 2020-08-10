@@ -11,7 +11,7 @@
                         <label for="inputHorizontalDnger" class="col-sm-3 col-form-label">Título</label>
                         <div class="col-sm-9">
                             <div class="custom-file">
-                                <input type="text" name="titImagen" class="form-control" maxlength="10" required>
+                                <input type="text" name="titImagen" class="form-control" maxlength="20" required>
                             </div>
                         </div>
                     </div>

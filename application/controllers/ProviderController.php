@@ -6,14 +6,16 @@ class ProviderController extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		$this->load->model("ProviderModel");
+		$this->load->model("NotificationModel");
 	}
 
 	public function index($data = "") {
 		$data = array(
-			"providers" => $this->ProviderModel->queryAllProviders()
+			"providers" => $this->ProviderModel->queryAllProviders(),
+			"countNotifications" => $this->NotificationModel->countAllNotification()
 		);
 		$this->load->view("components/LoaderComponent");
-		$this->load->view("components/HeaderComponent");
+		$this->load->view("components/HeaderComponent", $data);
 		$this->load->view("components/NavbarComponent");
 		$this->load->view("ProviderView", $data);
 		$this->load->view("components/FooterComponent");

@@ -15,7 +15,6 @@ class MainController extends CI_Controller {
 		if($persons != null){
 			foreach($persons as $person){
 				$testdate = date_format(date_create($person["fecha_nacimiento"]),"m-d");
-				print_r($testdate);
 				if($testdate == date("m-d")){
 					$this->NotificationModel->detonateBirthdayNotification($person["id_personal"]);
 				}

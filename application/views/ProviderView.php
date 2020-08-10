@@ -1,92 +1,99 @@
 <div class="page-wrapper">
-    <div class="container-fluid">
-        <div class="card">
-            <div class="card-body">
-                <form action="<?php echo site_url()?>/ProviderController/AgregarProveedor" method="POST"
-                    enctype="multipart/form-data" class="mt-3 form-horizontal">
-                    <div class="form-group row">
-                        <label for="inputHorizontalDnger" class="col-sm-3 col-form-label">Nombre completo</label>
-                        <div class="col-sm-9">
-                            <div class="custom-file">
-                                <input type="text" name="Name" class="form-control" maxlength="50" required>
+    <div class="col-md-12">
+        <div class="box">
+            <div class="box-header with-border ">
+                <h1 class="box-title font-weight-bold text-info">Proveedores</h1>
+                <div class="card">
+                    <div class="card-body">
+                        <form action="<?php echo site_url()?>/ProviderController/AgregarProveedor" method="POST"
+                            enctype="multipart/form-data" class="mt-3 form-horizontal">
+                            <div class="form-group row">
+                                <label for="inputHorizontalDnger" class="col-sm-3 col-form-label">Nombre
+                                    completo</label>
+                                <div class="col-sm-9">
+                                    <div class="custom-file">
+                                        <input type="text" name="Name" class="form-control" maxlength="50" required>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="inputHorizontalDnger" class="col-sm-3 col-form-label">Tipo</label>
-                        <div class="col-sm-9">
-                            <select name="Type" class="custom-select">
-                                <option selected=""></option>
-                                <option value="Físico">Físico</option>
-                                <option value="Moral">Moral</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="inputHorizontalDnger" class="col-sm-3 col-form-label">Preferible</label>
-                        <div class="col-sm-9">
-                            <select name="Preferential" class="custom-select">
-                                <option selected=""></option>
-                                <option value="1">Sí</option>
-                                <option value="0">No</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="inputHorizontalDnger" class="col-sm-3 col-form-label">Teléfono</label>
-                        <div class="col-sm-9">
-                            <div class="custom-file">
-                                <input type="tel" name="Phone" class="form-control" maxlength="10" required>
+                            <div class="form-group row">
+                                <label for="inputHorizontalDnger" class="col-sm-3 col-form-label">Tipo</label>
+                                <div class="col-sm-9">
+                                    <select name="Type" class="custom-select">
+                                        <option selected=""></option>
+                                        <option value="Físico">Físico</option>
+                                        <option value="Moral">Moral</option>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="inputHorizontalDnger" class="col-sm-3 col-form-label">Correo electrónico</label>
-                        <div class="col-sm-9">
-                            <div class="custom-file">
-                                <input type="email" name="Email" class="form-control" maxlength="50" required>
+                            <div class="form-group row">
+                                <label for="inputHorizontalDnger" class="col-sm-3 col-form-label">Preferible</label>
+                                <div class="col-sm-9">
+                                    <select name="Preferential" class="custom-select">
+                                        <option selected=""></option>
+                                        <option value="1">Sí</option>
+                                        <option value="0">No</option>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="inputHorizontalDnger" class="col-sm-3 col-form-label">Dirección</label>
-                        <div class="col-sm-9">
-                            <div class="custom-file">
-                                <input type="text" name="Address" class="form-control" maxlength="100" required>
+                            <div class="form-group row">
+                                <label for="inputHorizontalDnger" class="col-sm-3 col-form-label">Teléfono</label>
+                                <div class="col-sm-9">
+                                    <div class="custom-file">
+                                        <input type="tel" name="Phone" class="form-control" maxlength="10" required>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="form-group text-center">
-                        <button type="submit" class="btn btn-outline-info">Guardar</button>
+                            <div class="form-group row">
+                                <label for="inputHorizontalDnger" class="col-sm-3 col-form-label">Correo
+                                    electrónico</label>
+                                <div class="col-sm-9">
+                                    <div class="custom-file">
+                                        <input type="email" name="Email" class="form-control" maxlength="50" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputHorizontalDnger" class="col-sm-3 col-form-label">Dirección</label>
+                                <div class="col-sm-9">
+                                    <div class="custom-file">
+                                        <input type="text" name="Address" class="form-control" maxlength="100" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group text-center">
+                                <button type="submit" class="btn btn-outline-info">Guardar</button>
+                            </div>
                     </div>
                 </div>
 
-        <div class="card">
-            <div class="card-body">
-                <div class="table-responsive">
-                    <div class="row">
-                        <div class="col-6">
-                            <div>
-                                <input type="search" name="Search" class="form-control"
-                                    placeholder="Buscar por nombre del proveedor" aria-controls="tbllistado">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div>
+                                        <input type="search" id="search-input" class="form-control"
+                                            placeholder="Filitar por cualquier elemento visible en la tabla"
+                                            aria-controls="tbllistado">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <hr>
-                    <table class="table table-striped table-bordered table-hover">
-                        <thead class="thead-dark text-center">
-                            <tr>
-                                <th scope="col">Acciones</th>
-                                <th scope="col">Nombre</th>
-                                <th scope="col">Tipo</th>
-                                <th scope="col">Preferible</th>
-                                <th scope="col">Teléfono</th>
-                                <th scope="col">Correo electrónico</th>
-                                <th scope="col">Dirección</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php 
+                            <hr>
+                            <table class="table table-striped table-bordered table-hover">
+                                <thead class="thead-dark text-center">
+                                    <tr>
+                                        <th scope="col">Acciones</th>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Tipo</th>
+                                        <th scope="col">Preferible</th>
+                                        <th scope="col">Teléfono</th>
+                                        <th scope="col">Correo electrónico</th>
+                                        <th scope="col">Dirección</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="table-body">
+                                    <?php 
                                         $path = site_url();
                                         foreach ($providers as $person) {
                                             echo "<tr >";
@@ -103,10 +110,20 @@
                                             echo "</tr>";
                                         }
                                     ?>
-                        </tbody>
-                    </table>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+        <script>
+        $(document).ready(function() {
+            $("#search-input").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#table-body tr").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+        </script>

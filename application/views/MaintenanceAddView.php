@@ -21,13 +21,13 @@
                                  </div>
                                  <div class="col-md-4 mb-3">
                                      <label for="validationCustom01">Clave</label>
-                                     <input type="text" class="form-control" name="cl" placeholder="Nombre" required>
+                                     <input type="text" class="form-control" name="cl" placeholder="" required>
                                      <div class="invalid-feedback">
                                          Completa Nombre.
                                      </div>
                                  </div>
                                  <div class="col-md-5 mb-3">
-                                     <label for="validationCustom02">Tipo de Mantenimiento</label>
+                                     <label for="validationCustom02">Tipo de mantenimiento</label>
                                      <select name="mtto" class="custom-select">
 									 <option selected="Lavado">Lavado</option>
                                          <option value="Desinfección y Cloración">Desinfección y Cloración</option>
@@ -42,7 +42,7 @@
                              <div class="form-row">
                                  <div class="col-md-12 mb-3">
                                      <label for="validationCustom03">Observación</label>
-                                     <input type="text" class="form-control" name="obs" placeholder="Observación">
+                                     <input type="text" class="form-control" name="obs" placeholder="">
                                  </div>
                              </div>
                              <div class="form-row">
