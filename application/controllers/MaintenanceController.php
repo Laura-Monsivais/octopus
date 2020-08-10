@@ -12,11 +12,13 @@ class MaintenanceController extends CI_Controller
 	}
 
 	public function index() {
+		$data = array(
+			"equipoList" => $this->MaintenanceModel->Mant_Equipo());
 
 		$this->load->view("components/LoaderComponent");
 		$this->load->view("components/HeaderComponent");
 		$this->load->view("components/NavbarComponent");
-		$this->load->view("MaintenanceView");		
+		$this->load->view("MaintenanceView",$data);		
 		$this->load->view("components/FooterComponent");}
 	
 
@@ -24,6 +26,7 @@ class MaintenanceController extends CI_Controller
 	{
 		$data = array(
 			"mttoList" => $this->MaintenanceModel->getMantenimiento(),
+			
 		
 		);
 		$this->load->view("components/LoaderComponent");
@@ -56,7 +59,7 @@ class MaintenanceController extends CI_Controller
 			$this->input->post(null, false);
 			$this->output->set_status_header(500);
 		} else {
-			return redirect(site_url() . "/MaintenanceController/indexMtto/");
+			return redirect(site_url() . "/MaintenanceController/indexMtto");
 		}
 	}
 	public function ModificarMantenimiento($idMtto = null) {
@@ -82,13 +85,13 @@ class MaintenanceController extends CI_Controller
 
 		$isModify = $this->MaintenanceModel->UpdateMtto($idMtto,$MttoData);		
 		if ($isModify) {
-			redirect('/MaintenanceController/indexMtto/', 'location');
+			redirect('/MaintenanceController/indexMtto', 'location');
 		} 
 	}
 	public function EliminarMtto($idMtto) {
 		$isDelete = $this->MaintenanceModel->DeleteMtto($idMtto);		
 		if ($isDelete) {
-			redirect('/MaintenanceController/indexMtto/', 'location');
+			redirect('/MaintenanceController/indexMtto', 'location');
 		} 
 	}
 

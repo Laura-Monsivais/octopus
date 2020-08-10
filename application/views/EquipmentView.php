@@ -160,7 +160,7 @@
                             } else {
                                 echo "<td class='text-center'><a class='btn btn-success' href='${path}/EquipmentController/EndMaintenance/" .  $equipo["id_equipo"] . "'><i title='Terminar Mantenimiento' class='fas fa-check-circle' ></a></td>"; 
 							}
-							echo "<td data-target='nombre'>" . $equipo["nombre"] . "</td>";
+							echo "<td data-target='nombre'>" . $equipo["nombre_equipo"] . "</td>";
                             echo "<td >" . $equipo["descripcion"] . "</td>";
                             echo "<td >" . $equipo["marca"] . "</td>";
 							echo "<td >" . $equipo["modelo"] . "</td>";
@@ -176,7 +176,7 @@
 							if ($equipo["matenimiento"] == 1) {
 								echo "<td  class='text-center'><a class='btn btn-outline-primary' href='${path}/EquipmentController/ModificarEquipo/" .  $equipo["id_equipo"] . "'>
 								<i title='Actualizar' class='fas fa-pencil-alt' ></i></a>
-								<td class='text-center'><a class='btn btn-warning' href='${path}/MaintenanceController/indexMtto/" .  $equipo["id_equipo"] . "'>
+								<td class='text-center'><a class='btn btn-warning' href='${path}/MaintenanceController/indexMtto/'>
 								<i title='Mantenimiento' class='fas fa-people-carry'></i></a>
 								
 							</td>"; 

@@ -17,6 +17,7 @@ class MaintenanceModel extends CI_Model {
 	return $this->db->insert("mantenimiento", $data);
 	}
 
+
 	public function selectAllPersonal() {
         $query = $this->db->query("SELECT id_personal, nombre, apellido_paterno, apellido_materno FROM personal");
 
@@ -29,7 +30,30 @@ class MaintenanceModel extends CI_Model {
         $query = $this->db->get();
 
         return $query->result_array();
-    }
+	}
+
+	public function Mant_Equipo() {
+        $this->db->select('*');
+        $this->db->from('mantenimiento_equipo m');
+		$this->db->join('mantenimiento me', 'm.id_mantenimiento = me.id_mantenimiento');
+		$this->db->join('equipo e', 'm.id_equipo = e.id_equipo');
+		$this->db->join('personal p', 'p.id_personal= e.id_personal');
+
+
+        $query = $this->db->get();
+
+        return $query->result_array();
+	}
+
+
+
+
+	public function getEquipo()
+	{
+		return $this->db->query("SELECT * FROM equipo")->result();
+	}
+	
+	
 
 	public function ListoMantenimiento($id_equipo,$data) {
         $this->db->where('id_equipo', $id_equipo);

@@ -13,20 +13,24 @@
                                             <tr class="text-center">
                                                 <th scope="col">Nombre del Equipo</th>
                                                 <th scope="col">Tipo de Mantenimiento</th>
-                                                <th scope="col">Persona Asignada</th>
-                                                <th scope="col"><i class="fas fa-cogs"
-                                                        class="d-flex align-items-center"></i>
+                                                <th scope="col">Empleado Asignado</th>
                                                 </th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td scope="row">Bascula</td>
-                                                <td>Sirve para pesar</td>
-                                                <td>Toro</td>
-                                                <td><i title="Actualizar" class="fas fa-pencil-alt mr-3" type="button"
-                                                        data-toggle="modal" data-target="#signup-modal"></i><i
-                                                        title="Eliminar" class="fas fa-trash mr-3" id="btn_delete"></i>
+											
+                                            <?php  
+							         
+									 $equipos = json_decode(json_encode($equipoList), true);
+									 $path = site_url();
+									 foreach ($equipos as $equipo) {
+										 echo "<tr id_equipo=".$equipo["id_equipo"].">";
+										 echo "<td data-target='nombre'>" . $equipo["nombre_equipo"] . "</td>";
+										 echo "<td 'tipo'>" . $equipo["tipo"] . "</td>";
+										 echo "<td >" . $equipo["nombre"] . ' ' .  $equipo["apellido_paterno"] . ' ' .  $equipo["apellido_materno"] . "</td>";}
+												?>
+																								
                                             </tr>
                                         </tbody>
                                     </table>
