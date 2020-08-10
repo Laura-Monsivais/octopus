@@ -2,7 +2,7 @@
 	"description": "The CodeIgniter framework",
 	"name": "codeigniter/framework",
 	"type": "project",
-	"homepage": "https://codeigniter.com",
+	"homepage": "https://octopusdev.herokuapp.com/",
 	"license": "MIT",
 	"support": {
 		"forum": "http://forum.codeigniter.com/",
