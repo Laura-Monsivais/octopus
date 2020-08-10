@@ -11,7 +11,7 @@
                              <div class="form-group text-right"
                                  style="flex-direction:column;justify-content: flex-end;">
 
-                                 <a class='btn btn-light' href='<?php echo site_url()?>/EquipmentController/'>x</a>
+                                 <a class='btn btn-light' href='<?php echo site_url()?>/EquipmentController'>x</a>
                              </div>
                              <div class="form-row">
                                  <div class="col-md-3 mb-3">
@@ -26,14 +26,17 @@
                                          Completa Nombre.
                                      </div>
                                  </div>
-
                                  <div class="col-md-5 mb-3">
                                      <label for="validationCustom02">Tipo de Mantenimiento</label>
-                                     <input type="text" class="form-control" name="mtto" placeholder="Descripción"
-                                         required>
-                                     <div class="invalid-feedback">
-                                         Completa Tipo Mantenimiento.
-                                     </div>
+                                     <select name="mtto" class="custom-select">
+									 <option selected="Lavado">Lavado</option>
+                                         <option value="Desinfección y Cloración">Desinfección y Cloración</option>
+                                         <option value="Verificación/Corrección">Verificación/Corrección</option>
+                                         <option value="Calibración">Calibración</option>
+										 <option selected="Control de Plagas">Control de Plagas</option>
+                                         <option value="Fumigación">Fumigación</option>
+                                         <option value="Análisis del Agua">Análisis del Agua</option>
+                                     </select>
                                  </div>
                              </div>
                              <div class="form-row">
@@ -67,6 +70,55 @@
                  </div><!-- /.modal-content -->
              </div><!-- /.modal-dialog -->
          </div><!-- /.modal -->
+         <div class="table-responsive-sm">
+             <div class="col-md-12 mb-1">
+                 <table class="table table-striped table-hover text-center">
+                     <thead class="thead-dark">
+                         <tr class="text-center">
+                             <th scope="col">Clave</th>
+                             <th scope="col">Tipo de Mantenimiento</th>
+                             <th scope="col">Observación</th>
+                             <th scope="col">Fecha de Entrada</th>
+                             <th scope="col">Fecha de Salida</th>
+                             <th scope="col"></th>
+                             <th scope="col">
+                             </th>
+                         </tr>
+                     </thead>
+
+                     <tbody>
+                         <?php 
+                       $mttos = json_decode(json_encode($mttoList), true);
+					   $path = site_url();
+					   foreach ($mttos as $mtto) {
+						   echo "<tr id=".$mtto["id_mantenimiento"].">";
+          
+							echo "<td data-target='cl'>" . $mtto["clave"] . "</td>";
+                            echo "<td >" . $mtto["tipo"] . "</td>";
+                            echo "<td >" . $mtto["observacion"] . "</td>";
+							echo "<td >" . $mtto["fecha_inicio"] . "</td>";
+							echo "<td >" . $mtto["fecha_fin"] . "</td>";
+							
+							echo "<td class='text-center'><a class='btn btn-danger' href='${path}/MaintenanceController/EliminarMtto/" .  $mtto["id_mantenimiento"] . "'>
+							<i title='Eliminar' class='fas fa-trash' id='btn_delete'></i></a>
+							</td>"; 
+							
+								echo "<td  class='text-center'><a class='btn btn-outline-primary' href='${path}/MaintenanceController/ModificarMantenimiento/" .  $mtto["id_mantenimiento"] . "'>
+								<i title='Actualizar' class='fas fa-pencil-alt' ></i></a>
+					
+								
+							</td>"; 
+		
+								}
+							?>
+                     </tbody>
+                 </table>
+             </div>
+         </div>
+         </table>
+
+
+
 
          <script script>
          (function() {

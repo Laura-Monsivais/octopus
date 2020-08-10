@@ -14,7 +14,7 @@
                                         required >
                                     <div class="invalid-feedback">
                                         Completa Nombre.
-                                         </div>
+                                    </div>
                                 </div>
                                 <div class="col-md-8 mb-3">
                                     <label for="validationCustom02">Descripción</label>
@@ -81,16 +81,16 @@
                                         <option value="1">Si</option>
                                         <option value="0">No</option>
                                     </select>
-									<div class="invalid-feedback">
+                                    <div class="invalid-feedback">
                                         Completa Fecha de Adquisición.
                                     </div>
                                 </div>
                                 <div class="col-md-4 mb-3">
                                     <label for="validationCustom05">Persona asignada</label>
                                     <select name="id_personal" class="custom-select" id="validationCustom05" required>
-									<div class="invalid-feedback">
-                                        Completa Fecha de Adquisición.
-                                    </div>
+                                        <div class="invalid-feedback">
+                                            Completa Fecha de Adquisición.
+                                        </div>
                                         <option selected=""></option>
                                         <?php  
                                     $results = $this->EquipmentModel->selectAllPersonal();
@@ -140,13 +140,13 @@
                                     <th scope="col">Costo</th>
                                     <th scope="col">Stock</th>
                                     <th scope="col">Fecha de adquisición</th>
-                                    <th scope="col">Requiere Mantenimiento</th>
-                                    <th scope="col">Persona asignada</th>
-									<th scope="col" ></th>
-									<th scope="col"></th>
-									<th scope="col" style= "border-top-style: dotted;"></th>
-									
-                                    
+                                    <th scope="col">Mantenimiento</th>
+                                    <th scope="col">Empleado Asignado</th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                    <th scope="col" style="border-top-style: dotted;"></th>
+
+
                                 </tr>
                             </thead>
                             <tbody>
@@ -160,7 +160,7 @@
                             } else {
                                 echo "<td class='text-center'><a class='btn btn-success' href='${path}/EquipmentController/EndMaintenance/" .  $equipo["id_equipo"] . "'><i title='Terminar Mantenimiento' class='fas fa-check-circle' ></a></td>"; 
 							}
-							echo "<td data-target='nombre'>" . $equipo["nombre"] . "</td>";
+							echo "<td data-target='nombre'>" . $equipo["nombre_equipo"] . "</td>";
                             echo "<td >" . $equipo["descripcion"] . "</td>";
                             echo "<td >" . $equipo["marca"] . "</td>";
 							echo "<td >" . $equipo["modelo"] . "</td>";
@@ -174,13 +174,20 @@
 							<i title='Eliminar' class='fas fa-trash' id='btn_delete'></i></a>
 							</td>"; 
 							if ($equipo["matenimiento"] == 1) {
-								echo "<td  class='text-center'><a class='btn btn-dark' href='${path}/EquipmentController/ModificarEquipo/" .  $equipo["id_equipo"] . "'>
+								echo "<td  class='text-center'><a class='btn btn-outline-primary' href='${path}/EquipmentController/ModificarEquipo/" .  $equipo["id_equipo"] . "'>
 								<i title='Actualizar' class='fas fa-pencil-alt' ></i></a>
-								<td class='text-center'><a class='btn btn-info' href='${path}/MaintenanceController/indexMtto/" .  $equipo["id_equipo"] . "'>
-								<i title='Mantenimiento' class='fas fa-align-center'></i></a>
+								<td class='text-center'><a class='btn btn-warning' href='${path}/MaintenanceController/indexMtto/'>
+								<i title='Mantenimiento' class='fas fa-people-carry'></i></a>
 								
 							</td>"; 
 							 } else {
+								 
+
+								echo "<td class='text-center'><a class='btn btn-secondary' href='javascript:void()'><i title='Terminado' class='fas fa-pencil-alt' '></i></a></td>"; 
+								echo "<td class='text-center'><a class='btn btn-secondary' href='javascript:void()'><i title='Terminado' class='fas fa-people-carry' '></i></a></td>"; 
+
+
+
 									 
 									}
 									echo "</tr>";

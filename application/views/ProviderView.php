@@ -59,9 +59,7 @@
                     <div class="form-group text-center">
                         <button type="submit" class="btn btn-outline-info">Guardar</button>
                     </div>
-                </form>
-            </div>
-        </div>
+                </div>
 
         <div class="card">
             <div class="card-body">
