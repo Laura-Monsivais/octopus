@@ -11,7 +11,7 @@
                              <div class="form-group text-right"
                                  style="flex-direction:column;justify-content: flex-end;">
 
-                                 <a class='btn btn-light' href='<?php echo site_url()?>/EquipmentController/'>x</a>
+                                 <a class='btn btn-light' href='<?php echo site_url()?>/EquipmentController'>x</a>
                              </div>
                              <div class="form-row">
                                  <div class="col-md-3 mb-3">

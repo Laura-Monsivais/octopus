@@ -10,7 +10,7 @@
                             <div class="form-group text-right" style="flex-direction:column;justify-content: flex-end;">
 
                                 <a class='btn btn-light'
-                                    href='<?php echo site_url()?>/MaintenanceController/indexMtto/'>x</a>
+                                    href='<?php echo site_url()?>/MaintenanceController/indexMtto'>x</a>
                             </div>
                             <input type="hidden" id="id_mantenimiento" name="id_mantenimiento"
                                 value="<?php echo $data->id_mantenimiento; ?>">

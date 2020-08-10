@@ -1,101 +1,107 @@
 <div class="page-wrapper">
-    <div class="container-fluid">
-        <div class="card">
-            <div class="card-body">
-                <form action="<?php echo site_url()?>/ImportFileController/subirArchivo" method="POST"
-                    enctype="multipart/form-data" class="mt-3 form-horizontal">
-                    <div class="form-group row">
-                        <label for="inputHorizontalDnger" class="col-sm-3 col-form-label">Nombre completo</label>
-                        <div class="col-sm-9">
-                            <div class="custom-file">
-                                <input type="text" name="" class="form-control" maxlength="10" required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="inputHorizontalDnger" class="col-sm-3 col-form-label">Tipo</label>
-                        <div class="col-sm-9">
-                            <select name="" class="custom-select">
-                                <option selected=""></option>
-                                <option value="Físico">Físico</option>
-                                <option value="Moral">Moral</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="inputHorizontalDnger" class="col-sm-3 col-form-label">Preferible</label>
-                        <div class="col-sm-9">
-                            <select name="" class="custom-select">
-                                <option selected=""></option>
-                                <option value="Sí">Sí</option>
-                                <option value="No">No</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="inputHorizontalDnger" class="col-sm-3 col-form-label">Teléfono</label>
-                        <div class="col-sm-9">
-                            <div class="custom-file">
-                                <input type="tel" name="" class="form-control" maxlength="10" required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="inputHorizontalDnger" class="col-sm-3 col-form-label">Correo electrónico</label>
-                        <div class="col-sm-9">
-                            <div class="custom-file">
-                                <input type="email" name="" class="form-control" maxlength="10" required>
-                            </div>
-                        </div>
-                    </div>
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr class="text-center">
-                                <td scope="col" width="20%">Calle</td>
-                                <td scope="col" width="15%">C.P.</td>
-                                <td scope="col" width="20%">Municipio</td>
-                                <td scope="col">Estado</td>
-                                <td scope="col">País</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="text-center">
-                                <td scope="col"><input type="text" name="" class="form-control" required></td>
-                                <td scope="col"><input type="text" name="" class="form-control" required></td>
-                                <td scope="col"><input type="text" name="" class="form-control" required></td>
-                                <td scope="col">
-                                    <div class="col-sm-12">
-                                        <select name="categoria" class="custom-select">
-                                            <option value=""></option>
-                                        </select>
+    <div class="col-md-12">
+        <div class="box">
+            <div class="box-header with-border ">
+                <h1 class="box-title font-weight-bold text-info">Proveedores</h1>
+                <div class="card">
+                    <div class="card-body">
+                        <form action="<?php echo site_url()?>/ImportFileController/subirArchivo" method="POST"
+                            enctype="multipart/form-data" class="mt-3 form-horizontal">
+                            <div class="form-group row">
+                                <label for="inputHorizontalDnger" class="col-sm-3 col-form-label">Nombre
+                                    completo</label>
+                                <div class="col-sm-9">
+                                    <div class="custom-file">
+                                        <input type="text" name="" class="form-control" maxlength="100" required>
                                     </div>
-                                </td>
-                                <td scope="col">
-                                    <div class="col-sm-12">
-                                        <select name="categoria" class="custom-select">
-                                            <option value=""></option>
-                                        </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputHorizontalDnger" class="col-sm-3 col-form-label">Tipo</label>
+                                <div class="col-sm-9">
+                                    <select name="" class="custom-select">
+                                        <option selected=""></option>
+                                        <option value="Físico">Físico</option>
+                                        <option value="Moral">Moral</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputHorizontalDnger" class="col-sm-3 col-form-label">Preferible</label>
+                                <div class="col-sm-9">
+                                    <select name="" class="custom-select">
+                                        <option selected=""></option>
+                                        <option value="Sí">Sí</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputHorizontalDnger" class="col-sm-3 col-form-label">Teléfono</label>
+                                <div class="col-sm-9">
+                                    <div class="custom-file">
+                                        <input type="tel" name="" class="form-control" maxlength="10" required>
                                     </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="form-group text-center">
-                        <button type="submit" class="btn btn-outline-info">Guardar</button>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputHorizontalDnger" class="col-sm-3 col-form-label">Correo
+                                    electrónico</label>
+                                <div class="col-sm-9">
+                                    <div class="custom-file">
+                                        <input type="email" name="" class="form-control" maxlength="100" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr class="text-center">
+                                        <td scope="col" width="20%">Calle</td>
+                                        <td scope="col" width="15%">C.P.</td>
+                                        <td scope="col" width="20%">Municipio</td>
+                                        <td scope="col">Estado</td>
+                                        <td scope="col">País</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="text-center">
+                                        <td scope="col"><input type="text" name="" class="form-control" required></td>
+                                        <td scope="col"><input type="text" name="" class="form-control" required></td>
+                                        <td scope="col"><input type="text" name="" class="form-control" required></td>
+                                        <td scope="col">
+                                            <div class="col-sm-12">
+                                                <select name="categoria" class="custom-select">
+                                                    <option value=""></option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                        <td scope="col">
+                                            <div class="col-sm-12">
+                                                <select name="categoria" class="custom-select">
+                                                    <option value=""></option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="form-group text-center">
+                                <button type="submit" class="btn btn-outline-info">Guardar</button>
+                            </div>
+                        </form>
                     </div>
-                </form>
-            </div>
-        </div>
+                </div>
 
-        <div class="card">
-            <div class="card-body">
-                    <div class="table-responsive">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-responsive">
                             <div class="row">
                                 <div class="col-6">
-                                    <div>		
-                                        <input type="search" class="form-control" placeholder="Buscar por nombre del proveedor" aria-controls="tbllistado">
+                                    <div>
+                                        <input type="search" class="form-control"
+                                            placeholder="Buscar por nombre del proveedor" aria-controls="tbllistado">
                                     </div>
-                                </div>	
+                                </div>
                             </div>
                             <hr>
                             <table class="table table-striped table-bordered table-hover">
@@ -130,8 +136,8 @@
                                     </tr>
                                 </tbody>
                             </table>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
