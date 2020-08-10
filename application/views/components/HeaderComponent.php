@@ -62,7 +62,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle pl-md-3 position-relative" href="<?php base_url()?>MainController">
                             <span><i data-feather="bell" class="svg-icon"></i></span>
-                            <?php if ($countNotifications != null): ?>
+                            <?php if (isset($countNotifications) and $countNotifications != null): ?>
                                 <span class="badge badge-primary notify-no rounded-circle"><?php echo $countNotifications; ?></span>
                             <?php endif; ?>
                         </a>
