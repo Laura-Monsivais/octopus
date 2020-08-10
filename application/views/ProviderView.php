@@ -98,7 +98,7 @@
                                                 </td>";
                                             echo "<td >" . $person["nombre"] . "</td>";
                                             echo "<td >" . $person["tipo"] . "</td>";
-                                            echo "<td >" . $person["preferente"] . "</td>";
+                                            echo "<td >" . $isPreferent = $person["preferente"] ? "Si" : "No". "</td>";
                                             echo "<td >" . $person["telefono"] . "</td>";
                                             echo "<td >" . $person["correo"] . "</td>";
                                             echo "<td >" . $person["direccion"] . "</td>";
