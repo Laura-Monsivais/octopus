@@ -12,10 +12,11 @@ class AssistanceController extends CI_Controller {
 
 	public function index() {
 		$data = array(
-			"personal" => $this->PersonalModel->queryAllPersonal()
+			"personal" => $this->PersonalModel->queryAllPersonal(),
+			"countNotifications" => $this->NotificationModel->countAllNotification()
 		);
 		$this->load->view("components/LoaderComponent");
-		$this->load->view("components/HeaderComponent");
+		$this->load->view("components/HeaderComponent", $data);
 		$this->load->view("components/NavbarComponent");
 		$this->load->view("AssistanceView", $data);		
 		$this->load->view("components/FooterComponent");
