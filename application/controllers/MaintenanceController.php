@@ -8,15 +8,24 @@ class MaintenanceController extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model("MaintenanceModel");
+		$this->load->model("NotificationModel");
 	}
 
 	public function index()
 	{
-
 		$this->load->view("components/LoaderComponent");
 		$this->load->view("components/HeaderComponent");
 		$this->load->view("components/NavbarComponent");
 		$this->load->view("MaintenanceView");
+		$this->load->view("components/FooterComponent");
+	}
+
+	public function indexMtto()
+	{
+		$this->load->view("components/LoaderComponent");
+		$this->load->view("components/HeaderComponent");
+		$this->load->view("components/NavbarComponent");
+		$this->load->view("MaintenanceAddView");
 		$this->load->view("components/FooterComponent");
 	}
 
@@ -26,8 +35,13 @@ class MaintenanceController extends CI_Controller
 		$this->load->view("EquipmentView");
 	}
 
-	public function AgregarMantenimiento()
-	{
+	public function AgregarMantenimiento(){
+	$this->load->view("components/LoaderComponent");
+			$this->load->view("components/HeaderComponent");
+			$this->load->view("components/NavbarComponent");
+			$this->load->view("MaintenanceUpdateView");
+			$this->load->view("components/FooterComponent");
+	
 		$clave = $this->input->post('cl');
 		$tipo = $this->input->post('mtto');
 		$observacion = $this->input->post('obs');

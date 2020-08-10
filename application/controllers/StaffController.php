@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class StaffController extends CI_Controller {
-
+	
 	public function __construct() {
 		parent::__construct();
 		$this->load->model("StaffModel");
@@ -10,6 +10,7 @@ class StaffController extends CI_Controller {
 
 	public function index() {
 		$data = array("personal" => $this->StaffModel->queryAllStaffUsers());
+
 		$this->load->view("components/LoaderComponent");
 		$this->load->view("components/HeaderComponent");
 		$this->load->view("components/NavbarComponent");
