@@ -32,4 +32,19 @@ class PersonalModel extends CI_Model {
         $query = "SELECT * FROM personal WHERE id_personal = ?"; 
         return $this->db->query($query, $idPerson)->result_array();       
     }
+
+    public function getPersonalForModify($id_personal) {
+        $query = $this->db->query("SELECT * FROM personal WHERE id_personal = {$id_personal}");
+         return $query->row();
+     }
+
+     public function modifyPersonal($id_servicio,$data) {
+        $this->db->where('id_personal', $id_personal);
+        $result = $this->db->update('personal', $data);
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

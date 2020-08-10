@@ -54,5 +54,44 @@ class PersonalController extends CI_Controller {
 	private function generateEncryption($password) {
 		$option = ["cost" => 12];
 		return password_hash($password, PASSWORD_DEFAULT, $option);
-    }
+	}
+	
+	public function modifyPersonal($id = null) {
+		$id = $this->db->escape($id);
+		$data = $this->PersonalModel->getPersonalForModify($id);	
+		$countNotifications = $this->NotificationModel->countAllNotification();
+		$this->load->view("components/LoaderComponent");
+		$this->load->view("components/HeaderComponent", compact("countNotifications"));
+		$this->load->view("components/NavbarComponent");
+		$this->load->view("PersonalEditView", compact("data"));
+		$this->load->view("components/FooterComponent");
+	}
+
+	public function updatePersonal() {
+		$id = $this->input->post('idU');
+		$PersonalData = array(
+		    'nombre' => $this->input->post('nombreU'),
+			'apellido_paterno' => $this->input->post('apellido_paternoU'),
+			'apellido_materno' => $this->input->post('apellido_maternoU'),
+			'edad' => $this->input->post('edadU'),
+			'fecha_nacimiento' => $this->input->post('fecha_nacimientoU'),
+			'RFC' => $this->input->post('RFCU'),
+			'fecha_ingreso' => $this->input->post('fecha_ingresoU'),
+			'usuario' => $this->input->post('usuarioU'),
+			'contrasena' => $this->generateEncryption($this->input->post('contrasenaU')),
+			'telefono' => $this->input->post('telefonoU'),
+			'calle' => $this->input->post('calleU'),
+			'fraccionamiento' => $this->input->post('fraccionamientoU'),
+			'codigo_postal' => $this->input->post('codigo_postalU'),
+			'numero' => $this->input->post('numeroU'),
+			'pais' => $this->input->post('paisU'),
+			'experiencia' => $this->input->post('experienciaU'),
+			'estatus' => 1
+		);
+
+		$isModify = $this->PersonalModel->modifyPersonal($id,$PersonalData);		
+		if ($isModify) {
+			redirect('/PersonalController', 'location');
+		} 
+	}
 }
