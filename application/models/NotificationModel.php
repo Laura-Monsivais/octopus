@@ -10,12 +10,21 @@ class NotificationModel extends CI_Model {
     public function detonateAssistanceNotification($assistence, $idPerson) {
         if ($assistence) {
             $personInfo = $this->PersonalModel->queryPersonalById($idPerson);
-            $assistanceNotificationDescription = "El empleado " . $personInfo[0]["nombre"] . " " 
+            $assistanceNotificationDescription = "La empleado " . $personInfo[0]["nombre"] . " " 
                 .  $personInfo[0]["apellido_paterno"] . " " .  $personInfo[0]["apellido_materno"] . " no asistió en día de hoy, 
                  su número de teléfono es " .  $personInfo[0]["telefono"] . " para contactarlo";
             $data = array("descripcion" => $assistanceNotificationDescription);
             $this->db->insert("notificación", $data); 
         }
+    }
+    public function detonateBirthdayNotification($idPerson) {
+            $personInfo = $this->PersonalModel->queryPersonalById($idPerson);
+            $assistanceNotificationDescription = "Hoy es el cumpleaños de  " . $personInfo[0]["nombre"] . " " 
+                .  $personInfo[0]["apellido_paterno"] . " " .  $personInfo[0]["apellido_materno"] . ",¡Felicidades!";
+            $data = array("descripcion" => $assistanceNotificationDescription);
+                if(!$this->checkForDuplicatedNotifications($assistanceNotificationDescription)){
+                    $this->db->insert("notificación", $data);
+                }
     }
 
     public function queryAllNotification() { 
@@ -25,5 +34,14 @@ class NotificationModel extends CI_Model {
     public function countAllNotification() { 
         $array = $this->db->query("SELECT * FROM notificación")->result_array();
         return count($array);
+    }
+
+    public function checkForDuplicatedNotifications($notificationContent){
+        $notifications =$this->queryAllNotification();
+        foreach($notifications as $notification){
+            if($notification["descripcion"] == $notificationContent){
+                return true;
+            }
+        }
     }
 }
