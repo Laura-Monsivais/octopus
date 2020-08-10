@@ -8,7 +8,7 @@
                         <label for="inputHorizontalDnger" class="col-sm-3 col-form-label">Nombre completo</label>
                         <div class="col-sm-9">
                             <div class="custom-file">
-                                <input type="text" name="UName" class="form-control" maxlength="10" required>
+                                <input type="text" name="UName" class="form-control" maxlength="50" required>
                             </div>
                         </div>
                     </div>
