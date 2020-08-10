@@ -1,4 +1,3 @@
-
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -91,7 +90,7 @@ class PersonalController extends CI_Controller {
 
 		$isModify = $this->PersonalModel->modifyPersonal($id,$PersonalData);		
 		if ($isModify) {
-			redirect('/PersonalController', 'location');
+			redirect("PersonalController");
 		} 
 	}
 }

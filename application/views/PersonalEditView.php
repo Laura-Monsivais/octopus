@@ -1,5 +1,5 @@
 <div class="page-wrapper">
-<div class="col-md-12">
+    <div class="col-md-12">
         <div class="box">
             <div class="box-header with-border ">
                 <div class="card">
@@ -50,16 +50,18 @@
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label>Nombre de usuario</label>
-                                    <input type="text" name="nombreUsario" class="form-control" minlength="5" maxlength="30" required>
+                                    <input type="text" name="nombreUsario" class="form-control" minlength="5"
+                                        maxlength="30" required>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label>Contraseña</label>
-                                    <input type="password" name="contrasena" class="form-control" minlength="8" maxlength="30"
-                                        required>
+                                    <input type="password" name="contrasena" class="form-control" minlength="8"
+                                        maxlength="30" required>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label>Vuelve a escribir la contraseña</label>
-                                    <input type="password" name="" class="form-control" minlength="8" maxlength="30" required>
+                                    <input type="password" name="" class="form-control" minlength="8" maxlength="30"
+                                        required>
                                 </div>
                             </div>
                             <div class="form-row">
@@ -113,11 +115,13 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            <input type="hidden" name="idU" class="form-control" maxlength="10" value="<?php echo $data->id_personal; ?>">
-                    <div class="form-group text-center">
-                        <button type="submit" class="btn btn-outline-info">Actualizar</button> 
-                        <a class='btn btn-primary' href='<?php echo site_url()?>/PersonalController' >Regresar</a>
-                    </div>
+                            <input type="hidden" name="idU" class="form-control" maxlength="10"
+                                value="<?php echo $data->id_personal; ?>">
+                            <div class="form-group text-center">
+                                <button type="submit" class="btn btn-outline-info">Actualizar</button>
+                                <a class='btn btn-primary'
+                                    href='<?php echo site_url()?>/PersonalController'>Regresar</a>
+                            </div>
                         </form>
                     </div>
                 </div>
