@@ -2,10 +2,9 @@
 <div class="col-md-12">
         <div class="box">
             <div class="box-header with-border ">
-                <h1 class="box-title font-weight-bold text-info">Gestión de usuarios</h1>
                 <div class="card">
                     <div class="card-body">
-                        <form action="<?php echo site_url()?>/PersonalController/validateFormData" method="POST"
+                        <form action="<?php echo site_url()?>/PersonalController/updatePersonal" method="POST"
                             encname="multipart/form-data" class="mt-3 form-horizontal">
                             <div class="form-row">
                                 <div class="form-group col-md-6">
@@ -114,67 +113,11 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            <div class="form-group text-center">
-                                <button type="submit" class="btn btn-outline-info">Guardar</button>
-                            </div>
-                        </form>
+                            <input type="hidden" name="idU" class="form-control" maxlength="10" value="<?php echo $data->id_personal; ?>">
+                    <div class="form-group text-center">
+                        <button type="submit" class="btn btn-outline-info">Actualizar</button> 
+                        <a class='btn btn-primary' href='<?php echo site_url()?>/PersonalController' >Regresar</a>
                     </div>
-                </div>
-
-
-                <div class="card">
-                    <div class="card-body table-responsive">
-                        <table class="table table-striped table-bordered table-hover">
-                            <thead class="thead-dark text-center">
-                                <tr >
-                                    <th scope="col">Acciones</th>
-                                    <th scope="col">Nombre</th>
-                                    <th scope="col">Apellido paterno</th>
-                                    <th scope="col">Apellido materno</th>
-                                    <th scope="col">Edad</th>
-                                    <th scope="col">Fecha de nacimiento</th>
-                                    <th scope="col">RFC</th>
-                                    <th scope="col">Fecha ingreso</th>
-                                    <th scope="col">Fecha egreso</th>
-                                    <th scope="col">Usuario</th>
-                                    <th scope="col">Teléfono</th>
-                                    <th scope="col">Calle</th>
-                                    <th scope="col">Fraccionamiento</th>
-                                    <th scope="col">Código postal</th>
-                                    <th scope="col">Número</th>
-                                    <th scope="col">País</th>
-                                    <th scope="col">Experiencia</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php 
-                                    $path = site_url();
-                                    foreach ($people as $person) {
-                                        echo "<tr >";
-                                        echo "<td class='text-center'>
-                                                <a class='btn btn-outline-info' href='${path}/PersonalController/modifyPersonal/" . $person["id_personal"] . "'>&nbsp;&nbsp;Editar&nbsp;&nbsp;</a>
-                                                <a class='btn btn-danger' href='${path}/PersonalController/processDeleteAdministrador/" . $person["id_personal"] . "'>Eliminar</a>
-                                            </td>";
-                                        echo "<td >" . $person["nombre"] . "</td>";
-                                        echo "<td >" . $person["apellido_paterno"] . "</td>";
-                                        echo "<td >" . $person["apellido_materno"] . "</td>";
-                                        echo "<td >" . $person["edad"] . "</td>";
-                                        echo "<td >" . $person["fecha_nacimiento"] . "</td>";
-                                        echo "<td >" . $person["RFC"] . "</td>";
-                                        echo "<td >" . $person["fecha_ingreso"] . "</td>";
-                                        echo "<td >" . $person["fecha_egreso"] . "</td>";
-                                        echo "<td >" . $person["usuario"] . "</td>";
-                                        echo "<td >" . $person["telefono"] . "</td>";
-                                        echo "<td >" . $person["calle"] . "</td>";
-                                        echo "<td >" . $person["fraccionamiento"] . "</td>";
-                                        echo "<td >" . $person["codigo_postal"] . "</td>";
-                                        echo "<td >" . $person["numero"] . "</td>";
-                                        echo "<td >" . $person["pais"] . "</td>";
-                                        echo "<td >" . $hasExperience = ($person["experiencia"]) ? "Si" : "No" . "</td>";
-                                        echo "</tr>";
-                                    }
-                                ?>
-                            </tbody>
-                        </table>
+                        </form>
                     </div>
                 </div>
