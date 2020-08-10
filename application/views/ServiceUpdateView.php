@@ -82,7 +82,7 @@
                      <input type="hidden" name="idU" class="form-control" maxlength="10" value="<?php echo $data->id_servicio; ?>">
                     <div class="form-group text-center">
                         <button type="submit" class="btn btn-outline-info">Actualizar</button> 
-                        <a class='btn btn-primary' href='<?php echo site_url()?>/ServiceController/' >Regresar</a>
+                        <a class='btn btn-primary' href='<?php echo site_url()?>/ServiceController' >Regresar</a>
                     </div>
                 </form>
             </div>

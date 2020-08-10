@@ -5,14 +5,17 @@ class StaffController extends CI_Controller {
 	
 	public function __construct() {
 		parent::__construct();
-		$this->load->model("StaffModel");
+		$this->load->model("PersonalModel");
+		$this->load->model("NotificationModel"); 
 	}
 
 	public function index() {
-		$data = array("personal" => $this->StaffModel->queryAllStaffUsers());
-
+		$data = array(
+			"people" => $this->PersonalModel->queryAllPersonalByAssistence(),
+			"countNotifications" => $this->NotificationModel->countAllNotification()
+		);
 		$this->load->view("components/LoaderComponent");
-		$this->load->view("components/HeaderComponent");
+		$this->load->view("components/HeaderComponent", $data);
 		$this->load->view("components/NavbarComponent");
 		$this->load->view("StaffView", $data);		
 		$this->load->view("components/FooterComponent");
