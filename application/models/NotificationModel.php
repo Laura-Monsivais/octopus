@@ -22,7 +22,9 @@ class NotificationModel extends CI_Model {
             $assistanceNotificationDescription = "Hoy es el cumpleaños de  " . $personInfo[0]["nombre"] . " " 
                 .  $personInfo[0]["apellido_paterno"] . " " .  $personInfo[0]["apellido_materno"] . ",¡Felicidades!";
             $data = array("descripcion" => $assistanceNotificationDescription);
-            $this->db->insert("notificación", $data); 
+                if(!$this->checkForDuplicatedNotifications($assistanceNotificationDescription)){
+                    $this->db->insert("notificación", $data);
+                }
     }
 
     public function queryAllNotification() { 
@@ -32,5 +34,14 @@ class NotificationModel extends CI_Model {
     public function countAllNotification() { 
         $array = $this->db->query("SELECT * FROM notificación")->result_array();
         return count($array);
+    }
+
+    public function checkForDuplicatedNotifications($notificationContent){
+        $notifications =$this->queryAllNotification();
+        foreach($notifications as $notification){
+            if($notification["descripcion"] == $notificationContent){
+                return true;
+            }
+        }
     }
 }
