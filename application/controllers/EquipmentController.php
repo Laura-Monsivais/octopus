@@ -6,14 +6,16 @@ class EquipmentController extends CI_Controller {
 	function __construct() { 
 		parent::__construct();
 		$this->load->model("EquipmentModel");  
+		$this->load->model("NotificationModel");
 	} 
 
 	public function index() {
 		$data = array(
-			"equiposList" => $this->EquipmentModel->EquipmentPersonal()
+			"equiposList" => $this->EquipmentModel->EquipmentPersonal(),
+			"countNotifications" => $this->NotificationModel->countAllNotification()
 		);
 		$this->load->view("components/LoaderComponent");
-		$this->load->view("components/HeaderComponent");
+		$this->load->view("components/HeaderComponent", $data);
 		$this->load->view("components/NavbarComponent");
 		$this->load->view("EquipmentView", $data);		
 		$this->load->view("components/FooterComponent");}

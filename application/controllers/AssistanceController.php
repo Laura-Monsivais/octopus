@@ -7,14 +7,16 @@ class AssistanceController extends CI_Controller {
 		parent::__construct();
 		$this->load->model("AssistanceModel");
 		$this->load->model("PersonalModel");
+		$this->load->model("NotificationModel"); 
 	}
 
 	public function index() {
 		$data = array(
-			"personal" => $this->PersonalModel->queryAllPersonal()
+			"personal" => $this->PersonalModel->queryAllPersonal(),
+			"countNotifications" => $this->NotificationModel->countAllNotification()
 		);
 		$this->load->view("components/LoaderComponent");
-		$this->load->view("components/HeaderComponent");
+		$this->load->view("components/HeaderComponent", $data);
 		$this->load->view("components/NavbarComponent");
 		$this->load->view("AssistanceView", $data);		
 		$this->load->view("components/FooterComponent");
@@ -30,6 +32,7 @@ class AssistanceController extends CI_Controller {
 				and $idPerson != null) {
 			$this->AssistanceModel->addAssistanceInfoToPerson($schedule, $date, 
 				$notAssist, $note, $idPerson);
+			$this->NotificationModel->detonateAssistanceNotification($notAssist, $idPerson);
 			redirect("StaffController");
 		}
 	}

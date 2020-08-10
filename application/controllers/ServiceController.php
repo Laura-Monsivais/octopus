@@ -6,15 +6,17 @@ class ServiceController extends CI_Controller {
 	function __construct() {
 		parent::__construct();
 		$this->load->model("ServiceModel");
+		$this->load->model("NotificationModel");
 	}
 
 	public function index($data = "") {
 		$data = array(
-			"serviceList" => $this->ServiceModel->selectAllServices()
+			"serviceList" => $this->ServiceModel->selectAllServices(),
+			"countNotifications" => $this->NotificationModel->countAllNotification()
 		);
 
 		$this->load->view("components/LoaderComponent");
-		$this->load->view("components/HeaderComponent");
+		$this->load->view("components/HeaderComponent", $data);
 		$this->load->view("components/NavbarComponent");
 		$this->load->view("ServiceView", $data);	
 		$this->load->view("components/FooterComponent");
@@ -60,9 +62,10 @@ class ServiceController extends CI_Controller {
 
 	public function modifyService($id = null) {
 		$id = $this->db->escape($id);
-		$data = $this->ServiceModel->getServiceForModify($id);		
+		$data = $this->ServiceModel->getServiceForModify($id);	
+		$countNotifications = $this->NotificationModel->countAllNotification();
 		$this->load->view("components/LoaderComponent");
-		$this->load->view("components/HeaderComponent");
+		$this->load->view("components/HeaderComponent", compact("countNotifications"));
 		$this->load->view("components/NavbarComponent");
 		$this->load->view("ServiceUpdateView", compact("data"));
 		$this->load->view("components/FooterComponent");

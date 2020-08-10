@@ -27,4 +27,9 @@ class PersonalModel extends CI_Model {
         $this->db->from("personal");
         return  $this->db->get()->result_array();
     }
+
+    public function queryPersonalById($idPerson) {
+        $query = "SELECT * FROM personal WHERE id_personal = ?"; 
+        return $this->db->query($query, $idPerson)->result_array();       
+    }
 }
