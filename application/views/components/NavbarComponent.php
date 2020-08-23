@@ -21,8 +21,6 @@
                         <li class="sidebar-item">
                             <a href="<?php base_url()?>EquipmentController" class="sidebar-link"><span
                                     class="hide-menu">Nuevo equipo</span></a>
-                            <a href="<?php base_url()?>MaintenanceController" class="sidebar-link"><span
-                                    class="hide-menu">Mantenimiento</span></a>
                         </li>
                     </ul>
                 </li>
@@ -52,7 +50,7 @@
                     <ul aria-expanded="false" class="collapse  first-level base-level-line">
                         <li class="sidebar-item">
                             <a href="<?php base_url()?>StaffController" class="sidebar-link"><span
-                                    class="hide-menu">Toma de asistencia</span></a>
+                                    class="hide-menu">Nuevo empleado</span></a>
                         </li>
                     </ul>
                 </li>

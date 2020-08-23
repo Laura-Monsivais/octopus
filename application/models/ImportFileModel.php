@@ -9,11 +9,8 @@ class ImportFileModel extends CI_Model {
     }
 
     public function obtenerArchivos() {
-        return $this->db->query("SELECT * FROM archivo")->result_array();
-    }
-    
-    public function eliminarArchivo($idArchivo) {
-        $this->db->where("id_archivo", $idArchivo); 
-        $this->db->delete("archivo"); 
+        return $this->db->query("SELECT * FROM archivo ")->result_array();
 	}
+	
+	
 }
