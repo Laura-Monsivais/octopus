@@ -17,6 +17,7 @@
     <style>
     * {
         font-family: 'Roboto', sans-serif;
+        color: #566573;
     }
     </style>
 </head>
