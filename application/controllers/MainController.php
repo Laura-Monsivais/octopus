@@ -27,7 +27,7 @@ class MainController extends CI_Controller {
 		);
 		$this->load->view("components/LoaderComponent");
 		$this->load->view("components/HeaderComponent", $data);
-		$this->load->view("components/NavbarComponent");
+		$this->load->view("components/NavbarAdminComponent");
 		$this->load->view("MainView", $data);		
 		$this->load->view("components/FooterComponent");
 	}
