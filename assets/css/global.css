@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+    --gray-color: #D3D8DA; 
+}
+
+* {
+    font-family: "Poppins", sans-serif;
+    color: #566573;
+    font-size: 14px;
+}
+
+.login-body {
+    background: var(--gray-color);
+}

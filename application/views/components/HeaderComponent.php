@@ -13,13 +13,7 @@
     <title>OCTOPUS</title>
     <link href="<?php echo base_url() ?>assets/src/dist/css/style.min.css" rel="stylesheet">
     <script src="<?php echo base_url() ?>assets/src/assets/libs/jquery/dist/jquery.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <style>
-    * {
-        font-family: 'Roboto', sans-serif;
-        color: #566573;
-    }
-    </style>
+    <link href="<?php echo base_url()?>assets/css/global.css" rel="stylesheet">
 </head>
 
 <body>
@@ -68,6 +62,19 @@
                             <?php endif; ?>
                         </a>
                     </li>
+
+                    <li class="nav-item dropdown show">
+                        <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-briefcase"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-left user-dd animated flipInY">
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="<?php base_url()?>MainController">Gestión de operaciones/formatos</a>
+                            <div class="dropdown-divider"></div>
+                        </div>
+                    </li>
+
                 </ul>
                 <ul class="navbar-nav float-right">
                     <li class="nav-item dropdown">
@@ -78,14 +85,18 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
                             <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="<?php base_url()?>PersonalController">
-                                    <i data-feather="settings" class="svg-icon mr-2 ml-1"></i>Configuración
+                               
+                                <a class="dropdown-item" href="<?php base_url()?>ConfigController">
+                                    <i data-feather="settings" class="svg-icon mr-2 ml-1"></i>Gestión interna/externa
                                 </a>
+
                             <div class="dropdown-divider"></div>
-                            <?php if ($this->session->userdata("usuario")) : ?>
+                            <?php if ($this->session->userdata("usuario")): ?>
+
                                 <a class="dropdown-item" href="<?php echo site_url() ?>/LoginController/logout">
                                     <i data-feather="power" class="svg-icon mr-2 ml-1"></i>Cerrar sesión
                                 </a>
+                           
                             <?php endif; ?>
                         </div>
                     </li>

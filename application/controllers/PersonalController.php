@@ -16,7 +16,7 @@ class PersonalController extends CI_Controller {
 		);
 		$this->load->view("components/LoaderComponent");
 		$this->load->view("components/HeaderComponent", $data);
-		$this->load->view("components/NavbarComponent");
+		$this->load->view("components/NavbarConfigComponent");
 		$this->load->view("PersonalView", $data);		
 		$this->load->view("components/FooterComponent");
 	}

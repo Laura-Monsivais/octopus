@@ -9,15 +9,9 @@
     <meta name="author" content="">
     <title>OCTOPUS</title>
     <link href="<?php echo base_url()?>assets/src/dist/css/style.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <style>
-    * {
-        font-family: 'Roboto', sans-serif;
-      }
-    </style>
+    <link href="<?php echo base_url()?>assets/css/global.css" rel="stylesheet">
 </head>
-
-<body style="background: #D3D8DA;">
+<body class="login-body">
     <div class="main-wrapper">
         <div class="auth-wrapper d-flex no-block justify-content-center align-items-center position-relative">
             <div class="card col-md-4">

@@ -2,7 +2,7 @@
 <div class="col-md-12">
         <div class="box">
             <div class="box-header with-border ">
-                <h1 class="box-title font-weight-bold text-info">Importar/descargar archivos</h1>
+                <h1 class="box-title font-weight-bold text-info">Importar/descargar formatos</h1>
         <div class="card">
             <div class="card-body">
                 <form action="<?php echo site_url()?>/ImportFileController/subirArchivo" method="POST"

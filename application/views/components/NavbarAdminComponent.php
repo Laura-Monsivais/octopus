@@ -16,62 +16,8 @@
                         aria-expanded="false"><i data-feather="box" class="feather-icon"></i><span
                             class="hide-menu">Formatos</span></a>
                     <ul aria-expanded="false" class="collapse  first-level base-level-line">
-                        <li class="sidebar-item">
-                            <a href="<?php base_url()?>IncidentController" class="sidebar-link"><span
-                                    class="hide-menu">Incidentes</span></a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a href="<?php base_url()?>IncidentController" class="sidebar-link"><span
-                                    class="hide-menu">Mantenimiento</span></a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a href="<?php base_url()?>IncidentController" class="sidebar-link"><span
-                                    class="hide-menu">Incidentes</span></a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a href="<?php base_url()?>IncidentController" class="sidebar-link"><span
-                                    class="hide-menu">Mantenimiento</span></a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a href="<?php base_url()?>IncidentController" class="sidebar-link"><span
-                                    class="hide-menu">Incidentes</span></a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a href="<?php base_url()?>IncidentController" class="sidebar-link"><span
-                                    class="hide-menu">Mantenimiento</span></a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a href="<?php base_url()?>IncidentController" class="sidebar-link"><span
-                                    class="hide-menu">Incidentes</span></a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a href="<?php base_url()?>IncidentController" class="sidebar-link"><span
-                                    class="hide-menu">Mantenimiento</span></a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a href="<?php base_url()?>IncidentController" class="sidebar-link"><span
-                                    class="hide-menu">Incidentes</span></a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a href="<?php base_url()?>IncidentController" class="sidebar-link"><span
-                                    class="hide-menu">Mantenimiento</span></a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a href="<?php base_url()?>IncidentController" class="sidebar-link"><span
-                                    class="hide-menu">Incidentes</span></a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a href="<?php base_url()?>IncidentController" class="sidebar-link"><span
-                                    class="hide-menu">Mantenimiento</span></a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a href="<?php base_url()?>IncidentController" class="sidebar-link"><span
-                                    class="hide-menu">Incidentes</span></a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a href="<?php base_url()?>IncidentController" class="sidebar-link"><span
-                                    class="hide-menu">Mantenimiento</span></a>
-                        </li>
+                
+                
                     </ul>
                 </li>
             </ul>
