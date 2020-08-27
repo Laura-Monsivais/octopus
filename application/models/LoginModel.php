@@ -33,10 +33,12 @@ class LoginModel extends CI_Model {
         $password = $this->getPassword();
         $query = "SELECT contrasena FROM personal WHERE usuario = ? LIMIT 1"; 
         $userHash = $this->db->query($query, $username)->result_array();
-        if (password_verify($password, $userHash[0]["contrasena"])) {
-            return true;
-        } else {
-            return false;
+        if ($userHash != null) {
+            if (password_verify($password, $userHash[0]["contrasena"])) {
+                return true;
+            } else {
+                return false;
+            }
         }
     }
 }

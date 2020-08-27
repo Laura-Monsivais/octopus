@@ -21,14 +21,14 @@
                         <span class="logo-icon"><img
                                 src="<?php echo base_url() ?>assets/src/assets/images/OCTOPUS.png" alt="homepage"
                                 class="dark-logo" width="200" height="60px" /></span>
-                        </div>
-                        <div class="form-group">
-                            <?php if (validation_errors()): ?>
-                            <div class="alert alert-danger" role="alert">
-                                <?php echo validation_errors(); ?>
-                            </div>
-                            <?php endif; ?>
-                        </div>
+                        </div>         
+                        <?php
+                            if (isset($warning) and $warning != "") {
+                                echo "<div class='form-group alert alert-danger text-center'>";
+                                echo  $warning; 
+                                echo "</div>";    
+                            }
+                        ?>
                         <div class="form-group">
                             <label class="text-body">Nombre de usuario</label>
                             <input type="text"     class="form-control" name="username" required="true" minlength="5" maxlength="30">
