@@ -65,15 +65,14 @@
                     <li class="nav-item dropdown show">
                         <a class="nav-link dropdown-toggle" href="javascript:void(0)" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-briefcase"></i>
+                            <i data-feather="settings" class="svg-icon"></i>
                         </a>
                         <div class="dropdown-menu dropdown-menu-left user-dd animated flipInY">
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="<?php base_url()?>MainController">Gestión de operaciones/formatos</a>
+                                <a class="dropdown-item" href="<?php base_url()?>MainController">Gestión de operaciones/formatos</a>
                             <div class="dropdown-divider"></div>
                         </div>
                     </li>
-
                 </ul>
                 <ul class="navbar-nav float-right">
                     <li class="nav-item dropdown">
@@ -83,19 +82,15 @@
                             </span> <i data-feather="chevron-down" class="svg-icon"></i></span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right user-dd animated flipInY">
-                            <div class="dropdown-divider"></div>
-                               
+                            <div class="dropdown-divider"></div>                  
                                 <a class="dropdown-item" href="<?php base_url()?>ConfigController">
                                     <i data-feather="settings" class="svg-icon mr-2 ml-1"></i>Gestión interna/externa
                                 </a>
-
                             <div class="dropdown-divider"></div>
                             <?php if ($this->session->userdata("usuario")): ?>
-
                                 <a class="dropdown-item" href="<?php echo site_url() ?>/LoginController/logout">
                                     <i data-feather="power" class="svg-icon mr-2 ml-1"></i>Cerrar sesión
                                 </a>
-                           
                             <?php endif; ?>
                         </div>
                     </li>
