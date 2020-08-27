@@ -1,5 +1,4 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+<?php defined('BASEPATH') OR exit('No direct script access allowed');
 
 class StaffController extends CI_Controller {
 	
@@ -12,8 +11,7 @@ class StaffController extends CI_Controller {
 	public function index() {
 		$data = array(
 			"people" => $this->PersonalModel->queryAllPersonalByAssistence(),
-			"countNotifications" => $this->NotificationModel->countAllNotification()
-		);
+			"countNotifications" => $this->NotificationModel->countAllNotification());
 		$this->load->view("components/LoaderComponent");
 		$this->load->view("components/HeaderComponent", $data);
 		$this->load->view("components/NavbarComponent");
@@ -21,8 +19,7 @@ class StaffController extends CI_Controller {
 		$this->load->view("components/FooterComponent");
 	}
 
-	public function AgregarPersonal()
-	{
+	public function AgregarPersonal() {
 		$Name = $this->input->post('name');
 		$last_name = $this->input->post('last_name');
 		$mother_last_name = $this->input->post('mother_last_name');

@@ -38,3 +38,6 @@ class LoginController extends CI_Controller {
 		redirect("LoginController");
 	} 
 }
+
+
+	
