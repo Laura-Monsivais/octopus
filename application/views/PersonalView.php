@@ -154,7 +154,7 @@
                                         echo "<td class='text-center'>
                                                 <a class='btn btn-outline-info' href='${path}/PersonalController/modifyPersonal/" . $person["id_personal"] . "'>&nbsp;&nbsp;Editar&nbsp;&nbsp;</a>
                                                 <a class='btn btn-danger' href='${path}/PersonalController/processDeleteAdministrador/" . $person["id_personal"] . "'>Eliminar</a>
-                                            </td>";
+												</td>";
                                         echo "<td >" . $person["nombre"] . "</td>";
                                         echo "<td >" . $person["apellido_paterno"] . "</td>";
                                         echo "<td >" . $person["apellido_materno"] . "</td>";

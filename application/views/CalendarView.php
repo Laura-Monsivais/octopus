@@ -68,4 +68,42 @@
                                 </body>
                         </table>
                     </div>
-                </div>
+				</div>
+				
+				<?php
+  if(isset($customer_data))
+  {
+  ?>
+  <div class="table-responsive">
+   <table class="table table-striped table-bordered">
+    <tr>
+     <th>Fecha</th>
+     <th>Evento</th>
+     <th>Fecha_importante</th>
+     <th>View in PDF</th>
+    </tr>
+   <?php
+   foreach($customer_data->result() as $row)
+   {
+    echo '
+    <tr>
+     <td>'.$row->fecha.'</td>
+	 <td>'.$row->evento.'</td>
+
+	 <td><a href="'.base_url().'ExampleController/details/'.$row->id_calendario.'">fecha_importante</a></td>
+     <td><a href="'.base_url('ExampleController/pdfdetails/').$row->id_calendario.'">View in PDF</a></td>
+	 </tr>
+
+    ';
+   }
+   ?>
+   </table>
+  </div>
+  <?php
+  }
+  if(isset($customer_details))
+  {
+   echo $customer_details;
+  }
+  ?>
+ </div>

@@ -17,7 +17,6 @@
                             class="hide-menu">Formatos</span></a>
                     <ul aria-expanded="false" class="collapse  first-level base-level-line">
                 
-                
                     </ul>
                 </li>
             </ul>

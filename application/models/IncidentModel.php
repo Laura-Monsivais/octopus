@@ -3,6 +3,6 @@
 class IncidentModel extends CI_Model {
 
     public function incidentes() {
-        return $this->db->query("SELECT * FROM incidente")->result_array();
+        return $this->db->query("SELECT * FROM incidentes")->result_array();
     }
 }

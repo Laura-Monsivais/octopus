@@ -93,4 +93,5 @@ class PersonalController extends CI_Controller {
 			redirect("PersonalController");
 		} 
 	}
+
 }

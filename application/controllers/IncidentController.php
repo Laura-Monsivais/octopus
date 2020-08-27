@@ -14,17 +14,9 @@ class IncidentController extends CI_Controller {
 		$this->load->view("components/LoaderComponent");
 		$this->load->view("components/HeaderComponent");
 		$this->load->view("components/NavbarAdminComponent");
-		$this->load->view("IncidentView", $data);		
+		$this->load->view("IncidentView");		
 		$this->load->view("components/FooterComponent");
     }
     
-    public function generatePDF() { 
-      $dompdf = new Dompdf\Dompdf();
-      $html = $this->load->view('welcome_message',[],true);
-      $dompdf->loadHtml("Hola");
-      $dompdf->setPaper('A4', 'landscape');
-      $dompdf->render();
-      $pdf = $dompdf->output();
-      $dompdf->stream();
-    }
 }
+
