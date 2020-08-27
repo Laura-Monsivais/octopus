@@ -13,3 +13,7 @@
 .login-body {
     background: var(--gray-color);
 }
+
+ul {
+    font-size: 5px;
+}
