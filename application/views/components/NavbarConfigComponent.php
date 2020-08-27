@@ -5,42 +5,52 @@
                 <li class="sidebar-item"> <a class="sidebar-link has-arrow" href="javascript:void(0)"
                         aria-expanded="false"><i data-feather="box" class="feather-icon"></i><span
                             class="hide-menu">Interno</span></a>
-                    
                     <ul aria-expanded="false" class="collapse  first-level base-level-line">
                         <li class="sidebar-item">
-                            <a href="<?php base_url()?>PersonalController" class="sidebar-link"><span
-                                    class="hide-menu">Nuevo empleado</span></a>
+                            <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
+                                <i data-feather="users" class="feather-icon"></i>
+                                <span class="hide-menu">Empleados</span></a>
+                            <ul aria-expanded="false" class="collapse  first-level base-level-line">
+                                <li class="sidebar-item">
+                                    <a href="<?php base_url()?>PersonalController" class="sidebar-link">
+                                        <span class="hide-menu">Nuevo empleado</span>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
-                        <li class="sidebar-item"> <a class="sidebar-link has-arrow" href="javascript:void(0)"
-                        aria-expanded="false"><i data-feather="calendar" class="feather-icon"></i><span
-                            class="hide-menu">Calendario</span></a>
-                        <ul aria-expanded="false" class="collapse  first-level base-level-line">
-                            <li class="sidebar-item">
-                                <a href="<?php base_url()?>CalendarController" class="sidebar-link"><span
-                                        class="hide-menu">Nuevo evento</span></a>
-                            </li>
-                        </ul>
-                    </li>      
-                  
-                  
-                  
+                        <li class="sidebar-item">
+                            <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
+                                <i data-feather="calendar" class="feather-icon"></i>
+                                <span class="hide-menu">Calendario</span></a>
+                            <ul aria-expanded="false" class="collapse  first-level base-level-line">
+                                <li class="sidebar-item">
+                                    <a href="<?php base_url()?>CalendarController" class="sidebar-link">
+                                        <span class="hide-menu">Nuevo evento</span></a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
-
-            
-                </li>       
+                </li>
             </ul>
             <ul id="sidebarnav">
                 <li class="sidebar-item"> <a class="sidebar-link has-arrow" href="javascript:void(0)"
                         aria-expanded="false"><i data-feather="box" class="feather-icon"></i><span
                             class="hide-menu">Externo</span></a>
-                    
                     <ul aria-expanded="false" class="collapse  first-level base-level-line">
                         <li class="sidebar-item">
-                            <a href="<?php base_url()?>ProviderController" class="sidebar-link"><span
-                                    class="hide-menu">Nuevo proveedor</span></a>
+                            <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
+                                <i data-feather="users" class="feather-icon"></i>
+                                <span class="hide-menu">Proveedor</span></a>
+                            <ul aria-expanded="false" class="collapse  first-level base-level-line">
+                                <li class="sidebar-item">
+                                    <a href="<?php base_url()?>ProviderController" class="sidebar-link">
+                                        <span class="hide-menu">Nuevo proveedor</span>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
-                </li>       
+                </li>
             </ul>
             <ul id="sidebarnav">
                 <li class="sidebar-item"> <a class="sidebar-link has-arrow" href="javascript:void(0)"
@@ -55,8 +65,9 @@
                     </ul>
                 </li>
             </ul>
-
-
+        </nav>
+    </div>
+</aside>
 
 
 
@@ -103,7 +114,3 @@
                         </li>
                     </ul>
                 </li>-->
-               
-        </nav>
-    </div>
-</aside>

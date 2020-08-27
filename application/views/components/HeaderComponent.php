@@ -9,15 +9,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url() ?>assets/src/assets/images/favicon.png">
+ 
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo $_SERVER['SERVER_NAME'] ?>assets/src/assets/images/favicon.png">
     <title>OCTOPUS</title>
     <link href="<?php echo base_url() ?>assets/src/dist/css/style.min.css" rel="stylesheet">
-    <script src="<?php echo base_url() ?>assets/src/assets/libs/jquery/dist/jquery.min.js"></script>
-    <link href="<?php echo base_url()?>assets/css/global.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>assets/css/global.css" rel="stylesheet">
+    <script src="<?php echo base_url()?>assets/src/assets/libs/jquery/dist/jquery.min.js"></script>
 </head>
-
-<body>
-
+<body >
 <?php if (!$this->session->userdata("usuario")): ?>
     <div id="info-header-modal" class="modal fade show" tabindex="-1" role="dialog"
         aria-labelledby="info-header-modalLabel" aria-modal="true" style="display: block; padding-right: 17px;">
