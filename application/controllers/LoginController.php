@@ -1,5 +1,4 @@
-<?php
-defined("BASEPATH") OR exit("No direct script access allowed");
+<?php defined("BASEPATH") OR exit("No direct script access allowed");
 
 class LoginController extends CI_Controller {
 
@@ -8,11 +7,14 @@ class LoginController extends CI_Controller {
 		$this->load->model("LoginModel");
 	}
 
-	public function index() {
+	public function index($warning = "") {
+		$data = array(
+			"warning" => $warning
+		);
 		if ($this->session->userdata("usuario")) {
 			redirect("MainController");
 		}
-		$this->load->view("LoginView");
+		$this->load->view("LoginView", $data);
 	}
 
 	public function validatingFormData() {
@@ -29,8 +31,10 @@ class LoginController extends CI_Controller {
 		if ($userValid) {
 			$this->session->set_userdata("usuario", $username);
 			redirect("MainController");
-		} 
-		redirect("LoginController");
+		} else {
+		   $warning = "El usuario y/o contraseña es incorrecto";
+		   $this->index($warning);
+		}
 	}
 
 	public function logout() {
