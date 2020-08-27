@@ -3,6 +3,14 @@
         <div class="box">
             <div class="box-header with-border ">
                 <h2 class="box-title font-weight-bold text-info">Incidente</h2>
+                <hr>
+                <div class="text-right">
+                <?php 
+                    $path = site_url();
+                    echo "<a target='_blank' class='btn btn-outline-success' href='${path}/IncidentController/exportPDF/'>Exportar a PDF</a>";
+                ?>
+                <hr>
+                </div>
                 <div class="card">
                     <div class="card-body">
                         <form action="" method="POST">
