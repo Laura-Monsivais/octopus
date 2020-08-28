@@ -18,11 +18,11 @@
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Clave</label>
                                 <div class="col-sm-4">
-                                    <input type="text" class="form-control" readonly=»readonly» name="" value="RDI-008">
+                                    <input type="text" class="form-control" readonly=»readonly» name="clave" value="RDI-008">
                                 </div>
                                 <label class="col-sm-2 col-form-label">Versión</label>
                                 <div class="col-sm-4">
-                                    <input type="number" min="0" max="20" class="form-control"  name="" required>
+                                    <input type="number" min="0" max="20" class="form-control"  name="version" required>
                                 </div>
                             </div>
                             <div class="form-group row">
