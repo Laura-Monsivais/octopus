@@ -53,6 +53,7 @@ class EquipmentController extends CI_Controller {
 			$this->load->view("components/NavbarComponent");
 			$this->load->view("updateEquipment", compact("data"));
 			$this->load->view("components/FooterComponent");
+			
 		}
 
 		public function ActualizarEquipo() {

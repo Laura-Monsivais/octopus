@@ -1,17 +1,11 @@
-<script type="text/javascript">
-window.onload = function(){
-fecha = new Date();
-texto = document.getElementById("fechaing");
-texto.value = fecha;}
-</script>
 <div class="page-wrapper">
     <div class="col-md-12">
         <div class="box">
             <div class="box-header with-border ">
-                <h2 class="box-title font-weight-bold text-info">Incidente</h2>
+                <h2 class="box-title font-weight-bold text-info">Actualizar Incidente</h2>
 				<div class="card">
                     <div class="card-body">
-                        <form action="<?php echo site_url() ?>/IncidentController/InsertIncident" method="POST">
+                        <form action="<?php echo site_url() ?>/IncidentController/EditIncident" method="POST">
                 <hr>
                 <div class="text-right">
                     <?php 
@@ -26,21 +20,21 @@ texto.value = fecha;}
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Clave</label>
                                 <div class="col-sm-4">
-                                    <input type="text" class="form-control" readonly=»readonly» name="clave" value="RDI-008">
+                                    <input type="text" required class="form-control" readonly=»readonly» name="clave" value="<?php echo $data->clve_incidente; ?>">
                                 </div>
                                 <label class="col-sm-2 col-form-label">Versión</label>
                                 <div class="col-sm-4">
-                                    <input type="number" min="0" max="20" class="form-control"  name="version" required>
+                                    <input type="number" required min="0" max="20" class="form-control"  name="version"  value="<?php echo $data->v_incidente; ?>">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Fecha Inicial</label>
                                 <div class="col-sm-4">
-                                    <input type="text" class="form-control" name="fecha_inicial" value="<?php echo date("d/m/Y")?>" readonly=»readonly»>
+                                    <input type="text" required class="form-control" name="fecha_inicial" value="<?php echo $data->fecha_incidente;?>" readonly=»readonly»>
                                 </div>
                                 <label class="col-sm-2 col-form-label">Nueva Fecha</label>
                                 <div class="col-sm-4">
-                                    <input type="date" class="form-control" name="nueva_fecha">
+                                    <input type="date" required class="form-control" name="nueva_fecha" value="<?php echo $data->fecha_registro;?>" >
                                 </div>
                             </div>
                             <hr>
@@ -49,8 +43,8 @@ texto.value = fecha;}
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <textarea type="text" class="form-control" rows="3"
-                                        style="resize: none;" name="incidencia" ></textarea>
+                                    <textarea type="text" required class="form-control" rows="3"
+                                        style="resize: none;" name="incidencia"><?php echo $data->incidencia;?></textarea>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -58,15 +52,15 @@ texto.value = fecha;}
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-12">
-                                    <textarea type="text" class="form-control" rows="3"
-                                        style="resize: none;" name="medida"></textarea>
+                                    <textarea type="text" required class="form-control" rows="3"
+                                        style="resize: none;" name="medida" ><?php echo $data->medida;?></textarea>
                                 </div>
                             </div>
                             <hr>
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Responsable</label>
                                 <div class="col-sm-4">
-                                    <select name="responsable" class="form-control">
+                                    <select name="responsable" required class="form-control" value="<?php echo $data->responsable;?>" >
                                         <option> <?php echo $this->session->userdata("usuario"); ?></option>
                                     </select>
                                 </div>
@@ -74,9 +68,9 @@ texto.value = fecha;}
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Realizó</label>
                                 <div class="col-sm-4">
-                                    <select name="realizo" class="form-control">
+                                    <select name="realizo" required class="form-control" value="<?php echo $data->realizo;?>" >
                                         <option selected=""></option>
-										<?php 
+                                        <?php  
                                             if (isset($personas)) {
                                                 foreach ($personas as $person) {
                                                     echo '<option value='.$person["id_personal"].'>' . $person["nombre"] . ' ' . $person["apellido_paterno"] . ' ' . $person["apellido_materno"] . '</option>';
@@ -89,9 +83,9 @@ texto.value = fecha;}
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Autorizó</label>
                                 <div class="col-sm-4">
-                                    <select name="id_personal" class="form-control">
+                                    <select name="id_personal" required class="form-control">
                                         <option selected=""></option>
-                                        <?php  
+										<?php  
                                              if (isset($personas)) {
                                                 foreach ($personas as $person) {
                                                     echo '<option value='.$person["id_personal"].'>' . $person["nombre"] . ' ' . $person["apellido_paterno"] . ' ' . $person["apellido_materno"] . '</option>';
@@ -101,57 +95,13 @@ texto.value = fecha;}
                                     </select>
                                 </div>
                             </div>
+							<input type="hidden" name="id_incidente" class="form-control" maxlength="10" value="<?php echo $data->id_incidente; ?>">
                             <div class="form-group text-center">
-                                <button type="submit" class="btn btn-outline-info">Guardar</button>
+                                <button type="submit" class="btn btn-outline-warning">Actualizar</button>
+								<a class='btn btn-primary' href='<?php echo site_url()?>/IncidentController' >Regresar</a>
                             </div>
                         </form>
                     </div>
                 </div>
                 
-                <div class="card">
-                    <div class="card-body table-responsive">
-                        <table class="table table-striped table-bordered table-hover">
-                            <thead class="thead-dark text-center">
-                                <tr>
-                                    <th>Clave</th>
-                                    <th>Versión</th>
-                                    <th>Fecha Inicial</th>
-                                    <th>Nueva fecha</th>
-                                    <th>Incidencia</th>
-                                    <th>Medida</th>
-                                    <th>Responsable</th>
-                                    <th>Realizó</th>
-                                    <th>Autorizó</th>
-                                    <th colspan=3>Acciones</th>
-                            </thead>
-                            <tbody>
-                                    <?php
-
-                                    if(isset($incidentes)) {
-                                        
-                                        foreach($incidentes->result() as $row) {
-                                            echo '
-                                            <tr>
-                                            <td>'.$row->clve_incidente.'</td>
-                                            <td>'.$row->v_incidente.'</td>
-                                            <td>'.$row->fecha_incidente.'</td>
-                                            <td>'.$row->fecha_registro.'</td>
-                                            <td>'.$row->incidencia.'</td>
-                                            <td>'.$row->medida.'</td>
-                                            <td>'.$row->responsable.'</td>
-                                            <td>'.$row->realizo.'</td>
-											<td>'.$row->id_personal.'</td>
-											<td><a class="btn btn-warning"  href="'.site_url().'/IncidentController/UpdateIncident/'.$row->id_incidente.'">Editar</a></td>
-											<td><a class="btn btn-danger"  href="'.site_url().'/IncidentController/deleteIncident/'.$row->id_incidente.'">Eliminar</a></td>
-                                            <td><a class="btn btn-primary"  href="'.site_url().'/IncidentController/pdfdetails/'.$row->id_incidente.'">Imprimir</a></td>
-                                            
-                                            </tr>
-                                            ';
-                                        }
-                                    }
-									?>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
+                

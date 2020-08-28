@@ -14,20 +14,45 @@ class IncidentModel extends CI_Model {
 			return $this->db->get('incidentes');
 		}
 
-	public function setEquipo( $nombreE, $desc, $marca, $modelo, $costo, $stock, $fechaA, $mttoTF, $idperson) {
-			$data = array("nombre_equipo" => $nombreE, "descripcion" => $desc, "marca" => $marca, "modelo" => $modelo, 
-			"costo" => $costo, "stock" => $stock, "fecha_adquisicion" => $fechaA, "matenimiento" => $mttoTF, "id_personal" => $idperson );
-			return $this->db->insert("equipo", $data);
+	public function addIncident( $clave, $version, $fecha_inicial, $nueva_fecha, $incidencia, $medida, $responsable, $realizo, $id_personal) {
+			$data = array("clve_incidente" => $clave, "v_incidente" => $version, "fecha_incidente" => $fecha_inicial, "fecha_registro" => $nueva_fecha, 
+			"incidencia" => $incidencia, "medida" => $medida, "responsable" => $responsable, "realizo" => $realizo, "id_personal" => $id_personal );
+			return $this->db->insert("incidentes", $data);
+			}
+	
+	public function updateIncident($id_incidente,$data) {
+				$this->db->where('id_incidente', $id_incidente);
+				$result = $this->db->update('incidentes', $data);
+				if ($result) {
+					return true;
+				} else {
+					return false;
+				}
+			}
+
+	public function IncidentForEdit($id_incidente) {
+				$query = $this->db->query("SELECT * FROM incidentes WHERE id_incidente= {$id_incidente}");
+				 return $query->row();
+			 }
+
+	public function DeleteIncident($id_incidente){
+				$this->db->where('id_incidente', $id_incidente);
+				$result = $this->db->delete('incidentes');
+				if ($result) {
+					return true;
+				} else {
+					return false;
+				}
 			}
 
 	function fetch_single_details($id_incidente)
 		{
 		$this->db->where('id_incidente', $id_incidente);
 		$data = $this->db->get('incidentes');
-		$output = '<table width="100%" border="1" bgcolor="#C0C0C0" align="center" cellspacing="5" cellpadding="5">';
-		foreach($data->result() as $row)
+		$output = '<table width="100%" border="1" bgcolor="#C0C0C0" align="center" cellspacing="5" cellpadding="5">';	foreach($data->result() as $row)
 		{
 		$output .= '
+		
 			<tr >
 				<th>Clave</th>
 				<th>Versión</th>
@@ -51,6 +76,7 @@ class IncidentModel extends CI_Model {
 				<td>'.$row->id_personal.'</td>
 		</td>
 		</tr>
+		
 
 		';
 		}
@@ -72,8 +98,8 @@ class IncidentModel extends CI_Model {
 	// 	$output = '<table width="100%" cellspacing="5" cellpadding="5">';
 	// 	foreach($data->result() as $row) {
 	// 		$output .= ' 1
-						 2
-						2
+						 
+						
 	// 		<tr>
 	// 		<td width="75%">
 	// 		<th><b>Clave : </b></th><td>'.$row->clve_incidente.'</td>
@@ -93,4 +119,5 @@ class IncidentModel extends CI_Model {
 	// 	$output .= '</table>';
 	// 	return $output;
 	// }
+}
 }
