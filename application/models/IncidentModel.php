@@ -147,7 +147,7 @@ class IncidentModel extends CI_Model {
 	 }
 	}
 	 public function renderHTML($incidenteId) {
-	    $this->db->where('id_incidente', 1);
+	    $this->db->where('id_incidente', $incidenteId);
 		$data = $this->db->get('incidentes');
 
 		$html = '
@@ -160,11 +160,11 @@ class IncidentModel extends CI_Model {
 								<tr >
 									<td  width="5%" rowspan="3"></td>
 									<td  style="text-align: center;">Rancho Ubuntu S de RL MI de CV</td>
-									<td  width="20%">Clave:</td>
+									<td  width="20%">Clave: ' . $row->clve_incidente .' </td>
 								</tr>
 								<tr >
 									<td  style="text-align: center;" rowspan="2">Reporte de incidentes ocurridos de la empresa</td>
-									<td>Versión: ' . $row->fecha_incidente .' </td>
+									<td>Versión: ' . $row->v_incidente .' </td>
 								</tr>
 								<tr >
 									<td>Fecha:   ' . $row->fecha_incidente . ' </td>
@@ -193,10 +193,10 @@ class IncidentModel extends CI_Model {
 					$html .= 
 						'
 							<tr >
-								<td>' . $row->fecha_incidente . '</td>
-								<td>' . $row->fecha_incidente . '</td>
-								<td>' . $row->fecha_incidente . '</td>
-								<td>' . $row->fecha_incidente . '</td>
+								<td>' . $row->fecha_registro . '</td>
+								<td>' . $row->incidencia . '</td>
+								<td>' . $row->medida . '</td>
+								<td>' . $row->responsable . '</td>
 							</tr>
 						';
 				}
@@ -214,8 +214,8 @@ class IncidentModel extends CI_Model {
 							$html .= 
 							'
 								<tr >
-									<td>Autorizó: ' . $row->fecha_incidente . '</td>
-									<td>Realizó:  ' . $row->fecha_incidente . '</td>
+									<td>Autorizó: ' . $row->id_personal . '</td>
+									<td>Realizó:  ' . $row->realizo . '</td>
 								</tr>
 							';
 						}

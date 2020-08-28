@@ -21,10 +21,9 @@ class IncidentController extends CI_Controller {
 		$this->load->view("components/FooterComponent");
 	}
 
-	public function pdfdetails() {
-
+	public function pdfdetails($incidenteId) {
 		
-		$html = $this->IncidentModel->renderHTML(1);
+		$html = $this->IncidentModel->renderHTML($incidenteId);
 		$this->pdf->loadHtml($html);
 		$this->pdf->render();
 		$this->pdf->stream("incidente.pdf", array("Attachment" => 0));
@@ -75,17 +74,17 @@ class IncidentController extends CI_Controller {
 		public function UpdateIncident($id_incidente = null) {
 			
 				$id_incidente = $this->db->escape($id_incidente);
-				$data = $this->IncidentModel->IncidentForEdit($id_incidente);	
+				$upd = $this->IncidentModel->IncidentForEdit($id_incidente);	
 				
-				$otro = array( 
+				$data = array( 
 					"incidentes" => $this->IncidentModel->fetch(),
-					"personas" => $this->PersonalModel->queryAllPersonal()
-				);
+					"personas" => $this->PersonalModel->queryAllPersonal(),
+					"updincidente" => $upd				);
 
 				$this->load->view("components/LoaderComponent");
 				$this->load->view("components/HeaderComponent");
 				$this->load->view("components/NavbarAdminComponent");
-				$this->load->view("IncidentUpdateView", compact("data","otro"));
+				$this->load->view("IncidentUpdateView",$data);
 				$this->load->view("components/FooterComponent");
 		}
 

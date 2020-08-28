@@ -20,21 +20,21 @@
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Clave</label>
                                 <div class="col-sm-4">
-                                    <input type="text" required class="form-control" readonly=»readonly» name="clave" value="<?php echo $data->clve_incidente; ?>">
+                                    <input type="text" required class="form-control" readonly=»readonly» name="clave" value="<?php echo $updincidente->clve_incidente; ?>">
                                 </div>
                                 <label class="col-sm-2 col-form-label">Versión</label>
                                 <div class="col-sm-4">
-                                    <input type="number" required min="0" max="20" class="form-control"  name="version"  value="<?php echo $data->v_incidente; ?>">
+                                    <input type="number" required min="0" max="20" class="form-control"  name="version"  value="<?php echo $updincidente->v_incidente; ?>">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Fecha Inicial</label>
                                 <div class="col-sm-4">
-                                    <input type="text" required class="form-control" name="fecha_inicial" value="<?php echo $data->fecha_incidente;?>" readonly=»readonly»>
+                                    <input type="text" required class="form-control" name="fecha_inicial" value="<?php echo $updincidente->fecha_incidente;?>" readonly=»readonly»>
                                 </div>
                                 <label class="col-sm-2 col-form-label">Nueva Fecha</label>
                                 <div class="col-sm-4">
-                                    <input type="date" required class="form-control" name="nueva_fecha" value="<?php echo $data->fecha_registro;?>" >
+                                    <input type="date" required class="form-control" name="nueva_fecha" value="<?php echo $updincidente->fecha_registro;?>" >
                                 </div>
                             </div>
                             <hr>
@@ -44,7 +44,7 @@
                             <div class="form-group row">
                                 <div class="col-sm-12">
                                     <textarea type="text" required class="form-control" rows="3"
-                                        style="resize: none;" name="incidencia"><?php echo $data->incidencia;?></textarea>
+                                        style="resize: none;" name="incidencia"><?php echo $updincidente->incidencia;?></textarea>
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -53,14 +53,14 @@
                             <div class="form-group row">
                                 <div class="col-sm-12">
                                     <textarea type="text" required class="form-control" rows="3"
-                                        style="resize: none;" name="medida" ><?php echo $data->medida;?></textarea>
+                                        style="resize: none;" name="medida" ><?php echo $updincidente->medida;?></textarea>
                                 </div>
                             </div>
                             <hr>
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Responsable</label>
                                 <div class="col-sm-4">
-                                    <select name="responsable" required class="form-control" value="<?php echo $data->responsable;?>" >
+                                    <select name="responsable" required class="form-control" value="<?php echo $updincidente->responsable;?>" >
                                         <option> <?php echo $this->session->userdata("usuario"); ?></option>
                                     </select>
                                 </div>
@@ -68,7 +68,7 @@
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Realizó</label>
                                 <div class="col-sm-4">
-                                    <select name="realizo" required class="form-control" value="<?php echo $data->realizo;?>" >
+                                    <select name="realizo" required class="form-control" value="<?php echo $updincidente->realizo;?>" >
                                         <option selected=""></option>
                                         <?php  
                                             if (isset($personas)) {
@@ -95,10 +95,10 @@
                                     </select>
                                 </div>
                             </div>
-							<input type="hidden" name="id_incidente" class="form-control" maxlength="10" value="<?php echo $data->id_incidente; ?>">
+							<input type="hidden" name="id_incidente" class="form-control" maxlength="10" value="<?php echo $updincidente->id_incidente; ?>">
                             <div class="form-group text-center">
-                                <button type="submit" class="btn btn-outline-warning">Actualizar</button>
-								<a class='btn btn-primary' href='<?php echo site_url()?>/IncidentController' >Regresar</a>
+                                <button type="submit" class="btn btn-warning">Actualizar</button>
+								<a class='btn btn-primary' href='<?php echo site_url()?>/IncidentController'>Regresar</a>
                             </div>
                         </form>
                     </div>

@@ -143,7 +143,7 @@ texto.value = fecha;}
 											<td>'.$row->id_personal.'</td>
 											<td><a class="btn btn-warning"  href="'.site_url().'/IncidentController/UpdateIncident/'.$row->id_incidente.'">Editar</a></td>
 											<td><a class="btn btn-danger"  href="'.site_url().'/IncidentController/deleteIncident/'.$row->id_incidente.'">Eliminar</a></td>
-                                            <td><a class="btn btn-primary"  href="'.site_url().'/IncidentController/pdfdetails/'.$row->id_incidente.'">Imprimir</a></td>
+                                            <td><a target="_blank" class="btn btn-primary"  href="'.site_url().'/IncidentController/pdfdetails/'.$row->id_incidente.'">PDF</a></td>
                                             
                                             </tr>
                                             ';
