@@ -16,7 +16,7 @@
         <div class="auth-wrapper d-flex no-block justify-content-center align-items-center position-relative">
             <div class="card col-md-4">
                 <div class="card-body">
-                    <form action="<?php echo site_url()?>/LoginController/validatingFormData" method="POST">
+                    <form style="font-size: 14px;" action="<?php echo site_url()?>/LoginController/validatingFormData" method="POST"
                         <div class="form-group text-center text-secondary">
                         <span class="logo-icon"><img
                                 src="<?php echo base_url() ?>assets/src/assets/images/OCTOPUS.png" alt="homepage"
@@ -30,15 +30,15 @@
                             }
                         ?>
                         <div class="form-group">
-                            <label class="text-body">Nombre de usuario</label>
-                            <input type="text"     class="form-control" name="username" required="true" minlength="5" maxlength="30">
+                            <label style="font-size: 14px;" class="text-body">Nombre de usuario</label>
+                            <input style="font-size: 14px;" type="text"     class="form-control" name="username" required="true" minlength="5" maxlength="30">
                         </div>
                         <div class="form-group">
-                            <label class="text-body">Contraseña</label>
-                            <input type="password" class="form-control" name="password" required="true" minlength="8" maxlength="30">
+                            <label style="font-size: 14px;" class="text-body">Contraseña</label>
+                            <input style="font-size: 14px;" type="password" class="form-control" name="password" required="true" minlength="8" maxlength="30">
                         </div>
                         <div class="form-group text-center">
-                            <button type="submit" class="btn btn-rounded btn-outline-primary">Iniciar sesión</button>
+                            <button style="font-size: 14px;" type="submit" class="btn btn-rounded btn-outline-primary">Iniciar sesión</button>
                         </div>
                     </form>
                 </div>
