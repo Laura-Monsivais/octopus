@@ -18,7 +18,9 @@ class IncidentModel extends CI_Model {
 	// 	$data = $this->db->get('incidentes');
 	// 	$output = '<table width="100%" cellspacing="5" cellpadding="5">';
 	// 	foreach($data->result() as $row) {
-	// 		$output .= '
+	// 		$output .= ' 1
+						 2
+						2
 	// 		<tr>
 	// 		<td width="75%">
 	// 		<th><b>Clave : </b></th><td>'.$row->clve_incidente.'</td>
