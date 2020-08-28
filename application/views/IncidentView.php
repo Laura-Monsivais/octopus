@@ -22,7 +22,7 @@
                                 </div>
                                 <label class="col-sm-2 col-form-label">Versión</label>
                                 <div class="col-sm-4">
-                                    <input type="number" min="0" max="20" class="form-control" name="" required>
+                                    <input type="number" min="0" max="20" class="form-control"  name="" required>
                                 </div>
                             </div>
                             <div class="form-group row">
