@@ -23,54 +23,64 @@ class CorrectiveActionsController extends CI_Controller {
     public function addAction(){
         $datos = $this->input->post();
         
-        $desc_no_conf = $datos['input1'];
-        $accion_realizada = $datos['input2'];
-        $c_existente = $datos['input3'];
-        $v_ctrl_cyr = $datos['input4'];
-        $monitoreo = $datos['input5'];
-        $problema = $datos['input6'];
-        $com_proceso = $datos['input7'];
-        $recolec_dato = $datos['input8'];
-        $analizar_dato = $datos['input9'];
-        $posible_causa = $datos['input10'];
-        $verif_causa = $datos['input11'];
-        $sol_imple = $datos['input12'];
-        $impl_sol = $datos['input13'];
-        $eval_efe = $datos['input14'];
-        $estbl_cambio = $datos['input15'];
-        $aprend_cierre = $datos['input16'];
-        $realizado_por = $datos['input17'];
-        $validado_por = $datos['input18'];
+        $clve_accion_cor = $datos['clve_accion_cor'];
+        $v_accion_cor = $datos['v_accion_cor'];
+        $fecha_accion_cor = $datos['fecha_accion_cor'];
+        $factual_accion_cor = $datos['factual_accion_cor'];
+        $desc_no_conf = $datos['desc_no_conf'];
+        $accion_realizada = $datos['accion_realizada'];
+        $c_existente = $datos['c_existente'];
+        $v_ctrl_cyr = $datos['v_ctrl_cyr'];
+        $monitoreo = $datos['monitoreo'];
+        $problema = $datos['problema'];
+        $com_proceso = $datos['com_proceso'];
+        $recolec_dato = $datos['recolec_dato'];
+        $analizar_dato = $datos['analizar_dato'];
+        $posible_causa = $datos['posible_causa'];
+        $verif_causa = $datos['verif_causa'];
+        $sol_imple = $datos['sol_imple'];
+        $impl_sol = $datos['impl_sol'];
+        $eval_efe = $datos['eval_efe'];
+        $estbl_cambio = $datos['estbl_cambio'];
+        $aprend_cierre = $datos['aprend_cierre'];
+        $realizado_por = $datos['realizado_por'];
+        $validado_por = $datos['validado_por'];
 
-        $this->CorrectiveActionsModel->setAcciones($desc_no_conf, $accion_realizada, $c_existente,
-            $v_ctrl_cyr, $monitoreo, $problema, $com_proceso, $recolec_dato, $analizar_dato, 
-            $posible_causa, $verif_causa, $sol_imple, $sol_imple, $impl_sol, $eval_efe, $estbl_cambio, $aprend_cierre,
+        $this->CorrectiveActionsModel->setAcciones($clve_accion_cor, $v_accion_cor, $fecha_accion_cor, $factual_accion_cor, 
+            $desc_no_conf, $accion_realizada, $c_existente,$v_ctrl_cyr, $monitoreo, $problema, $com_proceso, $recolec_dato, 
+            $analizar_dato,  $posible_causa, $verif_causa, $sol_imple, $impl_sol, $eval_efe, $estbl_cambio, 
+            $aprend_cierre, $realizado_por, $validado_por);
+    }
+
+    public function editAction(){
+        $datos = $this->input->post();
+        
+        $id_accion_cor = $datos['id_accion_cor'];
+        $factual_accion_cor = $datos['factual_accion_cor'];
+        $desc_no_conf = $datos['desc_no_conf'];
+        $accion_realizada = $datos['accion_realizada'];
+        $c_existente = $datos['c_existente'];
+        $v_ctrl_cyr = $datos['v_ctrl_cyr'];
+        $monitoreo = $datos['monitoreo'];
+        $problema = $datos['problema'];
+        $com_proceso = $datos['com_proceso'];
+        $recolec_dato = $datos['recolec_dato'];
+        $analizar_dato = $datos['analizar_dato'];
+        $posible_causa = $datos['posible_causa'];
+        $verif_causa = $datos['verif_causa'];
+        $sol_imple = $datos['sol_imple'];
+        $impl_sol = $datos['impl_sol'];
+        $eval_efe = $datos['eval_efe'];
+        $estbl_cambio = $datos['estbl_cambio'];
+        $aprend_cierre = $datos['aprend_cierre'];
+        $realizado_por = $datos['realizado_por'];
+        $validado_por = $datos['validado_por'];
+
+        $this->CorrectiveActionsModel->editAcciones($id_accion_cor, $factual_accion_cor,$desc_no_conf, $accion_realizada, 
+            $c_existente, $v_ctrl_cyr, $monitoreo, $problema, $com_proceso, $recolec_dato, $analizar_dato, 
+            $posible_causa, $verif_causa, $sol_imple, $impl_sol, $eval_efe, $estbl_cambio, $aprend_cierre,
             $realizado_por, $validado_por);
 
-        /*if(isset($datos)){
-            $desc_no_conf = $datos['input1'];
-            $accion_realizada = $datos['input2'];
-            $c_existente = $datos['input3'];
-            $v_ctrl_cyr = $datos['input4'];
-            $monitoreo = $datos['input5'];
-            $problema = $datos['input6'];
-            $com_proceso = $datos['input7'];
-            $recolec_dato = $datos['input8'];
-            $analizar_dato = $datos['input9'];
-            $posible_causa = $datos['input10'];
-            $verif_causa = $datos['input11'];
-            $sol_imple = $datos['input12'];
-            $impl_sol = $datos['input13'];
-            $eval_efe = $datos['input14'];
-            $estbl_cambio = $datos['input15'];
-            $aprend_cierre = $datos['input16'];
-            $realizado_por = $datos['input17'];
-            $validado_por = $datos['input18'];
-
-            $this->CorrectiveActionsModel->setAcciones($desc_no_conf, $accion_realizada, $c_existente,
-            $v_ctrl_cyr, $monitoreo, $problema, $com_proceso, $recolec_dato, $analizar_dato, 
-            $posible_causa, $verif_causa, $sol_imple, $sol_imple, $impl_sol, $eval_efe, $estbl_cambio, $aprend_cierre,
-            $realizado_por, $validado_por);
-        }*/
+        
     }
 }
