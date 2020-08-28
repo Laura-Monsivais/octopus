@@ -93,10 +93,10 @@
                                     <th scope="col">Tipo</th>
                                     <th scope="col">Fecha de emisión</th>
                                     <th scope="col">Fecha de expiración</th>
-                                    <th scope="col">Costo</th>
+                                    <th scope="col">Monto</th>
                                     <th scope="col">Tipo de pago</th>
-                                    <th scope="col">Pago Pendiente</th>
-                                    <th scope="col">Empleado</th>
+                                    <th scope="col">Pago pendiente</th>
+                                    <th scope="col">Realizó</th>
                                     <th></th>
                                     <th></th>
                                 </tr>
