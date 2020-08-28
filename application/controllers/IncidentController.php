@@ -22,9 +22,14 @@ class IncidentController extends CI_Controller {
 	}
 
 	public function pdfdetails() {
-
-		
 		$html = $this->IncidentModel->renderHTML(1);
+		$this->pdf->loadHtml($html);
+		$this->pdf->render();
+		$this->pdf->stream("incidente.pdf", array("Attachment" => 0));
+	}
+
+	public function generateIncidentsPDF() {
+		$html = $this->IncidentModel->renderPDF();
 		$this->pdf->loadHtml($html);
 		$this->pdf->render();
 		$this->pdf->stream("incidente.pdf", array("Attachment" => 0));

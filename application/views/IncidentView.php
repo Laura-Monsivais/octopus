@@ -7,7 +7,7 @@
                 <div class="text-right">
                     <?php 
                         $path = site_url();
-                        echo "<a target='_blank' class='btn btn-outline-success' href='${path}/IncidentController/pdfdetails/'>Exportar a PDF</a>";
+                        echo "<a target='_blank' class='btn btn-outline-success' href='${path}/IncidentController/generateIncidentsPDF'>Exportar a PDF</a>";
                     ?>
                 </div>
                 <hr>

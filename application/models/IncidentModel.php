@@ -111,4 +111,82 @@ class IncidentModel extends CI_Model {
 		         ';
 		return $html;
 	}
+
+	public function renderPDF() {
+		$data = $this->db->get('incidentes');
+
+		$html = '
+					<table width="100%" border="1" style="margin-bottom: 40px; border-collapse: collapse; font-family: Arial, Helvetica, sans-serif;  font-size: 12px;">
+						<tbody >';
+
+						foreach($data->result() as $row) {
+							$html .= 
+								'
+								<tr >
+									<td  width="5%" rowspan="3"></td>
+									<td  style="text-align: center;">Rancho Ubuntu S de RL MI de CV</td>
+									<td  width="20%">Clave:</td>
+								</tr>
+								<tr >
+									<td  style="text-align: center;" rowspan="2">Reporte de incidentes ocurridos de la empresa</td>
+									<td>Versión: ' . $row->fecha_incidente .' </td>
+								</tr>
+								<tr >
+									<td>Fecha:   ' . $row->fecha_incidente . ' </td>
+								</tr>
+								';
+						}
+
+		$html .=  '		</tbody> 
+					</table>
+		          ';
+	 
+		$html .= '
+				<table width="100%" border="1" style="margin-bottom: 40px; border-collapse: collapse; font-family: Arial, Helvetica, sans-serif;  font-size: 12px;">
+					<thead style="text-align: center; background-color: #53FF33;">
+						<tr >
+							<td>Fecha</td>
+							<td>Incidencia</td>
+							<td>Medida correctora aplicada</td>
+							<td>Responsable (Firma)</td>
+						</tr>
+					</thead> 
+					<tbody >
+				';	
+
+				foreach($data->result() as $row) {
+					$html .= 
+						'
+							<tr >
+								<td>' . $row->fecha_incidente . '</td>
+								<td>' . $row->fecha_incidente . '</td>
+								<td>' . $row->fecha_incidente . '</td>
+								<td>' . $row->fecha_incidente . '</td>
+							</tr>
+						';
+				}
+
+		$html .= '
+					<tbody >
+					</table>
+				 ';
+
+		$html .= '
+					<table width="100%" border="1" style="border-collapse: collapse; font-family: Arial, Helvetica, sans-serif;  font-size: 12px;">
+						<tbody >
+				 ';
+				 		foreach($data->result() as $row) {
+							$html .= 
+							'
+								<tr >
+									<td>Autorizó: ' . $row->fecha_incidente . '</td>
+									<td>Realizó:  ' . $row->fecha_incidente . '</td>
+								</tr>
+							';
+						}
+		$html .= '      </tbody> 
+					</table>
+		         ';
+		return $html;
+	}
 }
