@@ -15,7 +15,6 @@ class Htmltopdf_model extends CI_Model
   {
    $output .= '
    <tr>
-   
     <td width="75%">
      <p><b>Name : </b>'.$row->CustomerName.'</p>
      <p><b>Address : </b>'.$row->Address.'</p>

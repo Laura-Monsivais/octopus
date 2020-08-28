@@ -33,7 +33,7 @@ class HtmltoPDF extends CI_Controller {
    $customer_id = $this->uri->segment(3);
    $html_content = '<h3 align="center">Convert HTML to PDF in CodeIgniter using Dompdf</h3>';
    $html_content .= $this->htmltopdf_model->fetch_single_details($customer_id);
-   $this->pdf->loadHtml($html_content);
+   $this->pdf->loadHtml("html_content");
    $this->pdf->render();
    $this->pdf->stream("".$customer_id.".pdf", array("Attachment"=>0));
   }
