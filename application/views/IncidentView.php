@@ -6,12 +6,11 @@
                 <hr>
                 <div class="text-right">
                     <?php 
-					$path = site_url();
-
-                    echo "<a target='_blank' class='btn btn-outline-success' href='${path}/IncidentController/pdfdetails/'>Exportar a PDF</a>";
-                ?>
-                    <hr>
+                        $path = site_url();
+                        echo "<a target='_blank' class='btn btn-outline-success' href='${path}/IncidentController/pdfdetails/'>Exportar a PDF</a>";
+                    ?>
                 </div>
+                <hr>
                 <div class="card">
                     <div class="card-body">
                         <form action="" method="POST">
@@ -69,11 +68,12 @@
                                     <select name="realizo" class="form-control">
                                         <option selected=""></option>
                                         <?php  
-                                    $results = $this->IncidentModel->selectAllPersonal();
-                                    foreach ($results as $person) {
-                                        echo '<option value='.$person["id_personal"].'>' . $person["nombre"] . ' ' . $person["apellido_paterno"] . ' ' . $person["apellido_materno"] . '</option>';
-                                    }
-                                	?>
+                                            if (isset($personas)) {
+                                                foreach ($personas as $person) {
+                                                    echo '<option value='.$person["id_personal"].'>' . $person["nombre"] . ' ' . $person["apellido_paterno"] . ' ' . $person["apellido_materno"] . '</option>';
+                                                }
+                                            }
+                                    	?>
                                     </select>
                                 </div>
                             </div>
@@ -83,11 +83,12 @@
                                     <select name="id_personal" class="form-control">
                                         <option selected=""></option>
                                         <?php  
-                                    $results = $this->IncidentModel->selectAllPersonal();
-                                    foreach ($results as $person) {
-                                        echo '<option value='.$person["id_personal"].'>' . $person["nombre"] . ' ' . $person["apellido_paterno"] . ' ' . $person["apellido_materno"] . '</option>';
-                                    }
-                                	?>
+                                             if (isset($personas)) {
+                                                foreach ($personas as $person) {
+                                                    echo '<option value='.$person["id_personal"].'>' . $person["nombre"] . ' ' . $person["apellido_paterno"] . ' ' . $person["apellido_materno"] . '</option>';
+                                                }
+                                            }
+                                	    ?>
                                     </select>
                                 </div>
                             </div>
@@ -97,9 +98,7 @@
                         </form>
                     </div>
                 </div>
-                <?php
-  					if(isset($incident_data)){
-						  ?>
+                
                 <div class="card">
                     <div class="card-body table-responsive">
                         <table class="table table-striped table-bordered table-hover">
@@ -113,41 +112,35 @@
                                     <th>Medida</th>
                                     <th>Responsable</th>
                                     <th>Realizó</th>
-									<th>Autorizó</th>
-									<th>Acciones</th>
-                                    <?php
-									foreach($incident_data->result() as $row)
-									{
-										echo '
-										<tr>
-										<td>'.$row->clve_incidente.'</td>
-										<td>'.$row->v_incidente.'</td>
-										<td>'.$row->fecha_incidente.'</td>
-										<td>'.$row->fecha_registro.'</td>
-										<td>'.$row->incidencia.'</td>
-										<td>'.$row->medida.'</td>
-										<td>'.$row->responsable.'</td>
-										<td>'.$row->realizo.'</td>
-										<td>'.$row->id_personal.'</td>
-										<td><a target="_blank" href="'.site_url().'/IncidentController/pdfdetails/'.$row->id_incidente.'">View in PDF</a></td>
-										
-										</tr>
-										';
-									}
-									?>
+                                    <th>Autorizó</th>
+                                    <th>Acciones</th>
                             </thead>
+                            <tbody>
+                                    <?php
 
+                                    if(isset($incidentes)) {
+                                        
+                                        foreach($incidentes->result() as $row) {
+                                            echo '
+                                            <tr>
+                                            <td>'.$row->clve_incidente.'</td>
+                                            <td>'.$row->v_incidente.'</td>
+                                            <td>'.$row->fecha_incidente.'</td>
+                                            <td>'.$row->fecha_registro.'</td>
+                                            <td>'.$row->incidencia.'</td>
+                                            <td>'.$row->medida.'</td>
+                                            <td>'.$row->responsable.'</td>
+                                            <td>'.$row->realizo.'</td>
+                                            <td>'.$row->id_personal.'</td>
+                                            <td><a target="_blank" href="'.site_url().'/IncidentController/pdfdetails/'.$row->id_incidente.'">View in PDF</a></td>
+                                            
+                                            </tr>
+                                            ';
+                                        }
+                                    }
+									?>
+                            </tbody>
                         </table>
                     </div>
                 </div>
-                <?php
- 					 }
-					if(isset($incident_details))
-					{
-					echo $incident_details;
-					}
-					?>
             </div>
-            </body>
-
-            </html>

@@ -1,15 +1,19 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
 class IncidentController extends CI_Controller {
-
-    public function __construct() { 
+	
+	public function __construct() { 
 		parent::__construct();
-	 	$this->load->model("IncidentModel");
-	  	$this->load->library('pdf');	
+		$this->load->library("pdf");
+		$this->load->model("IncidentModel");	
+		$this->load->model("PersonalModel");	
     } 
     
 	public function index() {
-		$data['incident_data'] = $this->IncidentModel->fetch();
+		$data = array( 
+			"incidentes" => $this->IncidentModel->fetch(),
+			"personas" => $this->PersonalModel->queryAllPersonal()
+		);
 		$this->load->view("components/LoaderComponent");
 		$this->load->view("components/HeaderComponent");
 		$this->load->view("components/NavbarAdminComponent");
@@ -17,16 +21,38 @@ class IncidentController extends CI_Controller {
 		$this->load->view("components/FooterComponent");
 	}
 
-	public function pdfdetails()
-	{
-	 if($this->uri->segment(3))
-	 {
-	  $id_incidente = $this->uri->segment(3);
-	  $html_content = $this->IncidentModel->fetch_single_details($id_incidente);
-	  $this->pdf->loadHtml($html_content);
-	  $this->pdf->render();
-	  $this->pdf->stream("".$id_incidente.".pdf", array("Attachment"=>0));
-	 }
-    
-}
+	public function pdfdetails() {
+		$this->pdf->loadHtml($this->renderHTML());
+		$this->pdf->render();
+		$this->pdf->stream("incidente.pdf", array("Attachment" => 0));
+	}
+	
+	private function renderHTML() {
+		return 
+		"
+			<table width='100%' border='1' style='margin-bottom: 40px;'>
+				<thead ></thead> 
+				<tbody ></tbody> 
+			</table>
+			<table width='100%' border='1' style='margin-bottom: 40px;'>
+				<thead style='text-align: center; background-color: #53FF33;'>
+					<tr >
+						<td>Fecha</td>
+						<td>Incidencia</td>
+						<td>Medida correctora aplicada</td>
+						<td>Responsable (Firma)</td>
+					</tr>
+				</thead> 
+				<tbody ></tbody> 
+			</table>
+			<table width='100%' border='1'>
+				<tbody >
+					<tr >
+						<td>Autorizó: </td>
+						<td>Realizó:  </td>
+					</tr>
+				</tbody> 
+			</table>
+		";
+	}
 }
