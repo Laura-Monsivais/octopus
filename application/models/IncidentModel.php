@@ -38,7 +38,7 @@ class IncidentModel extends CI_Model {
 		$data = $this->db->get('incidentes');
 
 		$html = '
-					<table width="100%" border="1" style="margin-bottom: 40px; border-collapse: collapse;">
+					<table width="100%" border="1" style="margin-bottom: 40px; border-collapse: collapse; font-family: Arial, Helvetica, sans-serif;  font-size: 12px;">
 						<tbody >';
 
 						foreach($data->result() as $row) {
@@ -64,7 +64,7 @@ class IncidentModel extends CI_Model {
 		          ';
 	 
 		$html .= '
-				<table width="100%" border="1" style="margin-bottom: 40px; border-collapse: collapse;">
+				<table width="100%" border="1" style="margin-bottom: 40px; border-collapse: collapse; font-family: Arial, Helvetica, sans-serif;  font-size: 12px;">
 					<thead style="text-align: center; background-color: #53FF33;">
 						<tr >
 							<td>Fecha</td>
@@ -94,7 +94,7 @@ class IncidentModel extends CI_Model {
 				 ';
 
 		$html .= '
-					<table width="100%" border="1" style="border-collapse: collapse;">
+					<table width="100%" border="1" style="border-collapse: collapse; font-family: Arial, Helvetica, sans-serif;  font-size: 12px;">
 						<tbody >
 				 ';
 				 		foreach($data->result() as $row) {
