@@ -230,27 +230,27 @@ class IncidentModel extends CI_Model {
 
 		$html = '
 					<table width="100%" border="1" style="margin-bottom: 40px; border-collapse: collapse; font-family: Arial, Helvetica, sans-serif;  font-size: 12px;">
-						<tbody >';
+						<tbody >
 
-						foreach($data->result() as $row) {
-							$html .= 
-								'
+					//	foreach($data->result() as $row) {
+						//	$html .= 
+								
 								<tr >
 									<td  width="5%" rowspan="3"></td>
 									<td  style="text-align: center;">Rancho Ubuntu S de RL MI de CV</td>
-									<td  width="20%">Clave: ' . $row->clve_incidente .' </td>
+									<td  width="20%">Clave: RDI-008 </td>
 								</tr>
 								<tr >
 									<td  style="text-align: center;" rowspan="2">Reporte de incidentes ocurridos de la empresa</td>
-									<td>Versión: ' . $row->v_incidente .' </td>
+									<td>Versión: 1 </td>
 								</tr>
 								<tr >
-									<td>Fecha:   ' . $row->fecha_incidente . ' </td>
+									<td>Fecha: ' . date("d/m/Y") . ' </td>
 								</tr>
-								';
-						}
+								
+					//	}
 
-		$html .=  '		</tbody> 
+			</tbody> 
 					</table>
 		          ';
 	 
@@ -282,24 +282,17 @@ class IncidentModel extends CI_Model {
 		$html .= '
 					<tbody >
 					</table>
-				 ';
-
-		$html .= '
+				 
 					<table width="100%" border="1" style="border-collapse: collapse; font-family: Arial, Helvetica, sans-serif;  font-size: 12px;">
 						<tbody >
-				 ';
-				 		foreach($data->result() as $row) {
-							$html .= 
-							'
 								<tr >
-									<td>Autorizó: ' . $row->id_personal . '</td>
-									<td>Realizó:  ' . $row->realizo . '</td>
+									<td>Autorizó: Edith L del Razo C. </td>
+									<td>Realizó: '. $this->session->userdata("usuario") .'</td>
 								</tr>
-							';
-						}
-		$html .= '      </tbody> 
+
+	    </tbody> 
 					</table>
-		         ';
+		         '; 
 		return $html;
 	}
 }

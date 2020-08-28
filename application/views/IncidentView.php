@@ -1,9 +1,4 @@
-<script type="text/javascript">
-window.onload = function(){
-fecha = new Date();
-texto = document.getElementById("fechaing");
-texto.value = fecha;}
-</script>
+
 <div class="page-wrapper">
     <div class="col-md-12">
         <div class="box">
@@ -12,7 +7,6 @@ texto.value = fecha;}
 				<div class="card">
                     <div class="card-body">
                         <form action="<?php echo site_url() ?>/IncidentController/InsertIncident" method="POST">
-                <hr>
                 <div class="text-right">
                     <?php 
                         $path = site_url();
@@ -38,9 +32,9 @@ texto.value = fecha;}
                                 <div class="col-sm-4">
                                     <input type="text" class="form-control" name="fecha_inicial" value="<?php echo date("d/m/Y")?>" readonly=»readonly»>
                                 </div>
-                                <label class="col-sm-2 col-form-label">Nueva Fecha</label>
+                                <label class="col-sm-2 col-form-label"></label>
                                 <div class="col-sm-4">
-                                    <input type="date" class="form-control" name="nueva_fecha">
+                                    <input type="hidden" class="form-control" name="nueva_fecha">
                                 </div>
                             </div>
                             <hr>
