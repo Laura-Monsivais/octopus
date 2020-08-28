@@ -14,7 +14,7 @@ class StaffController extends CI_Controller {
 			"countNotifications" => $this->NotificationModel->countAllNotification());
 		$this->load->view("components/LoaderComponent");
 		$this->load->view("components/HeaderComponent", $data);
-		$this->load->view("components/NavbarComponent");
+		$this->load->view("components/NavbarAdminComponent");
 		$this->load->view("StaffView", $data);		
 		$this->load->view("components/FooterComponent");
 	}

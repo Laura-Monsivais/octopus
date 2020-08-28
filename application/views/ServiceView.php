@@ -5,11 +5,10 @@
                 <h1 class="box-title font-weight-bold text-info">Servicios</h1>
                 <div class="card">
                     <div class="card-body">
-                        <form action="<?php echo site_url()?>/ServiceController/insertService" method="POST"
-                            enctype="multipart/form-data" class="mt-3 form-horizontal">
+                        <form action="<?php echo site_url()?>/ServiceController/insertService" method="POST">
                             <div class="form-group row">
-                                <label for="inputHorizontalDnger" class="col-sm-3 col-form-label">Tipo</label>
-                                <div class="col-sm-9">
+                                <label class="col-sm-2 col-form-label">Tipo</label>
+                                <div class="col-sm-4">
                                     <select name="tipo" class="custom-select">
                                         <option selected="">Gas</option>
                                         <option selected="">Agua</option>
@@ -19,27 +18,15 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="inputHorizontalDnger" class="col-sm-3 col-form-label">Fecha de
-                                    emisión</label>
-                                <div class="col-sm-9">
-                                    <div class="custom-file">
-                                        <input type="date" name="fecha_emision" class="form-control" maxlength="10"
-                                            required>
-                                    </div>
+                                <label class="col-sm-2 col-form-label">Tipo de pago</label>
+                                <div class="col-sm-4">
+                                    <select name="tipo_pago" class="custom-select">
+                                        <option selected="">Efectivo</option>
+                                        <option selected="">Transferencia</option>
+                                    </select>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="inputHorizontalDnger" class="col-sm-3 col-form-label">Fecha de
-                                    expiración</label>
-                                <div class="col-sm-9">
-                                    <div class="custom-file">
-                                        <input type="date" name="fecha_expiracion" class="form-control" required>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="inputHorizontalDnger" class="col-sm-3 col-form-label">Costo</label>
-                                <div class="col-sm-9">
+                                <label class="col-sm-2 col-form-label">Monto</label>
+                                <div class="col-sm-4">
                                     <div class="custom-file">
                                         <div class="input-group mb-2">
                                             <div class="input-group-prepend">
@@ -51,37 +38,43 @@
                                     </div>
                                 </div>
                             </div>
+                            <hr>
                             <div class="form-group row">
-                                <label for="inputHorizontalDnger" class="col-sm-3 col-form-label">Tipo de pago</label>
-                                <div class="col-sm-9">
-                                    <select name="tipo_pago" class="custom-select">
-                                        <option selected="">Efectivo</option>
-                                        <option selected="">Transferencia</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="inputHorizontalDnger" class="col-sm-3 col-form-label">Pendiente</label>
-                                <div class="col-sm-9">
+                                <label class="col-sm-2 col-form-label">Pendiente</label>
+                                <div class="col-sm-4">
                                     <select name="pendiente" class="custom-select">
                                         <option selected=""></option>
                                         <option value="1">Si</option>
                                         <option value="0">No</option>
                                     </select>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="inputHorizontalDnger" class="col-sm-3 col-form-label">Empleado</label>
-                                <div class="col-sm-9">
+                                <label class="col-sm-2 col-form-label">Realizó</label>
+                                <div class="col-sm-4">
                                     <select name="personal" class="custom-select">
                                         <option selected=""></option>
                                         <?php  
-                                    $results = $this->ServiceModel->selectAllPersonal();
-                                    foreach ($results as $employee) {
-                                        echo '<option value='.$employee["id_personal"].'>' . $employee["nombre"] . ' ' . $employee["apellido_paterno"] . ' ' . $employee["apellido_materno"] . '</option>';
-                                    }
-                                ?>
+                                            $results = $this->ServiceModel->selectAllPersonal();
+                                            foreach ($results as $employee) {
+                                                echo '<option value='.$employee["id_personal"].'>' . $employee["nombre"] . ' ' . $employee["apellido_paterno"] . ' ' . $employee["apellido_materno"] . '</option>';
+                                            }
+                                        ?>
                                     </select>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="form-group row">
+                                <label class="col-sm-2 col-form-label">Fecha emisión</label>
+                                <div class="col-sm-4">
+                                    <div class="custom-file">
+                                        <input type="date" name="fecha_emision" class="form-control" maxlength="10"
+                                            required>
+                                    </div>
+                                </div>
+                                <label class="col-sm-2 col-form-label">Fecha expiración</label>
+                                <div class="col-sm-4">
+                                    <div class="custom-file">
+                                        <input type="date" name="fecha_expiracion" class="form-control" required>
+                                    </div>
                                 </div>
                             </div>
                             <div class="form-group text-center">
