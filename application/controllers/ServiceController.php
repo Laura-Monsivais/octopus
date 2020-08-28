@@ -17,7 +17,7 @@ class ServiceController extends CI_Controller {
 
 		$this->load->view("components/LoaderComponent");
 		$this->load->view("components/HeaderComponent", $data);
-		$this->load->view("components/NavbarComponent");
+		$this->load->view("components/NavbarAdminComponent");
 		$this->load->view("ServiceView", $data);	
 		$this->load->view("components/FooterComponent");
 	}
@@ -66,7 +66,7 @@ class ServiceController extends CI_Controller {
 		$countNotifications = $this->NotificationModel->countAllNotification();
 		$this->load->view("components/LoaderComponent");
 		$this->load->view("components/HeaderComponent", compact("countNotifications"));
-		$this->load->view("components/NavbarComponent");
+		$this->load->view("components/NavbarAdminComponent");
 		$this->load->view("ServiceUpdateView", compact("data"));
 		$this->load->view("components/FooterComponent");
 	}
