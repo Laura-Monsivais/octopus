@@ -36,8 +36,35 @@ class IncidentModel extends CI_Model {
 	 public function renderHTML($incidenteId) {
 	    $this->db->where('id_incidente', 1);
 		$data = $this->db->get('incidentes');
+
 		$html = '
-				<table width="100%" border="1" style="margin-bottom: 40px;">
+					<table width="100%" border="1" style="margin-bottom: 40px; border-collapse: collapse;">
+						<tbody >';
+
+						foreach($data->result() as $row) {
+							$html .= 
+								'
+								<tr >
+									<td  width="5%" rowspan="3"></td>
+									<td  style="text-align: center;">Rancho Ubuntu S de RL MI de CV</td>
+									<td  width="20%">Clave:</td>
+								</tr>
+								<tr >
+									<td  style="text-align: center;" rowspan="2">Reporte de incidentes ocurridos de la empresa</td>
+									<td>Versión: ' . $row->fecha_incidente .' </td>
+								</tr>
+								<tr >
+									<td>Fecha:   ' . $row->fecha_incidente . ' </td>
+								</tr>
+								';
+						}
+
+		$html .=  '		</tbody> 
+					</table>
+		          ';
+	 
+		$html .= '
+				<table width="100%" border="1" style="margin-bottom: 40px; border-collapse: collapse;">
 					<thead style="text-align: center; background-color: #53FF33;">
 						<tr >
 							<td>Fecha</td>
@@ -52,12 +79,12 @@ class IncidentModel extends CI_Model {
 				foreach($data->result() as $row) {
 					$html .= 
 						'
-						<tr >
-							<td>' . $row->fecha_incidente . '</td>
-							<td>' . $row->fecha_incidente . '</td>
-							<td>' . $row->fecha_incidente . '</td>
-							<td>' . $row->fecha_incidente . '</td>
-						</tr>
+							<tr >
+								<td>' . $row->fecha_incidente . '</td>
+								<td>' . $row->fecha_incidente . '</td>
+								<td>' . $row->fecha_incidente . '</td>
+								<td>' . $row->fecha_incidente . '</td>
+							</tr>
 						';
 				}
 
@@ -67,7 +94,7 @@ class IncidentModel extends CI_Model {
 				 ';
 
 		$html .= '
-					<table width="100%" border="1">
+					<table width="100%" border="1" style="border-collapse: collapse;">
 						<tbody >
 				 ';
 				 		foreach($data->result() as $row) {
@@ -83,33 +110,5 @@ class IncidentModel extends CI_Model {
 					</table>
 		         ';
 		return $html;
-
-
-
-		// $html = "
-		// 		<table width='100%' border='1' style='margin-bottom: 40px;'>
-		// 			<thead ></thead> 
-		// 			<tbody ></tbody> 
-		// 		</table>
-		// 		<table width='100%' border='1' style='margin-bottom: 40px;'>
-		// 			<thead style='text-align: center; background-color: #53FF33;'>
-		// 				<tr >
-		// 					<td>Fecha</td>
-		// 					<td>Incidencia</td>
-		// 					<td>Medida correctora aplicada</td>
-		// 					<td>Responsable (Firma)</td>
-		// 				</tr>
-		// 			</thead> 
-		// 			<tbody ></tbody> 
-		// 		</table>
-		// 		<table width='100%' border='1'>
-		// 			<tbody >
-		// 				<tr >
-		// 					<td>Autorizó: </td>
-		// 					<td>Realizó:  </td>
-		// 				</tr>
-		// 			</tbody> 
-		// 		</table>
-		// 	";
 	}
 }
