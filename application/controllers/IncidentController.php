@@ -22,37 +22,11 @@ class IncidentController extends CI_Controller {
 	}
 
 	public function pdfdetails() {
-		$this->pdf->loadHtml($this->renderHTML());
+
+		
+		$html = $this->IncidentModel->renderHTML(1);
+		$this->pdf->loadHtml($html);
 		$this->pdf->render();
 		$this->pdf->stream("incidente.pdf", array("Attachment" => 0));
-	}
-	
-	private function renderHTML() {
-		return 
-		"
-			<table width='100%' border='1' style='margin-bottom: 40px;'>
-				<thead ></thead> 
-				<tbody ></tbody> 
-			</table>
-			<table width='100%' border='1' style='margin-bottom: 40px;'>
-				<thead style='text-align: center; background-color: #53FF33;'>
-					<tr >
-						<td>Fecha</td>
-						<td>Incidencia</td>
-						<td>Medida correctora aplicada</td>
-						<td>Responsable (Firma)</td>
-					</tr>
-				</thead> 
-				<tbody ></tbody> 
-			</table>
-			<table width='100%' border='1'>
-				<tbody >
-					<tr >
-						<td>Autorizó: </td>
-						<td>Realizó:  </td>
-					</tr>
-				</tbody> 
-			</table>
-		";
 	}
 }
