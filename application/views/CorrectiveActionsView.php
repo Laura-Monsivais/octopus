@@ -30,7 +30,7 @@
                                                 echo "<td >" . $version["fecha_accion_cor"] . "</td>";
                                                 echo "<td >" . $version["factual_accion_cor"] . "</td>";
                                                 echo "<td >" . $version["desc_no_conf"] . "</td>";
-                                                echo "<td><i class='fas fa-pencil-alt mr-2' type='button' data-toggle='modal' data-target='#edit-".$version['id_accion_cor']."'></i><i class='fas fa-trash' data-id='".$version['id_accion_cor']."' id='btn_delete'></i></td>"; 
+                                                echo "<td><i class='fas fa-pencil-alt mr-2' type='button' data-toggle='modal' data-target='#edit-".$version['id_accion_cor']."'></i><i class='fas fa-trash-alt mr-2' type='button' id='btn_delete' data-id='".$version['id_accion_cor']."'></i></td>"; 
                                                 echo "</tr>";
                                             }
                                         ?>
@@ -327,37 +327,46 @@
 
 
 
-                <script>
-                    $("tr td #btn_delete").click(function() {
-                        Swal.fire({
-                            title: "¿Estás seguro?",
-                            text: "¡No podrás revertir esto!",
-                            icon: "warning",
-                            showCancelButton: true,
-                            confirmButtonText: "Sí, eliminar!",
-                            confirmButtonColor: "#d33",
-                            cancelButtonText: "Cancelar",
-                            cancelButtonColor: "#3085d6",
-                            showLoaderOnConfirm: true,
-                            preConfirm: () => {
-                                /* let id = this.hoshinGuidelines[index].id; */
-                                return axios //En esta parte va la petición Ajax
-                                    .delete(route("Usuarios.destroy", {
-                                        id: item.id
-                                    }).url())
-                                    .then((response) => {
-                                        this.users_data.splice(this.users_items.indexOf(item), 1); //Remove the user of the list.
-                                        return "eliminated";
-                                    })
-                                    .catch((error) => {
-                                        Swal.showValidationMessage(`Se produjo un error: ${error}`);
-                                    });
-                            },
-                            allowOutsideClick: () => !Swal.isLoading(),
-                        }).then((result) => {
-                            if (result.value) {
-                                Swal.fire("Eliminado!", "Equipo Eliminado.", "success");
-                            }
-                        });
-                    });;
-                </script>
+<script>
+    $("tr td #btn_delete").click(function(ev) {
+        ev.preventDefault();
+        var id_accion_cor2 = $(this).attr('data-id');
+        var self = this;
+        Swal.fire({
+            title: "¿Estás seguro?",
+            text: "¡No podrás revertir esto!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonText: "Continuar",
+            confirmButtonColor: "#d33",
+            cancelButtonText: "Cancelar",
+        }).then((result) => {
+            if (result.value) {
+                $.ajax({
+                    type: "POST",
+                    url: "<?php echo base_url()?>index.php/CorrectiveActionsController/deleteAction",
+                    data: {
+                        "id_accion_cor2": id_accion_cor2
+                    },
+
+                    success: function() {
+                        $(self).parents('tr').remove();
+                        Swal("¡Eliminado!",
+                            "El registro ha sido eliminado satisfactoriamente.",
+                            "success"
+                        )
+                    },
+                    statusCode: {
+                        400: function(data) {
+                            var json = JSON.parse(data.responseText);
+                            Swal("ERROR",
+                                json.msg,
+                                "error"
+                            )
+                        }
+                    }
+                })
+            }
+        });
+    });
+</script>

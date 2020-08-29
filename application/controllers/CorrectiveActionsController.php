@@ -50,6 +50,8 @@ class CorrectiveActionsController extends CI_Controller {
             $desc_no_conf, $accion_realizada, $c_existente,$v_ctrl_cyr, $monitoreo, $problema, $com_proceso, $recolec_dato, 
             $analizar_dato,  $posible_causa, $verif_causa, $sol_imple, $impl_sol, $eval_efe, $estbl_cambio, 
             $aprend_cierre, $realizado_por, $validado_por);
+
+            redirect('CorrectiveActionsController');
     }
 
     public function editAction(){
@@ -80,7 +82,18 @@ class CorrectiveActionsController extends CI_Controller {
             $c_existente, $v_ctrl_cyr, $monitoreo, $problema, $com_proceso, $recolec_dato, $analizar_dato, 
             $posible_causa, $verif_causa, $sol_imple, $impl_sol, $eval_efe, $estbl_cambio, $aprend_cierre,
             $realizado_por, $validado_por);
+            redirect('CorrectiveActionsController');
+    }
 
+    public function deleteAction(){
+        $id_accion_cor = $this->input->post('id_accion_cor2');
+
+        if(empty($id_accion_cor)){
+            $this->output->set_status_header(400)->set_output(json_encode(array('msg'=>'El id no puede ser vacio')));
+        }else{
+            $this->CorrectiveActionsModel->deleteAcciones($id_accion_cor);
+            $this->output->set_status_header(200);
+        }
         
     }
 }

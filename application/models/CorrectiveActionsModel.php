@@ -38,6 +38,7 @@ class CorrectiveActionsModel extends CI_Model {
             '$accion_realizada', '$c_existente','$v_ctrl_cyr', '$monitoreo', '$problema', '$com_proceso', '$recolec_dato', '$analizar_dato',
             '$posible_causa', '$verif_causa', '$sol_imple', '$impl_sol', '$eval_efe', '$estbl_cambio', '$aprend_cierre', 
             '$realizado_por', $validado_por)");
+
     }
 
     public function editAcciones($id_accion_cor, $factual_accion_cor, $desc_no_conf, $accion_realizada, $c_existente, 
@@ -50,6 +51,7 @@ class CorrectiveActionsModel extends CI_Model {
         `analizar_dato`='$analizar_dato',`posible_causa`='$posible_causa',`verif_causa`='$verif_causa',`sol_imple`='$sol_imple',
         `impl_sol`='$impl_sol',`eval_efe`='$eval_efe',`estbl_cambio`='$estbl_cambio',`aprend_cierre`='$aprend_cierre',
         `realizado_por`='$realizado_por',`id_personal`=$validado_por WHERE id_accion_cor = $id_accion_cor");
+
     }
 
     public function deleteAcciones($id_accion_cor){
