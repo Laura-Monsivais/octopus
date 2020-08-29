@@ -187,15 +187,17 @@
                         $path = site_url();
                         foreach ($versioness as $version) {
                             echo '<div id="edit-' . $version['id_accion_cor'] . '" class="modal" tabindex="-1" role="dialog" aria-hidden="true">';
-                            echo '                                
+                            echo '
+                                    <div class="modal-dialog modal-dialog-centered modal-lg">                                
                                     <div class="modal-content">
                                     <div class="modal-header">
-                                    <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                                    <h5 class="modal-title" id="staticBackdropLabel">Editar acciones correctivas</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                       <span aria-hidden="true">&times;</span>
                                     </button>
                                   </div>
-                                        <div class="modal-body">';
+                                        <div class="modal-body">
+                                        <div class="col-md-12">';
 
                             echo '
                                             <form method="post" action="' . base_url() . 'index.php/CorrectiveActionsController/editAction">
@@ -206,7 +208,7 @@
                                                         <label>Clave:</label>
                                                         <input type="text" name="clve_accion_cor" value="R-AC-002" class="form-control" readonly><br>
                                                         <label>Versión:</label>
-                                                        <input type="number" name="v_accion_cor" min="0" max="20" class="form-control" value="' . ($version['v_accion_cor'] + 1) . '"><br>
+                                                        <input type="number" name="v_accion_cor" min="0" max="20" class="form-control" value="' . ($version['v_accion_cor'] + 1) . '" readonly><br>
                                                         <label>Fecha:</label>
                                                         <input type="date" name="fecha_accion_cor" value="' . $version['fecha_accion_cor'] . '" class="form-control" readonly><br>
                                                         <label>Fecha actualización:</label>
@@ -277,7 +279,7 @@
                                                     <textarea required="required" class="form-control" name="aprend_cierre" rows="5">' . $version['aprend_cierre'] . '</textarea>
                                                 </div>
                                                 <div class="col-md-6 mb-3"><label><br> Realizado por.</label>
-                                                    <textarea required="required" class="form-control" name="realizado_por" rows="5">
+                                                    <textarea required="required" class="form-control" name="realizado_por" rows="5" readonly>
                                                 ';
 
                             $user = json_decode(json_encode($usuario), true);
