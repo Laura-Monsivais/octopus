@@ -23,3 +23,24 @@
 option {
     color: #000000;
 }
+
+.table-equipment tbody tr td:nth-child(2),
+.table-equipment tbody tr td:nth-child(5),
+.table-equipment tbody tr td:nth-child(8){
+    overflow: hidden;
+}
+.table-equipment tbody tr td:nth-child(2) span,
+.table-equipment tbody tr td:nth-child(5) span,
+.table-equipment tbody tr td:nth-child(8) span{
+    width: 32%;
+    margin: 0 0.65%;
+    height: 30px;
+    display: block;
+    background-color: #D1E2F7;
+    float: left;
+}
+.table-equipment tbody tr td:nth-child(2) span:last-child,
+.table-equipment tbody tr td:nth-child(5) span:last-child,
+.table-equipment tbody tr td:nth-child(8) span:last-child{
+    background-color: #86BAFA;
+}

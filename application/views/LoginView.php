@@ -35,7 +35,7 @@
                         </div>
                         <div class="form-group">
                             <label class="text-body">Contraseña</label>
-                            <input type="password" class="form-control" name="password" required="true" minlength="8" maxlength="30">
+                            <input type="password" class="form-control" name="password" required="true" minlength="6" maxlength="30">
                         </div>
                         <div class="form-group text-center">
                             <button type="submit" class="btn btn-rounded btn-outline-primary">Iniciar sesión</button>
