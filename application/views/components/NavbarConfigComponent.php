@@ -110,3 +110,19 @@
                         </li>
                     </ul>
                 </li>-->
+                </li>
+                <li class="sidebar-item"> <a class="sidebar-link has-arrow" href="javascript:void(0)"
+                        aria-expanded="false"><i data-feather="folder-plus" class="feather-icon"></i><span
+                            class="hide-menu">Acciones correctivas</span></a>
+                    <ul aria-expanded="false" class="collapse  first-level base-level-line">
+                        <li class="sidebar-item">
+                            <a href="<?php base_url()?>CorrectiveActionsController" class="sidebar-link">
+                                <span class="hide-menu">Acciones correctivas</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</aside>
