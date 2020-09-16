@@ -2,15 +2,16 @@
     <div class="col-md-12">
         <div class="box">
             <div class="box-header with-border">
-                <h1 class="box-title">Acciones correctivas</h1>
+			<h1 class="box-title font-weight-bold text-info">Acciones Correctivas</h1>
                 <div class="card">
                     <div class="card-body">
                         <form class="needs-validation" novalidate>
                             <div class="form-row">
-
-                                <table class="table table-hover">
-                                    <thead class="thead-dark">
-                                        <tr>
+           
+                    <div class="card-body table-responsive">
+                        <table class="table table-striped table-bordered table-hover">
+                            <thead class="thead-dark text-center">
+                                <tr class="text-center">
                                             <th scope="col">Clave</th>
                                             <th scope="col">Version</th>
                                             <th scope="col">Fecha de creación</th>
@@ -51,7 +52,7 @@
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                             </div>
 
-                            <div class="modal-body">
+                            <div class="modal-body ">
                                 <div class="col-md-12">
                                     <div class="box">
                                         <div class="box-header with-border ">

@@ -15,6 +15,12 @@
                                     <a href="<?php base_url()?>PersonalController" class="sidebar-link">
                                         <span class="hide-menu">Nuevo empleado</span>
                                     </a>
+									<a href="<?php base_url()?>" class="sidebar-link">
+                                        <span class="hide-menu">Capacitación</span>
+                                    </a>
+									<a href="<?php base_url()?>" class="sidebar-link">
+                                        <span class="hide-menu">Plan de carrera</span>
+                                    </a>
                                 </li>
                             </ul>
                         </li>
@@ -28,10 +34,26 @@
                                         <span class="hide-menu">Nuevo evento</span></a>
                                 </li>
                             </ul>
+                        </li> 
+						<li class="sidebar-item">
+                            <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
+                                <i data-feather="monitor" class="feather-icon"></i>
+                                <span class="hide-menu">Equipos</span></a>
+                            <ul aria-expanded="false" class="collapse  first-level base-level-line">
+                                <li class="sidebar-item">
+                                    <a href="<?php base_url()?>EquipmentController" class="sidebar-link">
+                                        <span class="hide-menu">Nuevo Equipo</span></a>
+                                </li>
+                            </ul>
                         </li>
+						<li class="sidebar-item">
+                            <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
+                                <i data-feather="monitor" class="feather-icon"></i>
+                                <span class="hide-menu">Mantenimiento</span></a>
+                            <ul aria-expanded="false" class="collapse  first-level base-level-line">
 
-
-                        
+                            </ul>
+                        </li> 		 		
                     </ul>
                 </li>
             </ul>
@@ -50,8 +72,21 @@
                                         <span class="hide-menu">Nuevo proveedor</span>
                                     </a>
                                 </li>
+								
                             </ul>
-                        </li>
+                        </li>       <li class="sidebar-item">
+                            <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
+                                <i data-feather="users" class="feather-icon"></i>
+                                <span class="hide-menu">Orden</span></a>
+                            <ul aria-expanded="false" class="collapse  first-level base-level-line">
+                                <li class="sidebar-item">
+                                    <a href="<?php base_url()?>ProviderController" class="sidebar-link">
+                                        <span class="hide-menu">Insumo</span>
+                                    </a>
+									<a href="<?php base_url()?>ProviderController" class="sidebar-link">
+                                        <span class="hide-menu">Compra</span>
+                                    </a>
+                                </li>
                     </ul>
                 </li>
             </ul>
@@ -68,6 +103,7 @@
                     </ul>
                 </li>
             </ul>
+				
         </nav>
     </div>
 </aside>
@@ -110,19 +146,4 @@
                         </li>
                     </ul>
                 </li>-->
-                </li>
-                <li class="sidebar-item"> <a class="sidebar-link has-arrow" href="javascript:void(0)"
-                        aria-expanded="false"><i data-feather="folder-plus" class="feather-icon"></i><span
-                            class="hide-menu">Acciones correctivas</span></a>
-                    <ul aria-expanded="false" class="collapse  first-level base-level-line">
-                        <li class="sidebar-item">
-                            <a href="<?php base_url()?>CorrectiveActionsController" class="sidebar-link">
-                                <span class="hide-menu">Acciones correctivas</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-    </div>
-</aside>
+

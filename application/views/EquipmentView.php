@@ -1,10 +1,11 @@
 <div class="page-wrapper">
     <div class="col-md-12">
         <div class="box">
-            <div class="box-header with-border ">
+            <div class="box-header with-border">
                 <h1 class="box-title font-weight-bold text-info">Equipos</h1>
                 <div class="card">
                     <div class="card-body">
+					<div class="form-row">
                         <form action="<?php echo site_url() ?>/EquipmentController/AgregarEquipo" method="POST"
                             class="needs-validation" novalidate>
                             <div class="form-row">

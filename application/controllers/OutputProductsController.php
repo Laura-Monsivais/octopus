@@ -1,13 +1,18 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class EmployeeController extends CI_Controller {
+class OutputProductsController extends CI_Controller {
+
+    function __construct() {
+		parent::__construct();
+		
+	}
 
 	public function index() {
 		$this->load->view("components/LoaderComponent");
 		$this->load->view("components/HeaderComponent");
-		$this->load->view("components/NavbarComponent");
-		$this->load->view("EmployeeView");		
+		$this->load->view("components/NavbarAdminComponent");
+		$this->load->view("OutputProductsView");		
 		$this->load->view("components/FooterComponent");
-	}
+    }
 }

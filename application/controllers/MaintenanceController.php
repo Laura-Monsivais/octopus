@@ -17,7 +17,7 @@ class MaintenanceController extends CI_Controller
 
 		$this->load->view("components/LoaderComponent");
 		$this->load->view("components/HeaderComponent");
-		$this->load->view("components/NavbarComponent");
+		$this->load->view("components/NavbarConfigComponent");
 		$this->load->view("MaintenanceView",$data);		
 		$this->load->view("components/FooterComponent");}
 	
@@ -31,7 +31,7 @@ class MaintenanceController extends CI_Controller
 		);
 		$this->load->view("components/LoaderComponent");
 		$this->load->view("components/HeaderComponent");
-		$this->load->view("components/NavbarComponent");
+		$this->load->view("components/NavbarConfigComponent");
 		$this->load->view("MaintenanceAddView", $data);
 		$this->load->view("components/FooterComponent");
 	}
