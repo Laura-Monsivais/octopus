@@ -214,8 +214,8 @@ class IncidentModel extends CI_Model {
 							$html .= 
 							'
 								<tr >
-									<td>Autorizó: ' . $row->id_personal . '</td>
-									<td>Realizó:  ' . $row->realizo . '</td>
+									<td width="48%">Autorizó: Edith L del Razo C</td>
+									<td width="">Realizó:   '. $this->session->userdata("usuario") .'</td>
 								</tr>
 							';
 						}
@@ -286,7 +286,7 @@ class IncidentModel extends CI_Model {
 					<table width="100%" border="1" style="border-collapse: collapse; font-family: Arial, Helvetica, sans-serif;  font-size: 12px;">
 						<tbody >
 								<tr >
-									<td>Autorizó: Edith L del Razo C. </td>
+									<td width="48%">Autorizó: Edith L del Razo C </td>
 									<td>Realizó: '. $this->session->userdata("usuario") .'</td>
 								</tr>
 
