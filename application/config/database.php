@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'octopus',
+	'hostname' => 'server-octopus.mysql.database.azure.com',
+	'username' => 'bocanegra',
+	'password' => 'LauraLaura1',
+	'database' => 'server-octopus',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
